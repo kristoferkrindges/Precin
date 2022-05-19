@@ -29,6 +29,12 @@ export const NavLink = styled(Link)`
         color: #15cdfc;
     }
 
+    .logo{
+        cursor: pointer;
+		width: 43px;
+		border-radius: 5px; 
+    }
+
 `
 
 export const Bars = styled(FaBars)`
