@@ -9,7 +9,7 @@ export default function Home(){
             <Container>
                 <Header></Header>
                 <Main></Main>
-                <Footer></Footer>
+                {/* <Footer></Footer> */}
             </Container>
     )
 }
