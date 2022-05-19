@@ -6,10 +6,10 @@ export const Container = styled.footer`
     align-items: center;
     width: 100%;
     height: 50px;
-    background-color: white;
+    background-color: black;
 
     strong{
-        color: #1e1e1e;
+        color: #15cdfc;
         font-weight:700;
         text-align: center;
     }
