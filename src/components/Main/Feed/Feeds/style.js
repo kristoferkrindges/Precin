@@ -8,7 +8,7 @@ export const Li = styled.li`
     border-radius: 10px;
     padding: 25px;
     box-shadow: 1px 0 3px rgba(0,0,0,0.5);
-    
+
     .infoUserPost{
         display: flex;
         align-items: center;
@@ -50,15 +50,14 @@ export const Li = styled.li`
         align-items: center;
         justify-content: center;
     }
-
-    .actionBtnPost .filesPost{
+.actionBtnPost .filesPost{
         display:flex;
         align-items: center;
         justify-content: center;
 
         padding: 5px 20px;
         margin-right: 10px;
-        
+
         border: 0;
         outline: none;
         border-radius: 10px;
@@ -73,6 +72,7 @@ export const Li = styled.li`
 
     .actionBtnPost .filesPost svg{
         margin-right: 5px;
+        stroke: white;
     }
 
     .like{
@@ -98,26 +98,25 @@ export const Li = styled.li`
     .share:hover{
         background: rgba(8, 141, 241);
     }
-
 `
 
-export const IconHeart = styled(IoHeartOutline)`
-	stroke: red;
-	width: 15px;
-	height: 15px;
 
-`;
+export const IconHeart = styled(IoHeartOutline)`
+    stroke: red;
+    width: 15px;
+    height: 15px;
+`
+;
 
 export const IconChat = styled(IoChatbubbleOutline)`
-	stroke: #256ce1;
-	width: 15px;
-	height: 15px;
-
-`;
+    stroke: #256ce1;
+    width: 15px;
+    height: 15px;
+`
+;
 
 export const IconSocial = styled(IoShareSocialOutline)`
-	stroke: #256ce1;
-	width: 15px;
-	height: 15px;
-
+    stroke: #256ce1;
+    width: 15px;
+    height: 15px;
 `;
