@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Container } from "./style";
 import { useUserContext } from "../../../context/userContext";
-import api from "../../../services/api";
+// import api from "../../../services/api";
 
 // export default function Fields() {
 const Signup = () => {
@@ -46,11 +46,11 @@ const Signup = () => {
 			[e.currentTarget.name]: e.currentTarget.value,
 		});
 
-	const handleSubmit = (event) => {
-		//props.addPlanet(fields)
-		event.preventDefault();
-		setFields(initialState);
-	};
+	// const handleSubmit = (event) => {
+	// 	//props.addPlanet(fields)
+	// 	event.preventDefault();
+	// 	setFields(initialState);
+	// };
 
 	return (
 		<Container>
