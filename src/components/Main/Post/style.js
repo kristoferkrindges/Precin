@@ -98,7 +98,7 @@ export const Container = styled.div`
     }
 
     .formPost .iconsAndButton button.btnSubmitForm:hover{
-        background: white;
+        background: #ffff;
         color: black;     
     }
     

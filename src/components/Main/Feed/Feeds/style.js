@@ -73,6 +73,7 @@ export const Li = styled.li`
 
     .actionBtnPost .filesPost svg{
         margin-right: 5px;
+        stroke: white;
     }
 
     .like{

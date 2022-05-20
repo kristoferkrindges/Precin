@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Container, ImgIcon} from "./style";
 
 export default function Post(props) {
-  return (
+  
+    const [text, setText] = useState('')
+    const handleChange = event => setText(event.target.value)
+  
+    return (
     // newPost
     <Container>
         <div className="infoUser">
@@ -11,8 +15,8 @@ export default function Post(props) {
             </div>
         </div>
         {/* Form de publicação */}
-        <form className="formPost">
-            <textarea name="textarea" placeholder='Boas Novas?'></textarea>
+        <form className="formPost" addFeed={props.addFeed}>
+            <textarea name="textarea" placeholder='Boas Novas?' value={text} onChange={handleChange}></textarea>
             <div className="iconsAndButton">
                 <div className="icons">
                     <button className="btnFileForme"><ImgIcon></ImgIcon></button>

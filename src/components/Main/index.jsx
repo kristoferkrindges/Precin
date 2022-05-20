@@ -2,6 +2,7 @@ import React from 'react';
 import {Container} from "./style";
 import Post from "../Main/Post"
 import Feed from "../Main/Feed"
+import Feeds from "../Main/Feed/Feeds"
 
 export default function Main() {
   return (
@@ -11,6 +12,7 @@ export default function Main() {
       </div> */}
       <Post
         name={"Kristofer"}
+        addFeed={Feeds.addFeed}
         >
 
       </Post>

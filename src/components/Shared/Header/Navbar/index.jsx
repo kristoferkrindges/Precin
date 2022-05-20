@@ -12,12 +12,12 @@ export default function Navbar(){
                 </NavLink>
                 <Bars></Bars>
                 <NavMenu>
-                    <NavLink to="/about" activeStyle>About</NavLink>
-                    <NavLink to="/help" activeStyle>Help</NavLink>
-                    <NavLink to="/profile" activeStyle>Profile</NavLink>
+                    <NavLink to="/about" activeStyle>Sobre</NavLink>
+                    <NavLink to="/help" activeStyle>Ajuda</NavLink>
+                    <NavLink to="/profile" activeStyle>Perfil</NavLink>
                 </NavMenu>
                 <NavBtn>
-                    <NavBtnLink to="/login">Sign IN</NavBtnLink>
+                    <NavBtnLink to="/login">Login</NavBtnLink>
                 </NavBtn>
             </Nav>
         </>

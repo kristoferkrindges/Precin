@@ -12,11 +12,7 @@ export default function Feeds(props) {
                 <p>{props.time}</p>
             </div>
         </div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi doloremque, 
-            ducimus laborum voluptatum dolorum perspiciatis sapiente odit. Praesentium, 
-            quisquam! Molestiae nobis et quaerat obcaecati repellat molestias distinctio 
-            enim earum natus.
-        </p>
+        <p>{props.public}</p>
         <div className="actionBtnPost">
             <button type="button" class="filesPost like"><IconHeart></IconHeart >Curtir</button>
             <button type="button" class="filesPost comment"><IconChat></IconChat >Comentar</button>
