@@ -5,6 +5,8 @@ export default function Post(props) {
   
     const [text, setText] = useState('')
     const handleChange = event => setText(event.target.value)
+
+    const handleSubmit = event =>{}
   
     return (
     // newPost
