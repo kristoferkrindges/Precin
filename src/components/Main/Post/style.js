@@ -15,7 +15,7 @@ export const Container = styled.div`
     border-radius: 10px;
     box-shadow: 1px 0 3px rgb(0,0,0,0.2);
 
-    .infoUser{
+                .infoUser{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -43,18 +43,21 @@ export const Container = styled.div`
     }
     
     .formPost textarea{
-        height: 90px;
-        background: #396a90;
+        height: 100px;
+        background-color: #F4F4F4;
         margin: 15px 0%;
         padding: 25px;
         border-radius: 10px;
         resize: none;
         outline: none;
         border: 0;
-
+        font-size: 18px;
         font-weight: bold;
         font-family: 'Roboto', 'sans-serif';
-        color: #ffff;
+    }
+
+    .formPost ::placeholder{
+        color: black;
     }
 
     .formPost .iconsAndButton{
