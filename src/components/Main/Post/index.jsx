@@ -12,7 +12,7 @@ export default function Post(props) {
         </div>
         {/* Form de publicação */}
         <form className="formPost">
-            <textarea name="textarea" placeholder='Boas Novas?'></textarea>
+            <textarea name="textarea" placeholder='Qual o melhor precin do momento?'></textarea>
             <div className="iconsAndButton">
                 <div className="icons">
                     <button className="btnFileForme"><ImgIcon></ImgIcon></button>

@@ -17,7 +17,7 @@ export default function Navbar(){
                     <NavLink to="/profile" activeStyle>Profile</NavLink>
                 </NavMenu>
                 <NavBtn>
-                    <NavBtnLink to="/login">Sign IN</NavBtnLink>
+                    <NavBtnLink to="/login">Login</NavBtnLink>
                 </NavBtn>
             </Nav>
         </>
