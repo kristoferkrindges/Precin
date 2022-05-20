@@ -18,7 +18,7 @@ function Login() {
 				) : (
 					<> {user ? <Dashboard /> : <Auth />} </>
 				)}
-				<Footer></Footer>
+				{/* <Footer></Footer> */}
 			</div>
 		</Container>
 	);
