@@ -7,7 +7,7 @@ export const Container = styled.div`
 		justify-content: center;
 		justify-self: center;
 		flex-direction: column;
-		background-color: #396a90;
+		background: rgba(111, 162, 242, 1)
 	}
 
 	.form p {

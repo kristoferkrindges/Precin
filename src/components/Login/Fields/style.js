@@ -9,11 +9,16 @@ export const Container = styled.div`
 		flex-direction: column;
 		max-width: 1200px;
 		padding: 15%;
-		background-color: white;
-		box-shadow: 0 1px 6px black;
+		background: radial-gradient(
+		ellipse at left bottom,
+		rgba(22, 24, 47, 1) 0%,
+		rgba(38, 20, 72, 1) 59%,
+		rgba(22, 24, 47, 1) 100%
+		);
+		box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 		border-radius: 6px;
 		margin-top: 18%;
-		color: black;
+		color: white;
 	}
 
 	input {
@@ -27,17 +32,13 @@ export const Container = styled.div`
 	.form h2 {
 		text-align: center;
 		margin-bottom: 5%;
-	}
-
-	.form h3 {
-		text-align: center;
-		margin-bottom: 2%;
+		font-weight: 400;
 	}
 
 	.form p {
 		cursor: pointer;
 		text-align: center;
-		font-weight: 700;
+		font-weight: 400;
 	}
 
 	.form button {

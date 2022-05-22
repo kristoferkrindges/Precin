@@ -3,7 +3,7 @@ import {IoImagesOutline} from "react-icons/io5"
 
 export const Container = styled.div`
     /* newPost */
-    background: black;
+    background: rgba(22, 24, 47, 1);
     width: 100%;
     height: 240px;
     margin: 50px 0;
@@ -13,7 +13,7 @@ export const Container = styled.div`
     align-items: flex-start;
 
     border-radius: 10px;
-    box-shadow: 1px 0 3px rgb(0,0,0,0.2);
+    box-shadow: 0 50px 70px -30px rgba(0, 0, 0, 0.8);
 
                 .infoUser{
         display: flex;
@@ -31,7 +31,7 @@ export const Container = styled.div`
     .infoUser .imgUser strong{
         font-size: 16px;
         margin-left: 30px;
-        color: #23a0ff;
+        color: white;
         padding: 20px
         
     }
@@ -44,7 +44,7 @@ export const Container = styled.div`
     
     .formPost textarea{
         height: 100px;
-        background-color: #F4F4F4;
+        background-color: white;
         margin: 15px 0%;
         padding: 25px;
         border-radius: 10px;
@@ -52,12 +52,11 @@ export const Container = styled.div`
         outline: none;
         border: 0;
         font-size: 18px;
-        font-weight: bold;
-        font-family: 'Roboto', 'sans-serif';
+        font-weight: 600;
     }
 
     .formPost ::placeholder{
-        color: black;
+        color: rgba(22, 24, 47, 1);
     }
 
     .formPost .iconsAndButton{
@@ -91,18 +90,24 @@ export const Container = styled.div`
         background: #256ce1;
         padding: 10px 50px;
         color: #ffff;
-        font-weight: bold;
+        font-weight: 500;
         outline: none;
         cursor: pointer;
         border: 0;
-        border-radius: 10px;
+        border-radius: 5px;
         
+        &:hover{
+        transition: all 0.2s ease-in-out;
+        background: #fff;
+        color: #010606;
+
+    }
         
     }
 
     .formPost .iconsAndButton button.btnSubmitForm:hover{
         background: white;
-        color: black;     
+        color: black;  
     }
     
     .formPost .iconsAndButton button.btnFileForme svg:hover{

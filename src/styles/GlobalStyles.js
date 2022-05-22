@@ -17,6 +17,6 @@ export default createGlobalStyle`
         list-style: none;
     }
     body {
-        background-color: #396a90;
+      background: rgba(111, 162, 242, 1)
   }
 `;
