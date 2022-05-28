@@ -4,10 +4,10 @@ import {IoHeartOutline, IoChatbubbleOutline, IoShareSocialOutline} from "react-i
 export const Li = styled.li`
     margin-bottom: 50px;
     width: 100%;
-    background: black;
+    background: rgba(22, 24, 47, 1);
     border-radius: 10px;
     padding: 25px;
-    box-shadow: 1px 0 3px rgba(0,0,0,0.5);
+    box-shadow: 0 50px 70px -30px rgba(0, 0, 0, 0.8);
 
     .infoUserPost{
         display: flex;
@@ -27,13 +27,13 @@ export const Li = styled.li`
     }
 
     .infoUserPost .nameAndHour > strong{
-        color: #23a0ff;
+        color: white;
 
     }
 
     .infoUserPost .nameAndHour > p{
         font-size: 12px;
-        color: gray;
+        color: white;
 
     }
 
@@ -41,7 +41,7 @@ export const Li = styled.li`
         width: 100%;
         margin: 20px 0;
         font-weight: bold;
-        color: #23a0ff;
+        color: white;
 
     }
 
