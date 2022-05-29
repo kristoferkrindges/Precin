@@ -8,7 +8,7 @@ import userImage from "../../../../imagens/dog_sorridente.jpeg";
 
 export default function Feeds(props) {
 	return (
-		<Li>
+		<Li key={props.index}>
 			<div className="infoUserPost">
 				<img className="imgUserPost" src={userImage}></img>
 				<div className="nameAndHour">
@@ -18,7 +18,7 @@ export default function Feeds(props) {
 			</div>
 			<div className="infoPost">
 				<img className="postImage" src={postImage}></img>
-				<p>Tomate Holandês{/* {props.public} */}</p>
+				<p>{props.public}</p>
 			</div>
 			<div className="priceLocationPost">
 				<div class="price">

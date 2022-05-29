@@ -9,11 +9,12 @@ import {
 	NavLinks,
 	NavBtn,
 	NavBtnLink,
-	NavSearchBar,
 	NavSideBar,
 } from "./style";
-import { FaBars, FaSearch } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import logo from "../../../../imagens/logo.png";
+import SearchBar from "../../../SearchBar";
+import FeedData from "../../../../api/feeds.json";
 
 export default function Navbar({ toggle, resp }) {
 	return (
@@ -27,10 +28,10 @@ export default function Navbar({ toggle, resp }) {
 						<img className="logo" src={logo}></img>
 						<h1>Precin</h1>
 					</NavLogo>
-					<NavSearchBar>
-						<input placeholder="Procure por produtos ou mercados"></input>
-						<FaSearch className="search" />
-					</NavSearchBar>
+					<SearchBar
+						placeholder="Procure por produtos ou mercados"
+						data={FeedData}
+					/>
 					<MobileIcon onClick={toggle}>
 						<FaBars></FaBars>
 					</MobileIcon>
