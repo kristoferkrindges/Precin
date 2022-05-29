@@ -17,6 +17,6 @@ export default createGlobalStyle`
         list-style: none;
     }
     body {
-      background: rgba(111, 162, 242, 1)
+      background: rgba(8, 37, 84, 1)
   }
 `;

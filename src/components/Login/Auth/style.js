@@ -7,19 +7,27 @@ export const Container = styled.div`
 		justify-content: center;
 		justify-self: center;
 		flex-direction: column;
-		background: rgba(111, 162, 242, 1)
+		background: rgba(8, 37, 84, 1);
 	}
 
 	.form p {
 		font-size: 18px;
-		margin-top: 6%;
 	}
 	.novo_usuario {
 		cursor: pointer;
 		text-align: center;
 		font-weight: 700;
-		margin: 3%;
+		padding: 2%;
+		margin: 5% 25%;
 		color: white;
-		font-size: 18px;
+		font-size: 22px;
+		background: radial-gradient(
+			ellipse at left bottom,
+			rgba(22, 24, 47, 1) 0%,
+			rgba(8, 37, 84, 1) 59%,
+			rgba(22, 24, 47, 1) 100%
+		);
+		border: 1px solid black;
+		border-radius: 6px;
 	}
 `;

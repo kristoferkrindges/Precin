@@ -1,6 +1,9 @@
 import React, { useState, useRef } from "react";
 import { Container } from "./style";
 import { useUserContext } from "../../../context/userContext";
+import { BsPerson } from "react-icons/bs";
+import { AiOutlineMail } from "react-icons/ai";
+import { RiLockPasswordLine } from "react-icons/ri";
 // import api from "../../../services/api";
 
 // export default function Fields() {
@@ -57,6 +60,7 @@ const Signup = () => {
 			<div className="form">
 				<h2>Cadastro</h2>
 				<form onSubmit={onSubmit}>
+					<BsPerson className="formIcons" />
 					<input
 						placeholder="Nome"
 						id="name"
@@ -66,6 +70,7 @@ const Signup = () => {
 						value={fields.name}
 						onChange={handleFieldsChange}
 					/>
+					<AiOutlineMail className="formIcons" />
 					<input
 						placeholder="Email"
 						id="email"
@@ -75,6 +80,7 @@ const Signup = () => {
 						/*value={fields.email}*/
 						onChange={handleFieldsChange}
 					/>
+					<RiLockPasswordLine className="formIcons" />
 					<input
 						placeholder="Senha"
 						id="password"
