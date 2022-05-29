@@ -70,7 +70,7 @@ export const NavLogo = styled(LinkR)`
 		}
 
 		@media screen and (max-width: 768px) {
-			margin-left: 60%;
+			margin-left: 40%;
 		}
 	}
 
@@ -85,38 +85,6 @@ export const NavLogo = styled(LinkR)`
 		h1 {
 			display: none;
 		}
-	}
-`;
-
-export const NavSearchBar = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-
-	input {
-		width: 80%;
-		height: 50%;
-		border-radius: 10px;
-		background-color: rgba(255, 255, 255, 1);
-		font-size: 15px;
-		font-weight: 600;
-		padding-left: 1%;
-	}
-
-	.search {
-		color: white;
-		cursor: pointer;
-		font-size: 25px;
-		margin-left: 1%;
-
-		@media screen and (max-width: 768px) {
-			display: none;
-		}
-	}
-
-	.search :hover {
-		color: rgba(111, 162, 242, 1);
 	}
 `;
 
