@@ -18,7 +18,7 @@ export const Container = styled.div`
 		border: 1px solid black;
 		box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 		border-radius: 6px;
-		margin-top: 18%;
+		margin-top: 10%;
 		color: white;
 
 		.formIcons {

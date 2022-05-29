@@ -7,7 +7,7 @@ export const Container = styled.div`
 		justify-content: center;
 		flex-direction: column;
 		padding: 12%;
-		background-color: #396a90;
+		background: rgba(8, 37, 84, 1);
 		color: white;
 	}
 
