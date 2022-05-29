@@ -11,7 +11,7 @@ function Login() {
 	return (
 		<Container>
 			<div className="container">
-				<Header></Header>
+				<Header />
 				{error && <p className="error"> {error}</p>}
 				{loading ? (
 					<h2 className="carregando">Carregando...</h2>
