@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { Container } from "./style";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../../context/userContext";
+import { AiOutlineMail } from "react-icons/ai";
+import { RiLockPasswordLine } from "react-icons/ri";
 
 // function FieldsLogin() {
 const Signin = () => {
@@ -32,6 +34,7 @@ const Signin = () => {
 			<div className="form">
 				<h2>Login</h2>
 				<form onSubmit={onSubmit}>
+					<AiOutlineMail className="formIcons" />
 					<input
 						placeholder="Email"
 						// id="email"
@@ -39,6 +42,7 @@ const Signin = () => {
 						// name="email"
 						ref={emailRef}
 					/>
+					<RiLockPasswordLine className="formIcons" />
 					<input
 						placeholder="Senha"
 						// id="password"

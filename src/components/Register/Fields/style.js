@@ -10,22 +10,28 @@ export const Container = styled.div`
 		max-width: 600px;
 		padding: 15%;
 		background: radial-gradient(
-		ellipse at left bottom,
-		rgba(22, 24, 47, 1) 0%,
-		rgba(38, 20, 72, 1) 59%,
-		rgba(22, 24, 47, 1) 100%
+			ellipse at left bottom,
+			rgba(22, 24, 47, 1) 0%,
+			rgba(8, 37, 84, 1) 59%,
+			rgba(22, 24, 47, 1) 100%
 		);
 		box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+		border: 1px solid black;
 		border-radius: 6px;
 		margin-top: 10%;
 		color: white;
+
+		.formIcons {
+			font-size: 25px;
+			margin-right: 1%;
+		}
 	}
 
 	input {
 		border-radius: 6px;
 		padding: 2%;
 		margin: 2% 0;
-		width: 100%;
+		width: 90%;
 		font-size: 18px;
 	}
 
@@ -48,14 +54,19 @@ export const Container = styled.div`
 
 	.form button {
 		border-radius: 6px;
-		border-color: white;
+		border: none;
 		font-size: 18px;
-		width: 100%;
+		width: 50%;
 		padding: 2%;
-		margin: 2% 0;
+		margin: 5% 25%;
 		background-color: #256ce1;
 		color: white;
 		cursor: pointer;
+		transition: background 0.5s;
+
+		:hover {
+			background: rgb(37, 108, 225, 0.7);
+		}
 	}
 
 	select {

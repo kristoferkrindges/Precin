@@ -1,122 +1,178 @@
-import styled from "styled-components"
-import {IoHeartOutline, IoChatbubbleOutline, IoShareSocialOutline} from "react-icons/io5"
+import styled from "styled-components";
+import {
+	IoHeartOutline,
+	IoChatbubbleOutline,
+	IoShareSocialOutline,
+} from "react-icons/io5";
 
 export const Li = styled.li`
-    margin-bottom: 50px;
-    width: 100%;
-    background: rgba(22, 24, 47, 1);
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 50px 70px -30px rgba(0, 0, 0, 0.8);
+	display: flex;
+	/* flex-wrap: wrap; */
+	justify-content: center;
+	background: radial-gradient(
+		ellipse at left bottom,
+		rgba(22, 24, 47, 1) 0%,
+		rgba(8, 37, 84, 1) 59%,
+		rgba(22, 24, 47, 1) 100%
+	);
+	border-radius: 10px;
+	margin-top: 3%;
+	padding: 3%;
+	max-height: 350px;
+	box-shadow: 0 50px 70px -40px rgba(0, 0, 0, 0.8);
+	border: 1px solid black;
 
-    .infoUserPost{
-        display: flex;
-        align-items: center;
+	.infoUserPost {
+		width: 10%;
+	}
 
-    }
+	.infoUserPost .imgUserPost {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		margin-bottom: 2%;
+		background: rgba(50, 50, 50, 1);
+		cursor: pointer;
+		border: 2px solid rgba(37, 108, 225);
+	}
 
-    .infoUserPost .imgUserPost{
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: #333;
-    }
+	.infoUserPost .nameAndHour {
+		/* margin-left: 2%; */
+		/* padding-bottom: 2%; */
+	}
 
-    .infoUserPost .nameAndHour{
-        margin-left: 10px;
-    }
+	.infoUserPost .nameAndHour > strong {
+		color: white;
+	}
 
-    .infoUserPost .nameAndHour > strong{
-        color: white;
+	.infoUserPost .nameAndHour > p {
+		font-size: 15px;
+		color: white;
+	}
 
-    }
+	.infoPost {
+		flex: 1;
+		max-width: 20%;
 
-    .infoUserPost .nameAndHour > p{
-        font-size: 12px;
-        color: white;
+		p {
+			text-align: center;
+		}
+	}
 
-    }
+	.priceLocationPost {
+		flex: 2;
+		width: 40%;
 
-    p{
-        width: 100%;
-        margin: 20px 0;
-        font-weight: bold;
-        color: white;
+		.price {
+			background: rgba(255, 255, 255, 1);
+			width: 80%;
+			text-align: center;
+			border-radius: 5px;
+			margin-top: 10%;
+			margin-left: 10%;
+			/* margin-right: 15%; */
+			color: rgba(22, 24, 47, 1);
+		}
 
-    }
+		.price h1 {
+			font-size: 3vh;
+		}
 
-    .actionBtnPost{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-.actionBtnPost .filesPost{
-        display:flex;
-        align-items: center;
-        justify-content: center;
+		p {
+			font-weight: bold;
+			color: white;
+			margin-left: 10%;
+			padding: 2%;
+		}
 
-        padding: 5px 20px;
-        margin-right: 10px;
+		.locationIcon {
+			margin-left: 1%;
+			font-size: 20px;
+			/* cursor: pointer; */
+		}
+	}
 
-        border: 0;
-        outline: none;
-        border-radius: 10px;
-        cursor: pointer;
+	.postImage {
+		max-height: 150px;
+		max-width: 170px;
+		border-radius: 10px;
+	}
 
-        color: #fff;
-        font-weight: bold;
-        font-size: 16px;
-        transition: background 0.2s;
+	p {
+		width: 100%;
+		margin: 3%;
+		font-weight: bold;
+		color: white;
+	}
 
-    }
+	.actionBtnPost {
+		width: 30%;
+		/* margin-left: 10%; */
+		/* margin: 5%; */
+	}
+	.actionBtnPost .filesPost {
+		padding: 10px 15px;
+		margin: 3%;
+		border: 0;
+		outline: none;
+		border-radius: 5px;
+		cursor: pointer;
+		color: #fff;
+		font-weight: bold;
+		font-size: 16px;
+		transition: background 0.2s;
+	}
 
-    .actionBtnPost .filesPost svg{
-        margin-right: 5px;
-        stroke: white;
-    }
+	.actionBtnPost .filesPost svg {
+		/* margin-right: 5px; */
+		/* stroke: white; */
+	}
 
-    .like{
-        background: #ff6b6b;
-    }
+	.like {
+		background: rgba(37, 108, 225);
+	}
 
-    .like:hover{
-        background: rgb(248, 75, 75);
-    }
+	.like:hover {
+		background: rgb(37, 108, 225, 0.7);
+	}
 
-    .comment{
-        background: #ffc320;
-    }
+	.comment {
+		background: rgba(225, 37, 37);
+	}
 
-    .comment:hover{
-        background: rgb(245, 180, 0);
-    }
+	.comment:hover {
+		background: rgba(225, 37, 37, 0.7);
+	}
 
-    .share{
-        background: #23a0ff;
-    }
+	/* .share {
+		background: #23a0ff;
+	}
 
-    .share:hover{
-        background: rgba(8, 141, 241);
-    }
-`
+	.share:hover {
+		background: rgba(8, 141, 241);
+	} */
 
-
-export const IconHeart = styled(IoHeartOutline)`
-    stroke: red;
-    width: 15px;
-    height: 15px;
-`
-;
-
-export const IconChat = styled(IoChatbubbleOutline)`
-    stroke: #256ce1;
-    width: 15px;
-    height: 15px;
-`
-;
-
-export const IconSocial = styled(IoShareSocialOutline)`
-    stroke: #256ce1;
-    width: 15px;
-    height: 15px;
+	.comments {
+		color: white;
+		font-size: 20px;
+		cursor: pointer;
+	}
 `;
+
+// export const IconHeart = styled(IoHeartOutline)`
+/* stroke: red; */
+/* width: 30px;
+	height: 20px; */
+// `;
+
+// // export const IconChat = styled(IoChatbubbleOutline)`;
+// 	stroke: #256ce1;
+// 	width: 15px;
+// 	height: 15px;
+// `;
+
+// export const IconSocial = styled(IoShareSocialOutline)`
+// 	stroke: #256ce1;
+// 	width: 15px;
+// 	height: 15px;
+// `;
