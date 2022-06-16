@@ -22,7 +22,7 @@ export default function Navbar({ toggle, resp }) {
 			<Nav>
 				<NavbarContainer>
 					<NavSideBar>
-						<FaBars></FaBars>
+						{/* <FaBars></FaBars> */}
 					</NavSideBar>
 					<NavLogo to="/">
 						<img className="logo" src={logo}></img>

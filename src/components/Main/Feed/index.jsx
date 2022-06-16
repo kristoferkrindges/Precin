@@ -27,8 +27,11 @@ export default function Feed() {
 				<Feeds
 					key={index}
 					name={feed.name}
+					lastName={"Trevor"}
 					time={feed.time}
 					public={feed.public}
+					product={"Tomate"}
+					price={"2,55"}
 				/>
 			))}
 		</Ul>
