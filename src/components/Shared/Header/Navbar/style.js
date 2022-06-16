@@ -4,16 +4,17 @@ import { Link as LinkS } from "react-scroll";
 
 export const Nav = styled.nav`
 	/* background: #e8e8e8; */
-	background-color: rgba(22, 24, 47, 1);
+	background: ${({ theme }) => theme.navbar};
 	height: 80px;
 	/* margin-top: -80px; */
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	font-size: 1rem;
 	position: sticky;
 	top: 0;
 	z-index: 10;
+	/* position:absolute; */
 
 	@media screen and (max-width: 960px) {
 		transition: 0.8s all ease;
@@ -39,7 +40,7 @@ export const NavSideBar = styled.div`
 
 export const NavbarContainer = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	height: 80px;
 	z-index: 1;
 	width: 100%;
@@ -76,6 +77,7 @@ export const NavLogo = styled(LinkR)`
 
 	h1 {
 		font-size: 25px;
+		color: ${({ theme }) => theme.text};
 	}
 	h1:hover {
 		color: rgba(111, 162, 242, 1);

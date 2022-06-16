@@ -1,53 +1,147 @@
 import React from "react";
-import { Li, IconHeart, IconChat, IconSocial } from "./style";
+// import { Li, IconHeart, IconChat, IconSocial } from "./style";
+import { 
+	Lil,
+	Header,
+	User,
+	CardContent,
+	Image,
+	Logo,
+	Avatar,
+	Name,
+	Time,
+	Buttons,
+	HireMe,
+	Product,
+	Content,
+	ImgProduct,
+	Img,
+	Info,
+	NameInfo,
+	Price,
+	Interaction,
+	ButtonPrecin,
+	ButtonPrecao,
+	ButtonComment,
+	Market,
+	Icon,
+	InfoProduct,
+	Change,
+	Collection,
+	Locate,
+	IoCart,
+
+
+} 
+from "./style";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { BiCommentDetail } from "react-icons/bi";
 import postImage from "../../../../imagens/tomate2.jpg";
 import userImage from "../../../../imagens/dog_sorridente.jpeg";
+import Zaffari from "../../../../imagens/zaffari.png"
+import { ListAlt } from "@mui/icons-material";
 
 export default function Feeds(props) {
-	return (
-		<Li key={props.index}>
-			<div className="infoUserPost">
-				<img className="imgUserPost" src={userImage}></img>
-				<div className="nameAndHour">
-					<strong>{props.name}</strong>
-					<p>{props.time}</p>
-				</div>
-			</div>
-			<div className="infoPost">
-				<img className="postImage" src={postImage}></img>
-				<p>{props.public}</p>
-			</div>
-			<div className="priceLocationPost">
-				<div class="price">
-					<h1>R$ 5,00 Kg</h1>
-				</div>
-				<p clas>
-					Nacional
-					<br />
-					Rua Vicente da Fontoura, 356
-					<GoLocation className="locationIcon" />
-				</p>
-			</div>
-			<div className="actionBtnPost">
-				<button type="button" class="filesPost like">
-					<AiFillLike /> Precin
-					{/* <IconHeart></IconHeart> */}
-				</button>
-				<button type="button" class="filesPost comment">
-					<AiFillDislike /> Preção
-					{/* <IconChat></IconChat> */}
-				</button>
-				{/* <button type="button" class="filesPost share">
-					<IconSocial></IconSocial>Compartilhar
-				</button> */}
-			</div>
-			<div>
-				<BiCommentDetail className="comments" />
-				<p>18</p>
-			</div>
-		</Li>
-	);
+	return(
+		<Lil>
+			<Header>
+				<User>
+					<CardContent>
+						<Image>
+							<Logo src={userImage}/>
+						</Image>
+						<Avatar>
+							<Name>{`${props.name} ${props.lastName}`}</Name>
+							<Time>18h</Time>
+						</Avatar>
+						<Buttons>
+                        	<HireMe><GoLocation></GoLocation></HireMe>
+                    	</Buttons>
+					</CardContent>
+				</User>
+				{/* <Product>
+					<Img src={"https://www.designi.com.br/images/preview/10002716.jpg"}/>
+					<Content>
+						<Info>
+							<Market>
+								<Icon></Icon>
+								<InfoProduct>
+									<NameInfo>{props.product}</NameInfo>
+									<Price>R$ {props.price}</Price>
+								</InfoProduct>
+							</Market>
+							
+							<Change></Change>
+						</Info>
+					</Content>
+				</Product> */}
+				<Product>
+					<Content>
+						<ImgProduct>
+							<Img src={"https://3.bp.blogspot.com/-w540SySxjhg/Ubj-2KRYbxI/AAAAAAAAEhM/TbMTia8dCZo/s1600/02.png"}/>
+						</ImgProduct>
+						<Locate>
+							<IoCart />
+						</Locate>
+						<Collection>
+							<Icon src={"https://play-lh.googleusercontent.com/kk4XK5FuW3ukgeb2vsstuPxupOXCeNAdqnD-fPqtlEG3sEUAistRkbzMm2zrzqAYWIxU=w240-h480-rw"}></Icon>
+							<Info>
+								<NameInfo>{props.product}</NameInfo>
+								<Price>R$ {props.price}</Price>
+							</Info>
+						</Collection>
+					</Content>
+				</Product>
+			</Header>
+			<Interaction>
+				<ButtonPrecin type="button"><AiFillLike></AiFillLike>Precin</ButtonPrecin>
+				<ButtonPrecao type="button"><AiFillDislike></AiFillDislike>Preção</ButtonPrecao>
+				<ButtonComment type="button"><BiCommentDetail></BiCommentDetail>Comentário</ButtonComment>
+			</Interaction>
+		</Lil>
+	)
+	// return (
+	// 	<Li key={props.index}>
+	// 		<div className="infoUserPost">
+	// 			<img className="imgUserPost" src={userImage}></img>
+	// 			<div className="nameAndHour">
+	// 				<strong>{props.name}</strong>
+	// 				<p>{props.time}</p>
+	// 			</div>
+	// 		</div>
+	// 		<div className="infoPost">
+	// 			<img className="postImage" src={postImage}></img>
+	// 			<p>{props.public}</p>
+	// 		</div>
+	// 		<div className="priceLocationPost">
+	// 			<div class="price">
+	// 				<h1>R$ 5,00 Kg</h1>
+	// 			</div>
+	// 			<p clas>
+	// 				Nacional
+	// 				<br />
+	// 				Rua Vicente da Fontoura, 356
+	// 				<GoLocation className="locationIcon" />
+	// 			</p>
+	// 		</div>
+	// 		<div className="actionBtnPost">
+	// 			<button type="button" class="filesPost like">
+	// 				<AiFillLike /> Precin
+	// 				{/* <IconHeart></IconHeart> */}
+	// 			</button>
+	// 			<button type="button" class="filesPost comment">
+	// 				<AiFillDislike /> Preção
+	// 				{/* <IconChat></IconChat> */}
+	// 			</button>
+	// 			{/* <button type="button" class="filesPost share">
+	// 				<IconSocial></IconSocial>Compartilhar
+	// 			</button> */}
+	// 		</div>
+	// 		<div>
+	// 			<BiCommentDetail className="comments" />
+	// 			<p>18</p>
+	// 		</div>
+	// 	</Li>
+	// );
 }
