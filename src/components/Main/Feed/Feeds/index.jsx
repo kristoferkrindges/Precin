@@ -18,9 +18,9 @@ export default function Feeds(props) {
 			</div>
 			<div className="infoPost">
 				<img className="postImage" src={postImage}></img>
-				<p>{props.public}</p>
 			</div>
 			<div className="priceLocationPost">
+				<p className="postTitle">{props.public}</p>
 				<div class="price">
 					<h1>R$ 5,00 Kg</h1>
 				</div>

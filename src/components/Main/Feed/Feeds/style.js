@@ -63,12 +63,16 @@ export const Li = styled.li`
 		flex: 2;
 		width: 40%;
 
+		.postTitle {
+			font-size: 22px;
+		}
+
 		.price {
 			background: rgba(255, 255, 255, 1);
 			width: 80%;
 			text-align: center;
 			border-radius: 5px;
-			margin-top: 10%;
+			margin-top: 3%;
 			margin-left: 10%;
 			/* margin-right: 15%; */
 			color: rgba(22, 24, 47, 1);
@@ -100,7 +104,7 @@ export const Li = styled.li`
 
 	p {
 		width: 100%;
-		margin: 3%;
+		margin: 2%;
 		font-weight: bold;
 		color: white;
 	}
