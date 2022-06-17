@@ -3,10 +3,11 @@ import styled from "styled-components";
 
 import { btnReset, v } from "../../styles/variables";
 
-export const Container = styled.div`
-    display:flex;
-    background: ${({ theme }) => theme.navbar};
-`
+// export const Container = styled.div`
+//     display:flex;
+//     background: ${({ theme }) => theme.navbar};
+//     position: relative;
+// `
 
 export const Context = styled.div`
     width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
@@ -36,9 +37,12 @@ export const Button = styled.button`
 export const Logo = styled.div`
     display: flex;
     align-items: center;
-    width: 52px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
     cursor: pointer;
     margin-bottom: ${v.lgSpacing};
+    /* background: ${({ theme }) => theme.buttons}; */
 `;
 
 export const Img = styled.img`

@@ -10,11 +10,11 @@ export const Lil = styled.li`
  	margin-top: 3%;
 	margin-bottom: 50px;
     width: 100%; 
-	height: 50vh;
-    width: 90vh;
+	height: 40vh;
+    width: 70vh;
     /* background: #fff; */
     border-radius: 10px;
-    padding: 3%;
+    padding: 2%;
     box-shadow: 0 50px 70px -40px rgba(0, 0, 0, 0.8);
 	border: 1px solid black;
 	background: ${({ theme }) => theme.feed};
@@ -40,8 +40,10 @@ export const Lil = styled.li`
 export const Header = styled.div`
 	display:flex;
 	justify-content: space-between;
-	height: 40vh;
-    width: 82vh;
+	height: 34vh;
+    width: 70vh;
+	/* height: 40vh;
+    width: 70vh; */
 	
 `
 
@@ -51,15 +53,17 @@ export const User = styled.div`
     background-color: none;
     /* border-radius: 20px; */
     position: relative;
-    margin: 20px 0;
-    height: 32vh;
-    width: 26vh;
+    margin: 10px 0;
+    height: 34vh;
+    width: 15vh;
+	/* height: 34vh;
+    width: 70vh; */
     cursor: pointer;
     transition: opacity 0.5s ease-out;
 
     &::before{
         content: "";
-        position: absolute;
+        /* position: absolute; */
         height: 25%;
         width: 100%;
         background: ${({ theme }) => theme.buttons};
@@ -69,7 +73,7 @@ export const User = styled.div`
     &:hover{
         /* width: 38vh;
         height: 44vh; */
-        opacity: 0.5;
+        /* opacity: 0.5; */
     }
 `
 export const CardContent = styled.div`
@@ -77,15 +81,21 @@ export const CardContent = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 30px;
-    position: relative;
+    /* position: relative; */
     z-index: 100;
 `
 export const Image = styled.div`
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     padding: 3px;
     background: ${({ theme }) => theme.buttons};
+	
+	&:hover{
+        /* width: 38vh;
+        height: 44vh; */
+        opacity: 0.5;
+    }
 `
 export const Logo = styled.img`
     height: 100%;
@@ -100,15 +110,16 @@ export const Avatar = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.title};
 `
 
 export const Name = styled.span`
-    font-size: 1.0rem;
+    font-size: 0.8rem;
+	white-space: nowrap;
     font-weight: 600;
 `
 export const Time = styled.span`
-    font-size: 1.0rem;
+    font-size: 0.7rem;
     font-weight: 500;
 `
 
@@ -116,7 +127,7 @@ export const Buttons = styled.div`
     width: 100%;
     display:flex;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 90px;
 `
 export const HireMe = styled.button`
     background: ${({ theme }) => theme.buttons};
@@ -200,9 +211,11 @@ export const Product = styled.div`
 	/* background: ${({ theme }) => theme.buttons}; */
     /* border-radius: 20px; */
     position: relative;
-    margin: 20px 0;
-    height: 32vh;
-    width: 76vh;
+    margin: 10px 0;
+    height: 34vh;
+    width: 55vh;
+	/* height: 34vh;
+    width: 55vh; */
     cursor: pointer;
     transition: opacity 0.5s ease-out;
 
@@ -218,7 +231,7 @@ export const Product = styled.div`
     &:hover{
         /* width: 38vh;
         height: 44vh; */
-        opacity: 0.5;
+        /* opacity: 0.5; */
     }
 `
 export const Content = styled.div`
@@ -226,22 +239,28 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 5px;
-    position: relative;
+    /* position: relative; */
     z-index: 100;
 `
 export const ImgProduct = styled.div`
     height: 200px;
-    width: 490px;
-    border-radius: 1rem 1rem 0 0;
+    width: 400px;
+    /* border-radius: 20%; 1rem 1rem 0 0 */
     padding: 3px;
     /* background: ${({ theme }) => theme.buttons}; */
+
+	&:hover{
+        /* width: 38vh;
+        height: 44vh; */
+        opacity: 0.5;
+    }
 `
 export const Img = styled.img`
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: 1rem 1rem 0 0;
-    border: 3px solid ${({ theme }) => theme.buttons};
+    /* border-radius: 20%; */
+    /* border: 3px solid ${({ theme }) => theme.buttons}; */
 `
 export const Collection = styled.div`
 	display: flex;
@@ -264,6 +283,14 @@ export const Locate = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	& svg{
+		/* stroke: ${({ theme }) => theme.text}; */
+	}
+
+	& svg:hover{
+		opacity: 0.5;
+	}
+
 `
 
 export const Info = styled.div`
@@ -271,15 +298,15 @@ export const Info = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.title};
 `
 
 export const NameInfo = styled.span`
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
 `
 export const Price = styled.span`
-    font-size: 2.0rem;
+    font-size: 1.5rem;
     font-weight: 500;
 `
 // ==========================================
@@ -288,8 +315,10 @@ export const Interaction = styled.div`
 	display: flex;
     align-items: center;
     justify-content: center;
-	height:5px;
-    width: 88vh;
+	height: 3vh;
+    width: 70vh;
+	/* height: 34vh;
+    width: 70vh; */
 	background-color: none;
 `
 export const ButtonPrecin = styled.button`
@@ -370,7 +399,7 @@ export const ButtonComment = styled.button`
 	font-size: 16px;
 	transition: background 0.2s;
 
-	background: rgba(8, 141, 241);
+	background: rgb(245, 180, 0);
 
 	& svg{
 		margin-right: 5px;
@@ -378,7 +407,6 @@ export const ButtonComment = styled.button`
 	}
 
 	&:hover{
-		background: rgb(245, 180, 0);
 		opacity: 0.4;
 	}
 `
