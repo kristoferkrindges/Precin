@@ -7,14 +7,20 @@ import Suggestion from "../Suggestion";
 
 function Layout({ children }){
     return (
+        <>
+        {/* <Header></Header> */}
         <SLayout>
-            <Sidebar 
-                name="Kristofer Krindges"
-            />
-            <Main></Main>
-            <Suggestion></Suggestion>
+
+            {/* <SMain> */}
+                <Sidebar 
+                    name="Kristofer Krindges"
+                />
+                <Main></Main>
+                <Suggestion></Suggestion>
+            {/* </SMain> */}
             {/* <SMain>{children}</SMain> */}
         </SLayout>
+        </>
     );
 };
 

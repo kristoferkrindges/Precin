@@ -49,11 +49,11 @@ export default function Feeds(props) {
 				<User>
 					<CardContent>
 						<Image>
-							<Logo src={userImage}/>
+							<Logo src={props.img_url}/>
 						</Image>
 						<Avatar>
-							<Name>{`${props.name} ${props.lastName}`}</Name>
-							<Time>18h</Time>
+							<Name>{`${props.name}`}</Name>
+							<Time>{props.time}</Time>
 						</Avatar>
 						<Buttons>
                         	<HireMe><GoLocation></GoLocation></HireMe>
@@ -79,7 +79,7 @@ export default function Feeds(props) {
 				<Product>
 					<Content>
 						<ImgProduct>
-							<Img src={"https://3.bp.blogspot.com/-w540SySxjhg/Ubj-2KRYbxI/AAAAAAAAEhM/TbMTia8dCZo/s1600/02.png"}/>
+							<Img src={props.img_product}/>
 						</ImgProduct>
 						<Locate>
 							<IoCart />
