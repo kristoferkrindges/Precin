@@ -7,15 +7,15 @@ import {
 } from "react-icons/io5";
 
 export const Lil = styled.li`
- 	margin-top: 3%;
+	margin-top: 3%;
 	margin-bottom: 50px;
-    width: 100%; 
+	width: 100%;
 	height: 40vh;
-    width: 70vh;
-    /* background: #fff; */
-    border-radius: 10px;
-    padding: 2%;
-    box-shadow: 0 50px 70px -40px rgba(0, 0, 0, 0.8);
+	width: 70vh;
+	/* background: #fff; */
+	border-radius: 10px;
+	padding: 3%;
+	box-shadow: 0 50px 70px -40px rgba(0, 0, 0, 0.8);
 	border: 1px solid black;
 	background: ${({ theme }) => theme.feed};
 
@@ -34,117 +34,115 @@ export const Lil = styled.li`
 	max-height: 350px;
 	box-shadow: 0 50px 70px -40px rgba(0, 0, 0, 0.8);
 	border: 1px solid black; */
-
-`
+`;
 
 export const Header = styled.div`
-	display:flex;
+	display: flex;
 	justify-content: space-between;
-	height: 34vh;
-    width: 70vh;
+	height: 32vh;
+	width: 68vh;
 	/* height: 40vh;
     width: 70vh; */
-	
-`
+`;
 
 // ===============================
 // User
 export const User = styled.div`
-    background-color: none;
-    /* border-radius: 20px; */
-    position: relative;
-    margin: 10px 0;
-    height: 34vh;
-    width: 15vh;
+	background-color: none;
+	/* border-radius: 20px; */
+	/* position: relative; */
+	/* margin: 10px 0; */
+	height: 34vh;
+	width: 15vh;
 	/* height: 34vh;
     width: 70vh; */
-    cursor: pointer;
-    transition: opacity 0.5s ease-out;
+	cursor: pointer;
+	transition: opacity 0.5s ease-out;
 
-    &::before{
-        content: "";
-        /* position: absolute; */
-        height: 25%;
-        width: 100%;
-        background: ${({ theme }) => theme.buttons};
-        border-radius: 20px 20px 0 0;
-    }
+	&::before {
+		content: "";
+		/* position: absolute; */
+		height: 25%;
+		width: 100%;
+		background: ${({ theme }) => theme.buttons};
+		border-radius: 20px 20px 0 0;
+	}
 
-    &:hover{
-        /* width: 38vh;
+	&:hover {
+		/* width: 38vh;
         height: 44vh; */
-        /* opacity: 0.5; */
-    }
-`
+		/* opacity: 0.5; */
+	}
+`;
 export const CardContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    /* position: relative; */
-    z-index: 100;
-`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
+	/* position: relative; */
+	z-index: 100;
+`;
 export const Image = styled.div`
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    padding: 3px;
-    background: ${({ theme }) => theme.buttons};
-	
-	&:hover{
-        /* width: 38vh;
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	padding: 3px;
+	background: ${({ theme }) => theme.buttons};
+
+	&:hover {
+		/* width: 38vh;
         height: 44vh; */
-        opacity: 0.5;
-    }
-`
+		opacity: 0.5;
+	}
+`;
 export const Logo = styled.img`
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #fff;
-`
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 3px solid #fff;
+`;
 
 export const Avatar = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    color: ${({ theme }) => theme.title};
-`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10px;
+	color: ${({ theme }) => theme.title};
+`;
 
 export const Name = styled.span`
-    font-size: 0.8rem;
+	font-size: 0.8rem;
 	white-space: nowrap;
-    font-weight: 600;
-`
+	font-weight: 600;
+`;
 export const Time = styled.span`
-    font-size: 0.7rem;
-    font-weight: 500;
-`
+	font-size: 0.7rem;
+	font-weight: 500;
+`;
 
 export const Buttons = styled.div`
-    width: 100%;
-    display:flex;
-    justify-content: space-around;
-    margin-top: 90px;
-`
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	/* margin-top: 90px; */
+`;
 export const HireMe = styled.button`
-    background: ${({ theme }) => theme.buttons};
-    outline: none;
-    border: none;
-    color: #fff;
-    padding: 8px 22px;
-    border-radius: 20px;
-    font-size: 1.0rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    
-    &:hover{
-        background: #333;
+	background: ${({ theme }) => theme.buttons};
+	outline: none;
+	border: none;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 20px;
+	font-size: 1.5rem;
+	font-weight: 500;
+	transition: all 0.3s ease;
+	cursor: pointer;
 
-    }
-`
+	&:hover {
+		background: #333;
+	}
+`;
 // ==========================================
 // Product
 // export const Product = styled.div`
@@ -183,7 +181,7 @@ export const HireMe = styled.button`
 //   	height: 3rem;
 // `
 // export const Change = styled.a`
-    
+
 // `
 
 // export const Info = styled.div`
@@ -207,128 +205,139 @@ export const HireMe = styled.button`
 // `
 
 export const Product = styled.div`
-	background-color: none;
+	/* background-color: no-color; */
 	/* background: ${({ theme }) => theme.buttons}; */
-    /* border-radius: 20px; */
-    position: relative;
-    margin: 10px 0;
-    height: 34vh;
-    width: 55vh;
+	/* border-radius: 20px; */
+	position: relative;
+	/* margin-left: 2%; */
+	/* margin: 10px 0; */
+	height: 30vh;
+	width: 55vh;
 	/* height: 34vh;
     width: 55vh; */
-    cursor: pointer;
-    transition: opacity 0.5s ease-out;
+	cursor: pointer;
+	transition: opacity 0.5s ease-out;
 
-    &::before{
-        /* content: "";
+	&::before {
+		/* content: "";
         position: absolute;
         height: 22.8%;
         width: 100%;
         background: ${({ theme }) => theme.buttons}; */
-        /* border-radius: 20px 20px 0 0; */
-    }
+		/* border-radius: 20px 20px 0 0; */
+	}
 
-    &:hover{
-        /* width: 38vh;
+	&:hover {
+		/* width: 38vh;
         height: 44vh; */
-        /* opacity: 0.5; */
-    }
-`
+		/* opacity: 0.5; */
+	}
+`;
 export const Content = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px;
-    /* position: relative; */
-    z-index: 100;
-`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5px;
+	max-width: 45vh;
+	/* background-color: green; */
+	/* position: relative; */
+	/* z-index: 100; */
+`;
 export const ImgProduct = styled.div`
-    height: 200px;
-    width: 400px;
-    /* border-radius: 20%; 1rem 1rem 0 0 */
-    padding: 3px;
-    /* background: ${({ theme }) => theme.buttons}; */
+	margin-top: 2%;
+	height: 150px;
+	width: 350px;
+	/* border-radius: 20%; 1rem 1rem 0 0 */
+	/* padding: 3px; */
+	/* background: ${({ theme }) => theme.buttons}; */
 
-	&:hover{
-        /* width: 38vh;
+	&:hover {
+		/* width: 38vh;
         height: 44vh; */
-        opacity: 0.5;
-    }
-`
+		opacity: 0.5;
+	}
+`;
 export const Img = styled.img`
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    /* border-radius: 20%; */
-    /* border: 3px solid ${({ theme }) => theme.buttons}; */
-`
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	/* border-radius: 20%; */
+	/* border: 3px solid ${({ theme }) => theme.buttons}; */
+`;
 export const Collection = styled.div`
 	display: flex;
-  	align-items: center;
-	background: rgba(8, 141, 241, 0.4);
+	align-items: center;
+	height: 10vh;
+	width: 38vh;
+	/* background: rgba(8, 141, 241, 0.4); */
 	border-radius: 0.8rem;
-	padding: 10px;
-	margin: 10px;
-`
+	padding: 5% 5%;
+	/* padding: 10px; */
+	margin-left: 12%;
+	margin-top: 2%;
+`;
 export const Icon = styled.img`
-	width: 3rem;
-  	height: 3rem;
-	margin-left: 4px;
-	margin-right: 26px;
-`
+	width: 4.5rem;
+	height: 4.5rem;
+	margin-top: 50%;
+	/* margin-left: 4px;
+	margin-right: 26px; */
+`;
 export const Locate = styled.div`
 	position: absolute;
+	width: 5vh;
 	top: 10px;
 	right: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	& svg{
+	& svg {
 		/* stroke: ${({ theme }) => theme.text}; */
 	}
 
-	& svg:hover{
+	& svg:hover {
 		opacity: 0.5;
 	}
-
-`
+`;
 
 export const Info = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    color: ${({ theme }) => theme.title};
-`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* margin-top: 10px; */
+	color: ${({ theme }) => theme.title};
+`;
 
 export const NameInfo = styled.span`
-    font-size: 1.3rem;
-    font-weight: 600;
-`
+	font-size: 1.2rem;
+	white-space: nowrap;
+	font-weight: 600;
+`;
 export const Price = styled.span`
-    font-size: 1.5rem;
-    font-weight: 500;
-`
+	white-space: nowrap;
+	font-size: 2.5rem;
+	font-weight: 700;
+`;
 // ==========================================
 // Buttons Interaction
 export const Interaction = styled.div`
 	display: flex;
-    align-items: center;
-    justify-content: center;
+	align-items: center;
+	justify-content: center;
 	height: 3vh;
-    width: 70vh;
+	width: 70vh;
 	/* height: 34vh;
     width: 70vh; */
 	background-color: none;
-`
+`;
 export const ButtonPrecin = styled.button`
-	display:flex;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 
-	padding: 5px 20px;
+	padding: 8px 20px;
 	margin-right: 10px;
-	
+
 	border: 0;
 	outline: none;
 	border-radius: 10px;
@@ -341,24 +350,24 @@ export const ButtonPrecin = styled.button`
 
 	background: rgba(37, 108, 225, 1);
 
-	& svg{
+	& svg {
 		margin-right: 5px;
 		stroke: white;
 	}
 
-	&:hover{
+	&:hover {
 		opacity: 0.4;
 	}
-`
+`;
 
 export const ButtonPrecao = styled.button`
-	display:flex;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 
-	padding: 5px 20px;
+	padding: 8px 20px;
 	margin-right: 10px;
-	
+
 	border: 0;
 	outline: none;
 	border-radius: 10px;
@@ -371,24 +380,24 @@ export const ButtonPrecao = styled.button`
 
 	background: rgba(225, 37, 37);
 
-	& svg{
+	& svg {
 		margin-right: 5px;
 		stroke: white;
 	}
 
-	&:hover{
+	&:hover {
 		opacity: 0.4;
 	}
-`
+`;
 
 export const ButtonComment = styled.button`
-	display:flex;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 
-	padding: 5px 20px;
+	padding: 8px 20px;
 	margin-right: 10px;
-	
+
 	border: 0;
 	outline: none;
 	border-radius: 10px;
@@ -401,15 +410,15 @@ export const ButtonComment = styled.button`
 
 	background: rgb(245, 180, 0);
 
-	& svg{
+	& svg {
 		margin-right: 5px;
 		stroke: white;
 	}
 
-	&:hover{
+	&:hover {
 		opacity: 0.4;
 	}
-`
+`;
 
 // =======================================
 
