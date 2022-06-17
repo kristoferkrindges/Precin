@@ -1,6 +1,6 @@
 import React from "react";
 // import { Li, IconHeart, IconChat, IconSocial } from "./style";
-import { 
+import {
 	Lil,
 	Header,
 	User,
@@ -30,34 +30,29 @@ import {
 	Collection,
 	Locate,
 	IoCart,
-
-
-} 
-from "./style";
+} from "./style";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { BiCommentDetail } from "react-icons/bi";
 import postImage from "../../../../imagens/tomate2.jpg";
 import userImage from "../../../../imagens/dog_sorridente.jpeg";
-import Zaffari from "../../../../imagens/zaffari.png"
+import Zaffari from "../../../../imagens/coelhao.png";
 import { ListAlt } from "@mui/icons-material";
 
 export default function Feeds(props) {
-	return(
+	return (
 		<Lil>
 			<Header>
 				<User>
 					<CardContent>
 						<Image>
-							<Logo src={props.img_url}/>
+							<Logo src={props.img_url} />
 						</Image>
 						<Avatar>
 							<Name>{`${props.name}`}</Name>
 							<Time>{props.time}</Time>
 						</Avatar>
-						<Buttons>
-                        	<HireMe><GoLocation></GoLocation></HireMe>
-                    	</Buttons>
+						<Icon src={Zaffari}></Icon>
 					</CardContent>
 				</User>
 				{/* <Product>
@@ -79,28 +74,38 @@ export default function Feeds(props) {
 				<Product>
 					<Content>
 						<ImgProduct>
-							<Img src={props.img_product}/>
+							<Img src={props.img_product} />
 						</ImgProduct>
 						<Locate>
 							<IoCart />
 						</Locate>
 						<Collection>
-							<Icon src={"https://play-lh.googleusercontent.com/kk4XK5FuW3ukgeb2vsstuPxupOXCeNAdqnD-fPqtlEG3sEUAistRkbzMm2zrzqAYWIxU=w240-h480-rw"}></Icon>
 							<Info>
 								<NameInfo>{props.product}</NameInfo>
 								<Price>R$ {props.price}</Price>
 							</Info>
+							<Buttons>
+								<HireMe>
+									<GoLocation></GoLocation>
+								</HireMe>
+							</Buttons>
 						</Collection>
 					</Content>
 				</Product>
 			</Header>
 			<Interaction>
-				<ButtonPrecin type="button"><AiFillLike></AiFillLike>Precin</ButtonPrecin>
-				<ButtonPrecao type="button"><AiFillDislike></AiFillDislike>Preção</ButtonPrecao>
-				<ButtonComment type="button"><BiCommentDetail></BiCommentDetail>Comentário</ButtonComment>
+				<ButtonPrecin type="button">
+					<AiFillLike></AiFillLike>Precin
+				</ButtonPrecin>
+				<ButtonPrecao type="button">
+					<AiFillDislike></AiFillDislike>Preção
+				</ButtonPrecao>
+				<ButtonComment type="button">
+					<BiCommentDetail></BiCommentDetail>Comentário
+				</ButtonComment>
 			</Interaction>
 		</Lil>
-	)
+	);
 	// return (
 	// 	<Li key={props.index}>
 	// 		<div className="infoUserPost">
