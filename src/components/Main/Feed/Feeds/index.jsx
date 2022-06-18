@@ -55,9 +55,9 @@ export default function Feeds(props) {
 							<Name>{`${props.name}`}</Name>
 							<Time>{props.time}</Time>
 						</Avatar>
-						<Buttons>
-                        	<HireMe><GoLocation></GoLocation></HireMe>
-                    	</Buttons>
+						{/* <Market>
+                        	<Mark><Icon src={"https://play-lh.googleusercontent.com/kk4XK5FuW3ukgeb2vsstuPxupOXCeNAdqnD-fPqtlEG3sEUAistRkbzMm2zrzqAYWIxU=w240-h480-rw"}></Icon></HireMe>
+                    	</Market> */}
 					</CardContent>
 				</User>
 				{/* <Product>

@@ -41,7 +41,7 @@ export const Header = styled.div`
 	display:flex;
 	justify-content: space-between;
 	height: 34vh;
-    width: 70vh;
+    width: 68vh;
 	/* height: 40vh;
     width: 70vh; */
 	
@@ -241,10 +241,12 @@ export const Content = styled.div`
     padding: 5px;
     /* position: relative; */
     z-index: 100;
+	/* height: 32vh;
+    width: 35vh; */
 `
 export const ImgProduct = styled.div`
     height: 200px;
-    width: 400px;
+    width: 300px;
     /* border-radius: 20%; 1rem 1rem 0 0 */
     padding: 3px;
     /* background: ${({ theme }) => theme.buttons}; */
