@@ -21,9 +21,7 @@ export default function Navbar({ toggle, resp }) {
 		<>
 			<Nav>
 				<NavbarContainer>
-					<NavSideBar>
-						{/* <FaBars></FaBars> */}
-					</NavSideBar>
+					<NavSideBar>{/* <FaBars></FaBars> */}</NavSideBar>
 					<NavLogo to="/">
 						<img className="logo" src={logo}></img>
 						<h1>Precin</h1>

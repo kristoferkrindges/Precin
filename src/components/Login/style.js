@@ -8,7 +8,7 @@ export const Container = styled.div`
 		font-size: 36px;
 		font-weight: 700;
 		text-align: center;
-		color: white;
+		color: ${({ theme }) => theme.title};
 		padding: 20%;
 	}
 	.error {

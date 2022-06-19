@@ -8,8 +8,9 @@ export const NavSearchBar = styled.div`
 
 	.searchInputs {
 		display: flex;
-		flex: 1;
 		width: 90%;
+		border: 1px solid black;
+		background: ${({ theme }) => theme.background};
 		margin-top: 2%;
 		margin-left: 5%;
 	}
@@ -17,10 +18,7 @@ export const NavSearchBar = styled.div`
 	input {
 		width: 100%;
 		height: 40px;
-		border-radius: 10px;
-		border-bottom-right-radius: 0px;
-		border-top-right-radius: 0px;
-		background-color: rgba(255, 255, 255, 1);
+		border: none;
 		font-size: 18px;
 		font-weight: 600;
 		padding-left: 2%;
@@ -40,10 +38,12 @@ export const NavSearchBar = styled.div`
 	}
 
 	.searchIcon {
-		color: white;
+		background-color: white;
+		color: black;
 		cursor: pointer;
 		display: grid;
 		place-items: center;
+		padding-right: 1%;
 
 		@media screen and (max-width: 600px) {
 			display: none;
@@ -51,7 +51,7 @@ export const NavSearchBar = styled.div`
 	}
 
 	.searchIcon svg {
-		font-size: 35px;
+		font-size: 30px;
 	}
 
 	.searchIcon :hover {
