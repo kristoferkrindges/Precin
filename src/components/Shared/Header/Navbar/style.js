@@ -164,13 +164,14 @@ export const NavBtnLink = styled(LinkR)`
 	outline: none;
 	border: none;
 	cursor: pointer;
-	transition: all 0.2s ease-in-out;
+	transition: background 0.5s;
 	text-decoration: none;
 
 	&:hover {
-		transition: all 0.2s ease-in-out;
-		background: white;
-		color: black;
-		font-size: 20px;
+		background: rgb(37, 108, 225, 0.7);
+		/* transition: all 0.2s ease-in-out; */
+		/* background: white; */
+		/* color: black; */
+		/* font-size: 20px; */
 	}
 `;

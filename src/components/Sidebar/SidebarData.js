@@ -23,7 +23,7 @@ export const SidebarData = [
 	{
 		label: "Perfil",
 		icon: <IoPersonCircleOutline />, //MdOutlineAnalytics
-		to: "/statistics",
+		to: "/login",
 		notification: 0,
 	},
 	{
