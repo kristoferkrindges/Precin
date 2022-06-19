@@ -7,8 +7,8 @@ export const Container = styled.div`
 		justify-content: center;
 		flex-direction: column;
 		padding: 12%;
-		background: rgba(8, 37, 84, 1);
-		color: white;
+		background: ${({ theme }) => theme.background};
+		color: ${({ theme }) => theme.title};
 	}
 
 	.dashboard h1 {
@@ -22,7 +22,7 @@ export const Container = styled.div`
 		width: 10%;
 		padding: 1%;
 		margin: 2% 0;
-		background-color: #256ce1;
+		background: ${({ theme }) => theme.buttons};
 		color: white;
 		cursor: pointer;
 	}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import { Li, IconHeart, IconChat, IconSocial } from "./style";
 import {
 	Lil,
@@ -38,8 +38,11 @@ import postImage from "../../../../imagens/tomate2.jpg";
 import userImage from "../../../../imagens/dog_sorridente.jpeg";
 import Zaffari from "../../../../imagens/coelhao.png";
 import { ListAlt } from "@mui/icons-material";
+import { Modal } from "../../../Shared/Modal/index";
 
 export default function Feeds(props) {
+	const [openModal, setOpenModal] = useState(false);
+
 	return (
 		<Lil>
 			<Header>
@@ -85,11 +88,16 @@ export default function Feeds(props) {
 								<Price>R$ {props.price}</Price>
 							</Info>
 							<Buttons>
-								<HireMe>
+								<HireMe
+									onClick={() => {
+										setOpenModal(true);
+									}}
+								>
 									<GoLocation></GoLocation>
 								</HireMe>
 							</Buttons>
 						</Collection>
+						{openModal && <Modal closeModal={setOpenModal} />}
 					</Content>
 				</Product>
 			</Header>

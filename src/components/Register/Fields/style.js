@@ -9,17 +9,12 @@ export const Container = styled.div`
 		flex-direction: column;
 		max-width: 600px;
 		padding: 15%;
-		background: radial-gradient(
-			ellipse at left bottom,
-			rgba(22, 24, 47, 1) 0%,
-			rgba(8, 37, 84, 1) 59%,
-			rgba(22, 24, 47, 1) 100%
-		);
+		background: ${({ theme }) => theme.feed};
 		box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 		border: 1px solid black;
 		border-radius: 6px;
 		margin-top: 10%;
-		color: white;
+		color: ${({ theme }) => theme.title};
 
 		.formIcons {
 			font-size: 25px;
