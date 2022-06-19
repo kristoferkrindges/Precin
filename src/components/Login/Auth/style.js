@@ -7,7 +7,7 @@ export const Container = styled.div`
 		justify-content: center;
 		justify-self: center;
 		flex-direction: column;
-		background: rgba(8, 37, 84, 1);
+		background: ${({ theme }) => theme.background};
 	}
 
 	.form p {
@@ -19,14 +19,9 @@ export const Container = styled.div`
 		font-weight: 700;
 		padding: 2%;
 		margin: 5% 25%;
-		color: white;
+		color: ${({ theme }) => theme.title};
 		font-size: 22px;
-		background: radial-gradient(
-			ellipse at left bottom,
-			rgba(22, 24, 47, 1) 0%,
-			rgba(8, 37, 84, 1) 59%,
-			rgba(22, 24, 47, 1) 100%
-		);
+		background: ${({ theme }) => theme.feed};
 		border: 1px solid black;
 		border-radius: 6px;
 	}
