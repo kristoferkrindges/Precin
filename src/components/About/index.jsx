@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../Shared/Header';
+import Menu from '../Shared/Menu';
 
 function About() {
   return (
     <>
-        <Header></Header>
-        <div>About</div>
+      <Menu></Menu>
+      <div>About</div>
     </>
   )
 }
