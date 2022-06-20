@@ -1,12 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../Shared/Header';
+import Menu from '../Shared/Menu';
 
 function Profile() {
   let { username } = useParams();
   return (
     <>
-        <Header></Header>
+        <Menu></Menu>
         <div>This is the profile page for {username}!</div>
     </>
   )

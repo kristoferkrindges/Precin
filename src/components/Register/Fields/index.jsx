@@ -30,30 +30,11 @@ const Signup = () => {
 
 	const [fields, setFields] = useState(initialState);
 
-	// const postValues = () => {
-	// 	console.log("post values");
-	// 	api
-	// 		.post("/teacher")
-	// 		.then(({ data }) => {
-	// 			setTeachers(data);
-	// 			console.log(data);
-	// 		})
-	// 		.catch((error) => {
-	// 			console.error("error", error);
-	// 		});
-	// };
-
 	const handleFieldsChange = (e) =>
 		setFields({
 			...fields,
 			[e.currentTarget.name]: e.currentTarget.value,
 		});
-
-	// const handleSubmit = (event) => {
-	// 	//props.addPlanet(fields)
-	// 	event.preventDefault();
-	// 	setFields(initialState);
-	// };
 
 	return (
 		<Container>

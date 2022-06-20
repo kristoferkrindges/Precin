@@ -3,12 +3,6 @@ import styled from "styled-components";
 
 import { btnReset, v } from "../../styles/variables";
 
-// export const Container = styled.div`
-//     display:flex;
-//     background: ${({ theme }) => theme.navbar};
-//     position: relative;
-// `
-
 export const Context = styled.div`
     width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
     background: ${({ theme }) => theme.navbar};
@@ -42,7 +36,6 @@ export const Logo = styled.div`
     border-radius: 50%;
     cursor: pointer;
     margin-bottom: ${v.lgSpacing};
-    /* background: ${({ theme }) => theme.buttons}; */
 `;
 
 export const Img = styled.img`

@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../Shared/Header";
+import Menu from "../Shared/Menu"
 import Footer from "../Shared/Footer";
 import { useUserContext } from "../../context/userContext";
 import Auth from "./Auth/auth";
@@ -11,14 +11,14 @@ function Login() {
 	return (
 		<Container>
 			<div className="container">
-				<Header />
+				<Menu type="não" search="não"/>
 				{error && <p className="error"> {error}</p>}
 				{loading ? (
 					<h2 className="carregando">Carregando...</h2>
 				) : (
 					<> {user ? <Dashboard /> : <Auth />} </>
 				)}
-				{/* <Footer></Footer> */}
+				<Footer></Footer>
 			</div>
 		</Container>
 	);

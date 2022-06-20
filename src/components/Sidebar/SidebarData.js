@@ -1,12 +1,9 @@
 import {
-	AiOutlineApartment,
 	AiOutlineHome,
-	AiOutlineLeft,
 	AiOutlineSetting,
 } from "react-icons/ai";
-import { MdLogout, MdOutlineAnalytics } from "react-icons/md";
+import { MdLogout, } from "react-icons/md";
 import {
-	IoPeopleOutline,
 	IoPersonCircleOutline,
 	IoHelpCircleOutline,
 	IoCartOutline,
@@ -22,7 +19,7 @@ export const SidebarData = [
 	},
 	{
 		label: "Perfil",
-		icon: <IoPersonCircleOutline />, //MdOutlineAnalytics
+		icon: <IoPersonCircleOutline />,
 		to: "/login",
 		notification: 0,
 	},
