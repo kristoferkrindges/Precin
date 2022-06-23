@@ -8,6 +8,7 @@ import {
 	IoHelpCircleOutline,
 	IoCartOutline,
 	IoBookmarkOutline,
+	IoExtensionPuzzleOutline
 } from "react-icons/io5";
 import { BsPeople } from "react-icons/bs";
 export const SidebarData = [
@@ -16,6 +17,12 @@ export const SidebarData = [
 		icon: <AiOutlineHome />,
 		to: "/",
 		notification: 5,
+	},
+	{
+		label: "Publicar",
+		icon: <IoExtensionPuzzleOutline />,
+		to: "/publication",
+		notification: 0,
 	},
 	{
 		label: "Perfil",
