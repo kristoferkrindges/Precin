@@ -1,10 +1,11 @@
 import React from "react";
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomeScreen from "./Pages/Home";
 import About from './Pages/About';
 import Profile from './Pages/Profile';
 import Login from './Pages/Login';
 import ErrorPage from './Pages/ErrorPage';
+import SearchResultScreen from "./Pages/SearchResult";
 import Post from "./Pages/Post";
 
 export default function Routess(){
@@ -17,8 +18,14 @@ export default function Routess(){
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/profile/:username" element={<Profile />} />
                 <Route path="/publication" element={<Post />} />
+                <Route path="/search_result" element={<SearchResultScreen />} />
+				        <Route
+					          path="/search_result/:product"
+					          element={<SearchResultScreen />}
+				        />
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
         </Router>
     )
 }
+
