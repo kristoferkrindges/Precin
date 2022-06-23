@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavSearchBar } from "./style";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
 
 function SearchBar({ placeholder, data }) {
 	const [filteredData, setFilteredData] = useState([]);
@@ -43,13 +44,13 @@ function SearchBar({ placeholder, data }) {
 					)}
 				</label>
 			</div>
-			{filteredData.length != 0 && (
+			{filteredData.length !== 0 && (
 				<div className="dataResult">
 					{filteredData.slice(0, 5).map((value, key) => {
 						return (
-							<a className="dataItem">
+							<Link className="dataItem" to="/search_result">
 								<p> {value.public} </p>
-							</a>
+							</Link>
 						);
 					})}
 				</div>

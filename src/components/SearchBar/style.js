@@ -58,7 +58,7 @@ export const NavSearchBar = styled.div`
 	}
 
 	.dataResult {
-		width: 86.3%;
+		width: 90%;
 		height: 200px;
 		margin-left: 5%;
 		background-color: white;
