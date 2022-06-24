@@ -103,13 +103,13 @@ export default function Feeds(props) {
 			</Header>
 			<Interaction>
 				<ButtonPrecin type="button">
-					<AiFillLike></AiFillLike>Precin
+					<AiFillLike></AiFillLike>Precin {props.precin}
 				</ButtonPrecin>
 				<ButtonPrecao type="button">
-					<AiFillDislike></AiFillDislike>Preção
+					<AiFillDislike></AiFillDislike>Preção {props.precao}
 				</ButtonPrecao>
 				<ButtonComment type="button">
-					<BiCommentDetail></BiCommentDetail>Comentário
+					<BiCommentDetail></BiCommentDetail>Comentários {props.comments}
 				</ButtonComment>
 			</Interaction>
 		</Lil>
