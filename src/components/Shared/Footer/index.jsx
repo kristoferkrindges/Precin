@@ -68,7 +68,7 @@ export default function Footer() {
 					<SocialMediaWrap>
 						<SocialLogo to="/">Precin</SocialLogo>
 						<WebsiteRights>
-							Precin {new Date().getFullYear()} Todos os direitos Reservados.
+							Precin {new Date().getFullYear()}© Todos os direitos Reservados.
 						</WebsiteRights>
 							<SocialIcons>
 								<SocialIconLink>

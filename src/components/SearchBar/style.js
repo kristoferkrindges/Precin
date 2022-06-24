@@ -8,8 +8,8 @@ export const NavSearchBar = styled.div`
 	.searchInputs {
 		display: flex;
 		width: 90%;
-		border: 1px solid black;
-		background: ${({ theme }) => theme.background};
+		background: ${({ theme }) => theme.bgAlpha};
+    	border: 1px solid ${({ theme }) => theme.bg3};
 		margin-top: 2%;
 		margin-left: 5%;
 	}
@@ -21,6 +21,8 @@ export const NavSearchBar = styled.div`
 		font-size: 18px;
 		font-weight: 600;
 		padding-left: 2%;
+		background: transparent;
+		color: ${({ theme }) => theme.title};
 
 		@media screen and (max-width: 1000px) {
 			margin-top: 1%;
@@ -37,8 +39,8 @@ export const NavSearchBar = styled.div`
 	}
 
 	.searchIcon {
-		background-color: white;
-		color: black;
+		background: ${({ theme }) => theme.bgAlpha};
+		color: ${({ theme }) => theme.title};
 		cursor: pointer;
 		display: grid;
 		place-items: center;
@@ -61,7 +63,8 @@ export const NavSearchBar = styled.div`
 		width: 90%;
 		height: 200px;
 		margin-left: 5%;
-		background-color: white;
+		background: ${({ theme }) => theme.bgAlpha};
+		color: ${({ theme }) => theme.title};
 		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 		overflow: hidden;
 		overflow-y: auto;
@@ -76,7 +79,7 @@ export const NavSearchBar = styled.div`
 		height: 50px;
 		display: flex;
 		align-items: center;
-		color: black;
+		color: inherit;
 	}
 
 	.dataItem p {
