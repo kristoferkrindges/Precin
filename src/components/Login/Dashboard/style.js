@@ -21,7 +21,7 @@ export const Container = styled.div`
 		font-size: 18px;
 		width: 10%;
 		padding: 1%;
-		margin-top: 10%;
+		margin: 3%;
 		background: ${({ theme }) => theme.buttons};
 		color: white;
 		cursor: pointer;

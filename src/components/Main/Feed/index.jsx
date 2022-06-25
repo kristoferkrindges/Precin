@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Ul } from "./style";
 import Feeds from "../Feed/Feeds";
 import { db } from "../../../firebase/index";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
 async function getFeeds() {
 	let response = await fetch(`http://localhost:3000/api/feeds.json`);
@@ -14,7 +14,10 @@ export default function Feed() {
 	const [feeds, setFeed] = useState([]);
 	//Getting the posts collection from Firestore
 	const [posts, setPosts] = useState([]);
-	const postsCollectionRef = collection(db, "posts");
+	const postsCollectionRef = query(
+		collection(db, "posts"),
+		orderBy("date", "desc")
+	);
 
 	useEffect(() => {
 		const getPosts = async () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { 
+import {
 	Container,
 	FooterWrap,
 	FooterLinksContainer,
@@ -13,13 +13,11 @@ import {
 	WebsiteRights,
 	SocialIcons,
 	SocialIconLink,
-	FacebookIcon, 
-    TwitterIcon,
-    WhatsappIcon,
+	FacebookIcon,
+	TwitterIcon,
+	WhatsappIcon,
 	InstagramIcon,
-    YoutubeIcon,
-
-
+	YoutubeIcon,
 } from "./styles";
 
 export default function Footer() {
@@ -70,23 +68,23 @@ export default function Footer() {
 						<WebsiteRights>
 							Precin {new Date().getFullYear()}© Todos os direitos Reservados.
 						</WebsiteRights>
-							<SocialIcons>
-								<SocialIconLink>
-									<InstagramIcon></InstagramIcon>
-								</SocialIconLink>
-								<SocialIconLink>
-									<FacebookIcon></FacebookIcon>
-								</SocialIconLink>
-								<SocialIconLink>
-									<TwitterIcon></TwitterIcon>
-								</SocialIconLink>
-								<SocialIconLink>
-									<YoutubeIcon></YoutubeIcon>
-								</SocialIconLink>
-								<SocialIconLink>
-									<WhatsappIcon></WhatsappIcon>
-								</SocialIconLink>
-							</SocialIcons>
+						<SocialIcons>
+							<SocialIconLink>
+								<InstagramIcon></InstagramIcon>
+							</SocialIconLink>
+							<SocialIconLink>
+								<FacebookIcon></FacebookIcon>
+							</SocialIconLink>
+							<SocialIconLink>
+								<TwitterIcon></TwitterIcon>
+							</SocialIconLink>
+							<SocialIconLink>
+								<YoutubeIcon></YoutubeIcon>
+							</SocialIconLink>
+							<SocialIconLink>
+								<WhatsappIcon></WhatsappIcon>
+							</SocialIconLink>
+						</SocialIcons>
 					</SocialMediaWrap>
 				</SocialMedia>
 			</FooterWrap>

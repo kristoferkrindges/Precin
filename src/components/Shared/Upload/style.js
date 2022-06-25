@@ -19,6 +19,7 @@ export const Image = styled.img`
 export const File = styled.input`
 	margin: 5%;
 	font-size: 18px;
+	cursor: pointer;
 `;
 
 export const SendImage = styled.button`
