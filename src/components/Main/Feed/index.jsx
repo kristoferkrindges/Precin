@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Ul } from "./style";
 import Feeds from "../Feed/Feeds";
 import { db } from "../../../firebase/index";
 import { collection, getDocs } from "firebase/firestore";
+import { SearchContext } from "../../../context/searchContext";
+import { IoTabletLandscapeSharp } from "react-icons/io5";
 
 async function getFeeds() {
 	let response = await fetch(`http://localhost:3000/api/feeds.json`);
@@ -15,6 +17,13 @@ export default function Feed() {
 	//Getting the posts collection from Firestore
 	const [posts, setPosts] = useState([]);
 	const postsCollectionRef = collection(db, "posts");
+
+	const { tokenProduct, setTokenProduct } = useContext(SearchContext);
+	console.log(tokenProduct);
+
+	// useEffect(()=> {
+	// 	setProductName(productName)
+	// }, [productName])
 
 	useEffect(() => {
 		const getPosts = async () => {
@@ -33,14 +42,34 @@ export default function Feed() {
 		});
 	}, []);
 
-	const addFeed = (new_feed) => {
-		setFeed([...feeds, new_feed]);
-	};
-
 	return (
 		<Ul>
-			{posts.map((posts) => (
+			{posts.length > 0 &&
+				posts
+					.filter((value) => {
+						if (tokenProduct === "") {
+							return value;
+						} else if (
+							value.product.toLowerCase().includes(tokenProduct.toLowerCase())
+						) {
+							return value;
+						}
+					})
+					.map((value, key) => (
+						<Feeds
+							key={key}
+							product={value.product}
+							price={value.price}
+							market={value.market}
+							address={value.address}
+							precin={value.precin}
+							precao={value.precao}
+							comments={value.comments}
+						/>
+					))}
+			{/* {posts.map((posts, index) => (
 				<Feeds
+					key={index}
 					product={posts.product}
 					price={posts.price}
 					market={posts.market}
@@ -48,18 +77,6 @@ export default function Feed() {
 					precin={posts.precin}
 					precao={posts.precao}
 					comments={posts.comments}
-				/>
-			))}
-			{/* {feeds.map((feed, index) => (
-				<Feeds
-					key={index}
-					name={feed.name}
-					time={feed.time}
-					public={feed.public}
-					product={feed.product}
-					price={feed.price}
-					img_url={feed.img_url}
-					img_product={feed.img_product}
 				/>
 			))} */}
 		</Ul>

@@ -36,11 +36,46 @@ import { BiCommentDetail } from "react-icons/bi";
 import postImage from "../../../../imagens/tomate2.jpg";
 import userImage from "../../../../imagens/dog_sorridente.jpeg";
 import Zaffari from "../../../../imagens/coelhao.png";
-import { ListAlt } from "@mui/icons-material";
 import { Modal } from "../../../Shared/Modal/index";
 
 export default function Feeds(props) {
 	const [openModal, setOpenModal] = useState(false);
+	let controllerPrecin = props.precin;
+	let controllerPrecao = props.precao;
+	const [precin, setPrecin] = useState(controllerPrecin); //Aqui pega o context precin
+	const [precao, setPrecao] = useState(controllerPrecao); //Aqui pega o context precao
+	console.log(precin);
+
+	const [precinButton, setPrecinButton] = useState(false);
+	const [precaoButton, setPrecaoButton] = useState(false);
+
+	function HandlerButtonPrecin() {
+		if (precinButton == false) {
+			setPrecinButton(true);
+			setPrecin(precin + 1);
+			if (precaoButton == true) {
+				setPrecaoButton(false);
+				setPrecao(precao - 1);
+			}
+		} else {
+			setPrecinButton(false);
+			setPrecin(precin - 1);
+		}
+	}
+
+	function HandlerButtonPrecao() {
+		if (precaoButton == false) {
+			setPrecaoButton(true);
+			setPrecao(precao + 1);
+			if (precinButton == true) {
+				setPrecinButton(false);
+				setPrecin(precin - 1);
+			}
+		} else {
+			setPrecaoButton(false);
+			setPrecao(precao - 1);
+		}
+	}
 
 	return (
 		<Lil>
@@ -85,11 +120,17 @@ export default function Feeds(props) {
 				</Product>
 			</Header>
 			<Interaction>
-				<ButtonPrecin type="button">
-					<AiFillLike></AiFillLike>Precin {props.precin}
+				<ButtonPrecin type="button" onClick={HandlerButtonPrecin}>
+					<AiFillLike
+						style={precinButton ? { color: "black" } : {}}
+					></AiFillLike>
+					Precin {precin}
 				</ButtonPrecin>
-				<ButtonPrecao type="button">
-					<AiFillDislike></AiFillDislike>Preção {props.precao}
+				<ButtonPrecao type="button" onClick={HandlerButtonPrecao}>
+					<AiFillDislike
+						style={precaoButton ? { color: "black" } : {}}
+					></AiFillDislike>
+					Preção {precao}
 				</ButtonPrecao>
 				<ButtonComment type="button">
 					<BiCommentDetail></BiCommentDetail>Comentários {props.comments}

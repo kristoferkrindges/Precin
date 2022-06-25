@@ -58,7 +58,6 @@ import logo from "../../../imagens/logo.png"
 export default function Post() {
     const [productName, setProductName] = useState("")
     const [productPrice, setProductPrice] = useState("")
-    // const [productMarket, setProductMarket] = useState("")
     const [productLocate, setProductLocate] = useState("")
     const [productImg, setProductImg] = useState("")
 
@@ -210,7 +209,7 @@ export default function Post() {
                                             <Option 
                                                 isOpen={click}
                                                 onClick={()=>{
-                                                    setMarket((`${<IoCart2/>}Outros`))
+                                                    setMarket((`Outros`))
                                                     setClick((p) => !p)
                                                 }}
                                             >
