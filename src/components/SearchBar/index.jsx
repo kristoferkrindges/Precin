@@ -48,7 +48,7 @@ function SearchBar({ placeholder, data }) {
 				<div className="dataResult">
 					{filteredData.slice(0, 5).map((value, key) => {
 						return (
-							<Link className="dataItem" to="/search_result">
+							<Link className="dataItem" to={`/search_result/${value.public}`}>
 								<p> {value.public} </p>
 							</Link>
 						);
