@@ -1,11 +1,34 @@
 import React from "react";
 import { useUserContext } from "../../../context/userContext";
-import { Container } from "./style";
+import {
+	Container,
+	Layout,
+	Controller,
+	LineOne,
+	LineTwo,
+	LProfile,
+	Update,
+} from "./style";
 import UploadImage from "../../Shared/Upload";
+import Sidebar from "../../Sidebar";
 
 const Dashboard = () => {
 	const { user, logoutUser } = useUserContext();
 	return (
+		// <Layout>
+		// 	<Sidebar></Sidebar>
+		// 	<Controller>
+		// 		<LineOne>
+		// 			<LProfile>
+		// 				<h1>Oi</h1>
+		// 			</LProfile>
+		// 			<Update>
+		// 				<h1>Oi</h1>
+		// 			</Update>
+		// 		</LineOne>
+		// 		<LineTwo></LineTwo>
+		// 	</Controller>
+		// </Layout>
 		<Container>
 			<div className="dashboard">
 				<h1>Perfil</h1>

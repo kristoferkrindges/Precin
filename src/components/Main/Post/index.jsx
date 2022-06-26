@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, ImgIcon } from "./style";
+import { Container, ImgIcon, Image, Logo, Pharase, InfoUser } from "./style";
 
 export default function Post(props) {
 	const [text, setText] = useState("");
@@ -10,16 +10,19 @@ export default function Post(props) {
 	return (
 		// newPost
 		<Container>
-			<div className="infoUser">
-				<div className="imgUser">
+			<InfoUser>
+				<Image>
+					<Logo src={props.img_url} />
+				</Image>
+				<Pharase>
 					<strong>{props.name}</strong>
-				</div>
-			</div>
+				</Pharase>
+			</InfoUser>
 			{/* Form de publicação */}
 			<form className="formPost" addFeed={props.addFeed}>
 				<textarea
 					name="textarea"
-					placeholder="Qual o melhor precin do momento?"
+					placeholder="Poste seu comentário"
 					value={text}
 					onChange={handleChange}
 				></textarea>

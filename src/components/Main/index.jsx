@@ -6,7 +6,7 @@ import Feed from "../Main/Feed";
 export default function Main() {
 	return (
 		<Container>
-			<Feed></Feed>
+			<Feed filter="date" comments={false} />
 		</Container>
 	);
 }
