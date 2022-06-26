@@ -11,6 +11,7 @@ export const lightTheme = {
 	buttons: "rgba(37, 108, 225, 1)",
 	buttons_hover: "rgba(37, 108, 225, 0.7)",
 	feed: "rgba(255, 255, 255, 1)",
+	fundo: "rgba(255, 255, 255, 0.6)",
 	feedInter: "rgba(255, 255, 255, 1)",
 };
 export const darkTheme = {
@@ -27,4 +28,5 @@ export const darkTheme = {
 	buttons_hover: "rgba(37, 108, 225, 0.7)",
 	feed: "radial-gradient(ellipse at left bottom, rgba(22, 24, 47, 1) 0%, rgba(8, 37, 84, 1) 59%, rgba(22, 24, 47, 1) 100%)",
 	feedInter: "rgba(22, 24, 47, 1)",
+	fundo: "rgba(22, 24, 47, 0.6)",
 };

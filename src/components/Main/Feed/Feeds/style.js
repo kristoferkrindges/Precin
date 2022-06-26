@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import {
-	IoCartOutline,
-} from "react-icons/io5";
+import { IoCartOutline } from "react-icons/io5";
 
 export const Lil = styled.li`
 	margin-top: 3%;
-	margin-bottom: 50px;
+	/* margin-bottom: 50px; */
 	width: 100%;
 	height: 40vh;
 	width: 70vh;
@@ -14,6 +12,19 @@ export const Lil = styled.li`
 	box-shadow: 0 50px 70px -40px rgba(0, 0, 0, 0.8);
 	border: 1px solid black;
 	background: ${({ theme }) => theme.feed};
+`;
+
+export const Lile = styled.li`
+	margin-top: 5%;
+	/* margin-bottom: 50px; */
+	width: 100%;
+	height: 100%;
+	width: 70vh;
+	padding: 3%;
+	background: ${({ theme }) => theme.feed};
+	border-radius: 10px;
+	box-shadow: none;
+	border: 1px solid black;
 `;
 
 export const Header = styled.div`
@@ -106,7 +117,6 @@ export const HireMe = styled.button`
 	}
 `;
 
-
 export const Product = styled.div`
 	position: relative;
 	height: 30vh;
@@ -158,7 +168,7 @@ export const Locate = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
+
 	& svg {
 		/* stroke: ${({ theme }) => theme.text}; */
 	}
