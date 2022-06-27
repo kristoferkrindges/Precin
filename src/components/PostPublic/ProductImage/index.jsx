@@ -63,12 +63,15 @@ import { v4 } from "uuid";
 function ProductImage() {
 	const [imageUpload, setImageUpload] = useState(null);
 	const [imageList, setImageList] = useState([]);
+	const [imageURL, setImageURL] = useState();
 
 	const imageListRef = ref(storage, "images/products");
 
 	const uploadImage = () => {
 		if (imageUpload == null) return;
+
 		const imageRef = ref(storage, `images/products/${imageUpload.name + v4()}`);
+
 		uploadBytes(imageRef, imageUpload).then((snaphsot) => {
 			getDownloadURL(snaphsot.ref).then((url) => {
 				setImageList((prev) => [...prev, url]);
@@ -76,15 +79,15 @@ function ProductImage() {
 		});
 	};
 
-	useEffect(() => {
-		listAll(imageListRef).then((response) => {
-			response.items.forEach((item) => {
-				getDownloadURL(item).then((url) => {
-					setImageList((prev) => [...prev, url]);
-				});
-			});
-		});
-	}, []);
+	// useEffect(() => {
+	// 	listAll(imageListRef).then((response) => {
+	// 		response.items.forEach((item) => {
+	// 			getDownloadURL(item).then((url) => {
+	// 				setImageList((prev) => [...prev, url]);
+	// 			});
+	// 		});
+	// 	});
+	// }, []);
 
 	return (
 		<Container>

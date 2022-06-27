@@ -4,9 +4,12 @@ import { useUserContext } from "../../../context/userContext";
 import { BsPerson } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
+import { db } from "../../../firebase/index";
+import { collection, addDoc } from "firebase/firestore";
 // import api from "../../../services/api";
 
 // export default function Fields() {
+
 const Signup = () => {
 	const emailRef = useRef();
 	const nameRef = useRef();
@@ -19,6 +22,7 @@ const Signup = () => {
 		const name = nameRef.current.value;
 		const password = psdRef.current.value;
 		if (email && name && password) registerUser(email, name, password);
+		creatUserP();
 	};
 	const initialState = {
 		type: "",
@@ -35,6 +39,20 @@ const Signup = () => {
 			...fields,
 			[e.currentTarget.name]: e.currentTarget.value,
 		});
+
+	// Create collection inside Firestore with inputs
+	const usersPCollectionRef = collection(db, "usersP");
+
+	const creatUserP = async () => {
+		await addDoc(usersPCollectionRef, {
+			name: nameRef.current.value,
+			email: emailRef.current.value,
+			precin: ["0"],
+			precao: ["0"],
+			listPublic: ["0"],
+			listShoop: ["0"],
+		});
+	};
 
 	return (
 		<Container>
