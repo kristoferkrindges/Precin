@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Zaffari from "../../../../imagens/coelhao.png";
+import Zaffari from "../../../../imagens/logo_zaffari.png";
 import {
 	Lil,
 	Header,

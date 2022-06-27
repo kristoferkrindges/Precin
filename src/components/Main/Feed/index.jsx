@@ -7,6 +7,7 @@ import { IoTabletLandscapeSharp } from "react-icons/io5";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import Post from "../Post";
 import Comment from "../Comment";
+import Tomate from "../../../imagens/tomate2.jpg";
 
 // async function getFeeds() {
 // 	let response = await fetch(`http://localhost:3000/api/feeds.json`);
@@ -78,6 +79,7 @@ export default function Feed(props) {
 									precao={value.precao}
 									comments={value.comments}
 									openComment={true}
+									img_product={Tomate}
 									// button={commentButton}
 									// setButton={setCommentButton}
 								/>
@@ -115,6 +117,7 @@ export default function Feed(props) {
 									precao={value.precao}
 									comments={value.comments}
 									openComment={false}
+									img_product={Tomate}
 								/>
 								{props.comments && <Post name="Kristofer"></Post>}
 								{/* {props.comments && <Comments></Comments>} */}

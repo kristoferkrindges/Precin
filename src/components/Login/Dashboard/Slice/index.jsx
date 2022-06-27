@@ -12,11 +12,11 @@ function Slice(props) {
 		<Container>
 			<Context>
 				<Carrousel breakPoints={breakPoints}>
-					<SmallFeed></SmallFeed>
-					<SmallFeed></SmallFeed>
-					<SmallFeed></SmallFeed>
-					<SmallFeed></SmallFeed>
-					<SmallFeed></SmallFeed>
+					<SmallFeed market={"Zaffari"}></SmallFeed>
+					<SmallFeed market={"Carrefour"}></SmallFeed>
+					<SmallFeed market={"Nacional"}></SmallFeed>
+					<SmallFeed market={"Outro"}></SmallFeed>
+					<SmallFeed market={"Zaffari"}></SmallFeed>
 				</Carrousel>
 			</Context>
 			{/* <Context>
