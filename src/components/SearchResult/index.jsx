@@ -11,7 +11,7 @@ function SearchResult() {
 		<>
 			<Menu type="logado" search="não" />
 			<Layout>
-				<Sidebar name="Kristofer Krindges" />
+				<Sidebar name="Desconhecido" />
 				<Container>
 					<Context>
 						<Pharase>
