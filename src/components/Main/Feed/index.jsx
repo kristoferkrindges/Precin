@@ -2,11 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 import { Ul } from "./style";
 import Feeds from "../Feed/Feeds";
 import { db } from "../../../firebase/index";
-import { collection, getDocs } from "firebase/firestore";
 import { SearchContext } from "../../../context/searchContext";
 import { IoTabletLandscapeSharp } from "react-icons/io5";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
-
 
 async function getFeeds() {
 	let response = await fetch(`http://localhost:3000/api/feeds.json`);
@@ -20,7 +18,7 @@ export default function Feed() {
 	const [posts, setPosts] = useState([]);
 	const postsCollectionRef = query(
 		collection(db, "posts"),
-		orderBy("date", "desc")
+		orderBy("timestamp", "desc")
 	);
 
 	const { tokenProduct, setTokenProduct } = useContext(SearchContext);

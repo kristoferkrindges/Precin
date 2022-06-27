@@ -1,7 +1,7 @@
 import React from "react";
 import { useUserContext } from "../../../context/userContext";
 import { Container } from "./style";
-import UploadImage from "../../Shared/Upload";
+import ProfileImage from "../ProfileImage";
 
 const Dashboard = () => {
 	const { user, logoutUser } = useUserContext();
@@ -9,10 +9,10 @@ const Dashboard = () => {
 		<Container>
 			<div className="dashboard">
 				<h1>Perfil</h1>
-				<UploadImage />
+				{user && <ProfileImage />}
 				<h2>{user.displayName}</h2>
 				<h2>{user.email}</h2>
-				<h2>Membro desde: 01/03/2022</h2>
+				<h2>Membro desde: {user.metadata.creationTime}</h2>
 				<button className="logout" onClick={logoutUser}>
 					Sair
 				</button>
