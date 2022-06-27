@@ -8,11 +8,20 @@ import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import Post from "../Post";
 import Comment from "../Comment";
 
+// async function getFeeds() {
+// 	let response = await fetch(`http://localhost:3000/api/feeds.json`);
+// 	let data = await response.json();
+// 	return data;
+// }
+
+// export default function Feed() {
+// 	const [feeds, setFeed] = useState([]);
 export default function Feed(props) {
 	//Getting the posts collection from Firestore
 	const [posts, setPosts] = useState([]);
 	const postsCollectionRef = query(
 		collection(db, "posts"),
+// 		orderBy("timestamp", "desc")
 		orderBy(props.filter, "desc")
 	);
 	// const [commentButton, setCommentButton] = useState(false);
