@@ -21,8 +21,8 @@ export default function Feed(props) {
 	const [posts, setPosts] = useState([]);
 	const postsCollectionRef = query(
 		collection(db, "posts"),
-// 		orderBy("timestamp", "desc")
-		orderBy(props.filter, "desc")
+		orderBy("timestamp", "desc")
+		// orderBy(props.filter, "desc")
 	);
 	// const [commentButton, setCommentButton] = useState(false);
 

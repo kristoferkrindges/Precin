@@ -6,6 +6,7 @@ import {
 	IoCameraOutline,
 	IoPencilOutline,
 } from "react-icons/io5";
+import { FiUpload } from "react-icons/fi";
 
 export const Container = styled.div`
 	border-radius: 1rem;
@@ -141,6 +142,31 @@ export const LabelImage = styled.label`
 	&svg {
 		margin-left: 5%;
 	}
+`;
+
+export const SendImage = styled.button`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10px;
+	border: none;
+	font-size: 18px;
+	width: 40%;
+	margin-top: 3%;
+	padding: 2%;
+	background: ${({ theme }) => theme.buttons};
+	color: white;
+	cursor: pointer;
+	transition: background 0.5s;
+
+	:hover {
+		background: rgb(37, 108, 225, 0.7);
+	}
+`;
+
+export const UploadIcon = styled(FiUpload)`
+	font-size: 22px;
+	margin-top: 3%;
 `;
 
 export const FacebookIcon = styled(IoLogoFacebook)`
