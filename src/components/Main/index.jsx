@@ -6,7 +6,7 @@ import Feed from "../Main/Feed";
 export default function Main() {
 	return (
 		<Container>
-			<Feed filter="timestamp" comments={false} />
+			<Feed filter="timestamp" order="desc" comments={false} />
 		</Container>
 	);
 }

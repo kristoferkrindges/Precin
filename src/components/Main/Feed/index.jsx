@@ -21,9 +21,12 @@ export default function Feed(props) {
 	const [posts, setPosts] = useState([]);
 	const postsCollectionRef = query(
 		collection(db, "posts"),
-		orderBy(props.filter, "desc")
+		orderBy(props.filter, props.order)
+		// orderBy(props.filter, "desc")
 	);
 	// const [commentButton, setCommentButton] = useState(false);
+	//Loader
+	const [removeLoading, setRemoveLoading] = useState(false);
 
 	let result;
 	if (props.product != undefined) {

@@ -11,7 +11,7 @@ function SearchResult() {
 		<>
 			<Menu type="logado" search="não" />
 			<Layout>
-				<Sidebar name="Kristofer Krindges" />
+				<Sidebar name="Desconhecido" />
 				<Container>
 					<Context>
 						<Pharase>
@@ -23,6 +23,7 @@ function SearchResult() {
 					</Context>
 					<Feed
 						filter="price"
+						order="asc"
 						product={product}
 						comments={true}
 						img_url={

@@ -13,7 +13,7 @@ function Layout({ children }) {
 		<>
 			<DLayout>
 				<SearchContext.Provider value={{ setTokenProduct, tokenProduct }}>
-					<Sidebar /*name={user.displayName} logoutUser={logoutUser}*/ />
+					<Sidebar name="Desconhecido" />
 					<Main></Main>
 					<Suggestion></Suggestion>
 				</SearchContext.Provider>
