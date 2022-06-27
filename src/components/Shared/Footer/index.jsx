@@ -53,7 +53,7 @@ export default function Footer() {
 							<FooterLink to="/">Hello World</FooterLink>
 						</FooterLinkItems>
 						<FooterLinkItems>
-							<FooterLinkTitle>Redes Sociais</FooterLinkTitle>
+							<FooterLinkTitle>Redes</FooterLinkTitle>
 							<FooterLink to="/">Instagram</FooterLink>
 							<FooterLink to="/">Facebook</FooterLink>
 							<FooterLink to="/">Twitter</FooterLink>

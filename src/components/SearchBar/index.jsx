@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { NavSearchBar } from "./style";
+import {
+	NavSearchBar,
+	SearchInputs,
+	InputName,
+	TextInput,
+	DataResult,
+	Result,
+} from "./style";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
@@ -12,8 +19,9 @@ function SearchBar({ placeholder, data }) {
 		const searchWord = event.target.value;
 		setWordEntered(searchWord);
 		const newFilter = data.filter((value) => {
-			return value.public.toLowerCase().includes(searchWord.toLowerCase());
+			return value.product.toLowerCase().includes(searchWord.toLowerCase());
 		});
+		console.log(newFilter);
 
 		if (searchWord === "") {
 			setFilteredData([]);
@@ -28,32 +36,32 @@ function SearchBar({ placeholder, data }) {
 	};
 	return (
 		<NavSearchBar>
-			<div className="searchInputs">
-				<input
-					className="searchBar"
+			<SearchInputs>
+				<InputName
 					type="text"
 					placeholder={placeholder}
 					value={wordEntered}
 					onChange={handleFilter}
 				/>
-				<label className="searchIcon">
+				<TextInput>
 					{filteredData.length === 0 ? (
 						<SearchIcon />
 					) : (
 						<CloseIcon id="clearBtn" onClick={clearInput} />
 					)}
-				</label>
-			</div>
+				</TextInput>
+			</SearchInputs>
+
 			{filteredData.length !== 0 && (
-				<div className="dataResult">
+				<DataResult>
 					{filteredData.slice(0, 5).map((value, key) => {
 						return (
-							<Link className="dataItem" to={`/search_result/${value.public}`}>
-								<p> {value.public} </p>
+							<Link className="dataItem" to={`/search_result/${value.product}`}>
+								<Result> {value.product} </Result>
 							</Link>
 						);
 					})}
-				</div>
+				</DataResult>
 			)}
 		</NavSearchBar>
 	);

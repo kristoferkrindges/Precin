@@ -3,37 +3,23 @@ import { IoImagesOutline } from "react-icons/io5";
 
 export const Container = styled.div`
 	/* newPost */
-	background: rgba(22, 24, 47, 1);
+	background: ${({ theme }) => theme.feed};
 	width: 100%;
-	height: 240px;
-	margin: 50px 0;
-	padding: 25px;
+	height: 230px;
+	margin: 0;
+	padding: 3%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-
+	color: ${({ theme }) => theme.title};
 	border-radius: 10px;
-	box-shadow: 0 50px 70px -30px rgba(0, 0, 0, 0.8);
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
 
-	.infoUser {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+	/* border-radius: 10px; */
 
-	.infoUser .imgUser {
-		width: 35px;
-		height: 35px;
-		border-radius: 50%;
-		background: #333;
-	}
-
-	.infoUser .imgUser strong {
-		font-size: 16px;
-		margin-left: 30px;
-		color: white;
-		padding: 20px;
-	}
+	/* box-shadow: 0 50px 70px -40px rgba(0, 0, 0, 0.8); */
 
 	.formPost {
 		display: flex;
@@ -42,8 +28,8 @@ export const Container = styled.div`
 	}
 
 	.formPost textarea {
-		height: 100px;
-		background-color: #e8e8e8;
+		height: 80px;
+		background: ${({ theme }) => theme.fundo};
 		margin: 15px 0%;
 		padding: 25px;
 		border-radius: 10px;
@@ -52,10 +38,11 @@ export const Container = styled.div`
 		border: 0;
 		font-size: 18px;
 		font-weight: 600;
+		border: 1px solid black;
 	}
 
 	.formPost ::placeholder {
-		color: rgba(22, 24, 47, 1);
+		color: ${({ theme }) => theme.title};
 	}
 
 	.formPost .iconsAndButton {
@@ -112,4 +99,35 @@ export const ImgIcon = styled(IoImagesOutline)`
 	stroke: #256ce1;
 	width: 15px;
 	height: 15px;
+`;
+
+export const Image = styled.div`
+	height: 55px;
+	width: 55px;
+	border-radius: 50%;
+	padding: 3px;
+	background: ${({ theme }) => theme.buttons};
+
+	&:hover {
+		opacity: 0.5;
+	}
+`;
+export const Logo = styled.img`
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 3px solid #fff;
+`;
+
+export const Pharase = styled.h3`
+	font-size: 1rem;
+	margin-left: 2%;
+`;
+
+export const InfoUser = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
 `;

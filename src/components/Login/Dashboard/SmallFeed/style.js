@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { IoCartOutline } from "react-icons/io5";
 
-export const Lil = styled.li`
+export const Container = styled.div`
 	margin-top: 3%;
 	/* margin-bottom: 50px; */
 	width: 100%;
-	height: 40vh;
+	height: 30vh;
 	width: 70vh;
 	border-radius: 10px;
 	padding: 3%;
@@ -13,20 +13,6 @@ export const Lil = styled.li`
 	border: 1px solid black;
 	background: ${({ theme }) => theme.feed};
 `;
-
-export const Lile = styled.li`
-	margin-top: 5%;
-	/* margin-bottom: 50px; */
-	width: 100%;
-	height: 100%;
-	width: 70vh;
-	padding: 3%;
-	background: ${({ theme }) => theme.feed};
-	border-radius: 10px;
-	box-shadow: none;
-	border: 1px solid black;
-`;
-
 export const Header = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -194,105 +180,6 @@ export const Price = styled.span`
 	white-space: nowrap;
 	font-size: 2.5rem;
 	font-weight: 700;
-`;
-// ==========================================
-// Buttons Interaction
-export const Interaction = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 3vh;
-	width: 70vh;
-	background-color: none;
-`;
-export const ButtonPrecin = styled.button`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	padding: 8px 20px;
-	margin-right: 10px;
-
-	border: 0;
-	outline: none;
-	border-radius: 10px;
-	cursor: pointer;
-
-	color: #fff;
-	font-weight: bold;
-	font-size: 16px;
-	transition: background 0.2s;
-
-	background: rgba(37, 108, 225, 1);
-
-	& svg {
-		margin-right: 5px;
-		stroke: white;
-	}
-
-	&:hover {
-		opacity: 0.4;
-	}
-`;
-
-export const ButtonPrecao = styled.button`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	padding: 8px 20px;
-	margin-right: 10px;
-
-	border: 0;
-	outline: none;
-	border-radius: 10px;
-	cursor: pointer;
-
-	color: #fff;
-	font-weight: bold;
-	font-size: 16px;
-	transition: background 0.2s;
-
-	background: rgba(225, 37, 37);
-
-	& svg {
-		margin-right: 5px;
-		stroke: white;
-	}
-
-	&:hover {
-		opacity: 0.4;
-	}
-`;
-
-export const ButtonComment = styled.button`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	padding: 8px 20px;
-	margin-right: 10px;
-
-	border: 0;
-	outline: none;
-	border-radius: 10px;
-	cursor: pointer;
-
-	color: #fff;
-	font-weight: bold;
-	font-size: 16px;
-	transition: background 0.2s;
-
-	background: rgb(245, 180, 0);
-
-	& svg {
-		margin-right: 5px;
-		stroke: white;
-	}
-
-	&:hover {
-		opacity: 0.4;
-	}
 `;
 
 export const IoCart = styled(IoCartOutline)`
