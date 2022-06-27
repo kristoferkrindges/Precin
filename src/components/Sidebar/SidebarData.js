@@ -1,14 +1,11 @@
-import {
-	AiOutlineHome,
-	AiOutlineSetting,
-} from "react-icons/ai";
-import { MdLogout, } from "react-icons/md";
+import { AiOutlineHome, AiOutlineSetting } from "react-icons/ai";
+import { MdLogout } from "react-icons/md";
 import {
 	IoPersonCircleOutline,
 	IoHelpCircleOutline,
 	IoCartOutline,
 	IoBookmarkOutline,
-	IoExtensionPuzzleOutline
+	IoExtensionPuzzleOutline,
 } from "react-icons/io5";
 import { BsPeople } from "react-icons/bs";
 export const SidebarData = [
@@ -45,6 +42,17 @@ export const SidebarData = [
 ];
 
 export const Settings = [
+	{
+		label: "Configurações",
+		icon: <AiOutlineSetting />,
+	},
+	{
+		label: "Suporte",
+		icon: <IoHelpCircleOutline />,
+	},
+];
+
+export const Settings2 = [
 	{
 		label: "Configurações",
 		icon: <AiOutlineSetting />,
