@@ -17,11 +17,11 @@ export const ControllerUp = styled.div`
 	background-color: ${({ theme }) => theme.nav};
 	margin-left: 10%;
 	width: 90.4vw;
-	height: 55.5vh;
+	height: 66.5vh;
 
 	display: grid;
 	grid-template-areas: "l r" "f f";
-	grid-template-columns: 4fr 2fr;
+	grid-template-columns: 4fr 1.5fr;
 	grid-template-rows: 4fr 1fr;
 
 	@media only screen and (max-width: 768px) {
@@ -53,7 +53,7 @@ export const LinerLeft = styled.div`
 	background-color: ${({ theme }) => theme.nav};
 	grid-area: f;
 	padding: 1%;
-	margin-bottom: 5%;
+	/* margin-bottom: 5%; */
 
 	@media only screen and (max-width: 768px) {
 		display: none;

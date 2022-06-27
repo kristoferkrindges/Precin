@@ -23,6 +23,7 @@ function SearchResult() {
 					</Context>
 					<Feed
 						filter="price"
+						order="asc"
 						product={product}
 						comments={true}
 						img_url={
