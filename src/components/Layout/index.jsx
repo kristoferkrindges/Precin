@@ -7,13 +7,13 @@ import { SearchContext } from "../../context/searchContext";
 import { useUserContext } from "../../context/userContext";
 
 function Layout({ children }) {
-	const { user, logoutUser } = useUserContext();
+	// const { user, logoutUser } = useUserContext();
 	const [tokenProduct, setTokenProduct] = useState("");
 	return (
 		<>
 			<DLayout>
 				<SearchContext.Provider value={{ setTokenProduct, tokenProduct }}>
-					<Sidebar name={user.displayName} logoutUser={logoutUser} />
+					<Sidebar name="Desconhecido" />
 					<Main></Main>
 					<Suggestion></Suggestion>
 				</SearchContext.Provider>

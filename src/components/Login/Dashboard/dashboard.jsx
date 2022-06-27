@@ -27,7 +27,7 @@ const Dashboard = () => {
 	// logoutUser={logoutUser}
 	return (
 		<Layout>
-			<Sidebar name={user.displayName}></Sidebar>
+			<Sidebar name="Desconhecido" />
 			<ControllerUp>
 				<LineLeft>
 					<Profile name={user.displayName} email={user.email}></Profile>

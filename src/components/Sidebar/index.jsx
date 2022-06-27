@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useState, useEffect } from "react";
+import { useUserContext } from "../../context/userContext";
 import {
 	Container,
 	SDivider,
@@ -47,6 +48,16 @@ function Sidebar(props) {
 	const { pathname } = useLocation();
 	const [feeds, setFeed] = useState([]);
 
+	const { user, logoutUser } = useUserContext();
+
+	let n;
+	if (user == null) {
+		n = "Desconhecido";
+	} else {
+		n = user.displayName;
+	}
+	console.log(n);
+
 	useEffect(() => {
 		getFeeds().then((data) => {
 			setFeed(data["feeds"]);
@@ -74,7 +85,8 @@ function Sidebar(props) {
 							!sidebarOpen ? { width: 0, padding: 0, display: "none" } : {}
 						}
 					>
-						{props.name}
+						{user ? user.displayName : props.name}
+						{/* {n} */}
 					</Name>
 				</Logo>
 			</Link>
@@ -105,7 +117,10 @@ function Sidebar(props) {
 				</SLinkContainer>
 			))}
 			{/* onClick={props.logoutUser} */}
-			<SLinkContainer key={Settings2[2].label}>
+			<SLinkContainer
+				key={Settings2[2].label}
+				onClick={logoutUser ? logoutUser : ""}
+			>
 				<SLink to="/" style={!sidebarOpen ? { width: `fit-content` } : {}}>
 					<SLinkIcon>{Settings2[2].icon}</SLinkIcon>
 					{sidebarOpen && <SLinkLabel>{Settings2[2].label}</SLinkLabel>}

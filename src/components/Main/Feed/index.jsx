@@ -16,6 +16,8 @@ export default function Feed(props) {
 		orderBy(props.filter, "desc")
 	);
 	// const [commentButton, setCommentButton] = useState(false);
+	//Loader
+	const [removeLoading, setRemoveLoading] = useState(false);
 
 	let result;
 	if (props.product != undefined) {
