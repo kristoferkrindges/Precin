@@ -24,7 +24,7 @@ export default function Navbar({ toggle, resp, type, search }) {
 	const [posts, setPosts] = useState([]);
 	const postsCollectionRef = query(
 		collection(db, "posts"),
-		orderBy("date", "desc")
+		orderBy("timestamp", "desc")
 	);
 
 	useEffect(() => {
