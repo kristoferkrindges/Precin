@@ -46,7 +46,7 @@ export const UserContextProvider = ({ children }) => {
 	const signInUser = (email, password) => {
 		setLoading(true);
 		signInWithEmailAndPassword(auth, email, password)
-			.then((res) => console.log(res))
+			.then((res) => console.log(res, auth.currentUser.uid))
 			.catch((err) => setError(err.message))
 			.finally(() => setLoading(false));
 	};
