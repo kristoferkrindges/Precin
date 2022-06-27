@@ -33,7 +33,7 @@ function Profile(props) {
 
 	async function upload(file, user, setLoading) {
 		if (photo == null) return;
-		const fileRef = ref(storage, "images/users/" + user.uid + ".png");
+		const fileRef = ref(storage, "images/users/" + user.uid);
 
 		setLoading(true);
 
@@ -69,9 +69,9 @@ function Profile(props) {
 	return (
 		<Container>
 			<Card>
-				{/* <button className="logout" onClick={logoutUser}>
+				<button className="logout" onClick={logoutUser}>
 					Sair
-				</button> */}
+				</button>
 				<Image>
 					<InputImage
 						type="file"

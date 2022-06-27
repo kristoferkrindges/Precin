@@ -84,6 +84,7 @@ export default function Post() {
 			comments: 0,
 			timestamp: serverTimestamp(),
 			user_uid: user.uid,
+			user_email: user.email,
 			// img_url: productImg,
 		});
 	};
