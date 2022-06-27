@@ -31,17 +31,36 @@ import {
 	IoCart,
 	Lile,
 } from "./style";
-import { AiFillLike, AiFillDislike } from "react-icons/ai";
+import {
+	AiFillLike,
+	AiFillDislike,
+	AiOutlineShoppingCart,
+} from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { BiCommentDetail } from "react-icons/bi";
 import postImage from "../../../../imagens/tomate2.jpg";
 import userImage from "../../../../imagens/dog_sorridente.jpeg";
-import Zaffari from "../../../../imagens/coelhao.png";
+import Zaffari from "../../../../imagens/logo_zaffari.png";
+import Carrefour from "../../../../imagens/carrefour_logo.png";
+import Nacional from "../../../../imagens/nacional_logo.png";
+import Outro from "../../../../imagens/outros_mercados.png";
+// import Outros from "../../../../imagens/outros.png";
 import { Modal } from "../../../Shared/Modal/index";
 import Post from "../../Post";
 import Comment from "../../Comment";
 
 export default function Feeds(props) {
+	//Icone mercado
+	let merk;
+	if (props.market == "Zaffari") {
+		merk = Zaffari;
+	} else if (props.market == "Carrefour") {
+		merk = Carrefour;
+	} else if (props.market == "Nacional") {
+		merk = Nacional;
+	} else {
+		merk = Outro;
+	}
 	let c = true;
 	if (props.comments == 0) {
 		c = false;
@@ -91,6 +110,7 @@ export default function Feeds(props) {
 			setCommentButton(false);
 		}
 	}
+
 	if (props.openComment == false) {
 		return (
 			<>
@@ -105,7 +125,7 @@ export default function Feeds(props) {
 									<Name>{`${props.name}`}</Name>
 									<Time>{props.time}</Time>
 								</Avatar>
-								<Icon src={Zaffari}></Icon>
+								<Icon src={merk}></Icon>
 							</CardContent>
 						</User>
 						<Product>
@@ -178,7 +198,7 @@ export default function Feeds(props) {
 									<Name>{`${props.name}`}</Name>
 									<Time>{props.time}</Time>
 								</Avatar>
-								<Icon src={Zaffari}></Icon>
+								<Icon src={merk}></Icon>
 							</CardContent>
 						</User>
 						<Product>
