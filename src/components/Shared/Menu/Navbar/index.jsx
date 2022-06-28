@@ -56,10 +56,12 @@ export default function Navbar({ toggle, resp, type, search }) {
 							<Logo src={logo}></Logo>
 							<Title>Precin</Title>
 						</NavLogo>
-						<SearchBar
-							placeholder="Procure por produtos ou mercados"
-							data={posts}
-						/>
+						<NavMenu>
+							<SearchBar
+								placeholder="Procure por produtos ou mercados"
+								data={posts}
+							/>
+						</NavMenu>
 						<MobileIcon onClick={toggle}>
 							<FaBars></FaBars>
 						</MobileIcon>

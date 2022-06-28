@@ -12,7 +12,6 @@ export const Nav = styled.nav`
 	position: sticky;
 	top: 0;
 	z-index: 11;
-
 	@media screen and (max-width: 960px) {
 		transition: 0.8s all ease;
 	}
@@ -44,12 +43,10 @@ export const Logo = styled.img`
 	width: 40px;
 	margin-right: 20%;
 	border: none;
-	border-radius: 5px;
-
+	border-radius: 10px;
 	@media screen and (max-width: 1200px) {
 		margin-left: 10%;
 	}
-
 	@media screen and (max-width: 768px) {
 		margin-left: 40%;
 	}
@@ -58,7 +55,6 @@ export const Logo = styled.img`
 export const Title = styled.h1`
 	font-size: 20px;
 	color: ${({ theme }) => theme.title};
-
 	&:hover {
 		color: ${({ theme }) => theme.buttons_hover};
 	}
@@ -69,7 +65,6 @@ export const Title = styled.h1`
 
 export const MobileIcon = styled.div`
 	display: none;
-
 	@media screen and (max-width: 768px) {
 		display: block;
 		position: absolute;
@@ -86,8 +81,10 @@ export const NavMenu = styled.ul`
 	display: flex;
 	align-items: center;
 	list-style: none;
+	width: 100%;
 	text-align: center;
-	margin-right: -22px;
+	/* margin-right: -22px; */
+	padding: 0 5px;
 
 	@media screen and (max-width: 768px) {
 		display: none;
@@ -106,11 +103,9 @@ export const NavLinks = styled(LinkS)`
 	padding: 0 1rem;
 	height: 100%;
 	cursor: pointer;
-
 	&.active {
 		border-bottom: 3px solid #01bf71;
 	}
-
 	&:hover {
 		color: #94449e;
 		font-size: 20px;
@@ -121,7 +116,6 @@ export const NavBtn = styled.nav`
 	display: flex;
 	align-items: center;
 	/* margin-left: 5%; */
-
 	@media screen and (max-width: 768px) {
 		display: none;
 	}
@@ -139,7 +133,6 @@ export const NavBtnLink = styled(LinkR)`
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
 	text-decoration: none;
-
 	&:hover {
 		transition: all 0.2s ease-in-out;
 		background: ${({ theme }) => theme.buttons_hover};

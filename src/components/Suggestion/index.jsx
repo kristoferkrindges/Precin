@@ -12,6 +12,7 @@ import {
 	Item,
 	License,
 	Colleter,
+	STrends,
 } from "./style";
 import { SearchContext } from "../../context/searchContext";
 
@@ -23,7 +24,7 @@ function Suggestion(props) {
 	return (
 		<Container>
 			<Context>
-				<Search>
+				{/* <Search>
 					<SearchIcon>
 						<IoSearch />
 					</SearchIcon>
@@ -31,8 +32,8 @@ function Suggestion(props) {
 						placeholder="Search"
 						onChange={(e) => setTokenProduct(e.target.value)}
 					/>
-				</Search>
-				<Divider />
+				</Search> */}
+				{/* <Divider /> */}
 				<Trends>
 					<Trend>Em Alta</Trend>
 					<Colleter>
@@ -71,7 +72,9 @@ function Suggestion(props) {
 					</List> */}
 				</Trends>
 				<Divider />
-				<License>Precin © Todos os direitos Reservados</License>
+				<STrends>
+					<License>Precin © Todos os direitos Reservados</License>
+				</STrends>
 			</Context>
 		</Container>
 	);

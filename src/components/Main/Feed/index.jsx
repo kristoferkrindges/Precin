@@ -117,7 +117,9 @@ export default function Feed(props) {
 									precao={value.precao}
 									comments={value.comments}
 									openComment={false}
-									img_product={Tomate}
+									img_product={
+										"https://3.bp.blogspot.com/-w540SySxjhg/Ubj-2KRYbxI/AAAAAAAAEhM/TbMTia8dCZo/s1600/02.png"
+									}
 								/>
 								{props.comments && <Post name="Kristofer"></Post>}
 								{/* {props.comments && <Comments></Comments>} */}
