@@ -26,7 +26,7 @@ export const Container = styled.div`
 		content: "";
 		position: absolute;
 		height: 20%;
-		width: 63%;
+		width: 51.7%;
 		background-color: ${({ theme }) => theme.buttons};
 		border-radius: 20px 20px 0 0;
 	}

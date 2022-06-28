@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
 	padding: 1rem;
 	background-color: ${({ theme }) => theme.feedInter};
-	width: 100%;
 	transition: 0.4s ease-in-out;
 	width: 100%;
 	border-radius: 1rem;
@@ -12,6 +11,9 @@ export const Container = styled.div`
 	transition: 0.4s ease-in-out;
 	&:hover {
 		box-shadow: red;
+	}
+	h1 {
+		text-align: center;
 	}
 	@media screen and (min-width: 320px) and (max-width: 1080px) {
 		width: 80%;

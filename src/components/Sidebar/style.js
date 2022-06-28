@@ -6,10 +6,12 @@ import { btnReset, v } from "../../styles/variables";
 export const Context = styled.div`
 	width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
 	background: ${({ theme }) => theme.navbar};
-	height: 100vh;
+	border-radius: 10px;
+	height: 720px;
 	padding: ${v.lgSpacing};
 	position: fixed;
 	z-index: 999;
+	margin-top: 5%;
 
 	& a h2 {
 		color: ${({ theme }) => theme.title};

@@ -21,7 +21,7 @@ export const ControllerUp = styled.div`
 
 	display: grid;
 	grid-template-areas: "l r" "f f";
-	grid-template-columns: 4fr 1.5fr;
+	grid-template-columns: 4fr 2.7fr;
 	grid-template-rows: 4fr 1fr;
 
 	@media only screen and (max-width: 768px) {
@@ -70,11 +70,11 @@ export const ControllerDown = styled.div`
 	background-color: ${({ theme }) => theme.nav};
 	margin-left: 10%;
 	width: 90.4vw;
-	height: 44.1vh;
+	height: 44.3vh;
 
 	display: grid;
 	grid-template-areas: "l r";
-	grid-template-columns: 2fr 3fr;
+	grid-template-columns: 1.3fr 3fr;
 	grid-template-rows: 5fr 0.5fr;
 
 	@media only screen and (max-width: 768px) {

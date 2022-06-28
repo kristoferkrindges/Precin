@@ -20,6 +20,7 @@ function Invoices() {
 	return (
 		<Container>
 			<CardContent>
+				<h1>Sua lista</h1>
 				<Invoice>
 					<Info>
 						<Avatar>
@@ -75,6 +76,28 @@ function Invoices() {
 						<TextContainer>
 							<Title>Chocolate</Title>
 							<SubTitle>#doces</SubTitle>
+						</TextContainer>
+					</Info>
+					<InvoicesContainer>
+						<Pay>Média</Pay>
+						{/* <Badge content="Paid" paid /> */}
+						<Price>R$ 3,43</Price>
+					</InvoicesContainer>
+				</Invoice>
+				<Invoice>
+					<Info>
+						<Avatar>
+							<img
+								alt=""
+								src={
+									"https://flatheadbeacon.com/wp-content/uploads/2019/06/AdobeStock_94921053.jpeg"
+								}
+							/>
+							{/* src={AvatarImage} */}
+						</Avatar>
+						<TextContainer>
+							<Title>FastFood</Title>
+							<SubTitle>Hambúrguer</SubTitle>
 						</TextContainer>
 					</Info>
 					<InvoicesContainer>

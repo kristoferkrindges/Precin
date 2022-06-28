@@ -4,11 +4,11 @@ import { IoSearchOutline } from "react-icons/io5";
 
 export const Container = styled.div`
 	/* background: ${({ theme }) => theme.navbar}; */
-	height: 85vh;
+	height: 37vw;
 	width: 24vh;
 	border-radius: 25px;
-	margin-top: 1.5%;
-	margin-right: 17%;
+	margin-top: 5%;
+	margin-right: 1%;
 	/* margin-right: 1%; */
 `;
 
@@ -18,7 +18,7 @@ export const Context = styled.div`
 	/* align-items: center; */
 	/* margin-top: 2%; */
 	position: fixed;
-	height: 80vh;
+	height: 30vw;
 	width: 24vh;
 	border-radius: 25px;
 	/* padding: ${v.lgSpacing}; */
@@ -77,6 +77,23 @@ export const Trends = styled.div`
 	padding: ${v.smSpacing}; */
 `;
 
+export const STrends = styled.div`
+	/* display:flex;
+    justify-content: center; */
+	/* align-items: center; */
+	/* margin-top: 2%; */
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	background: ${({ theme }) => theme.navbar};
+	padding: 1rem;
+	border-radius: 1rem;
+	padding-left: 2rem;
+	/* padding: ${v.lgSpacing}; */
+	/* background: ${({ theme }) => theme.navbar}; */
+	/* margin-right: 20px; */
+`;
+
 export const Trend = styled.h1`
 	white-space: nowrap;
 	font-size: 2rem;
@@ -103,7 +120,7 @@ export const Item = styled.li`
 	margin: 15% 5% 10% 10%;
 `;
 export const License = styled.h2`
-	font-size: 1.5rem;
-	margin: 15% 5% 10% 10%;
+	font-size: 1rem;
+	/* margin: 15% 5% 10% 10%; */
 	/* white-space: nowrap; */
 `;

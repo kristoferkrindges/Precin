@@ -31,7 +31,8 @@ const Dashboard = () => {
 					{user && <Profile name={user.displayName} email={user.email} />}
 				</LineLeft>
 				<LineRight>
-					<Info digit1={4} info1={"Precin"} digit2={2} info2={"Preção"}></Info>
+					{/* <Info digit1={4} info1={"Precin"} digit2={2} info2={"Preção"}></Info> */}
+					<Alert></Alert>
 				</LineRight>
 				<LinerLeft>
 					<Join></Join>
@@ -42,7 +43,8 @@ const Dashboard = () => {
 			</ControllerUp>
 			<ControllerDown>
 				<LineLeftDown>
-					<Alert></Alert>
+					<Info digit1={4} info1={"Precin"} digit2={2} info2={"Preção"}></Info>
+					{/* <Alert></Alert> */}
 				</LineLeftDown>
 				<LineRightDown>
 					<Slice></Slice>
