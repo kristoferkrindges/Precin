@@ -69,9 +69,6 @@ function Profile(props) {
 	return (
 		<Container>
 			<Card>
-				<button className="logout" onClick={logoutUser}>
-					Sair
-				</button>
 				<Image>
 					<InputImage
 						type="file"

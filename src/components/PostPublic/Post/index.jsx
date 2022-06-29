@@ -62,7 +62,7 @@ import { useUserContext } from "../../../context/userContext";
 
 export default function Post() {
 	const [productName, setProductName] = useState("");
-	const [productPrice, setProductPrice] = useState("");
+	const [productPrice, setProductPrice] = useState();
 	const [productLocate, setProductLocate] = useState("");
 
 	// Select state
@@ -162,7 +162,7 @@ export default function Post() {
 									{/* <Instruction>Digite o nome do seu produto...</Instruction> */}
 									<ContainerInput>
 										<InputName
-											type="text"
+											type="number"
 											placeholder="Preço do produto"
 											value={productPrice}
 											onChange={(e) => {
