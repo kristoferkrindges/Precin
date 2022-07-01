@@ -15,6 +15,7 @@ import Post from "./Pages/Post";
 import { isAuthenticated } from "./auth";
 import { UserContextProvider } from "./context/userContext";
 import { PrivateRouter } from "./context/PrivateRouter";
+import EditProfileScreen from "./Pages/EditProfile";
 
 // const PrivateRoute = ({ component: Component, ...rest }) => (
 // 	<Route
@@ -38,6 +39,9 @@ export default function Routess() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/profile" element={<Profile />} />
+					<Route path="/editprofile" element={<PrivateRouter />}>
+						<Route path="/editprofile" element={<EditProfileScreen />} />
+					</Route>
 					<Route path="/profile/:username" element={<Profile />} />
 					{/* <Route path="/publication" element={<Post />} /> */}
 					<Route path="/publication" element={<PrivateRouter />}>

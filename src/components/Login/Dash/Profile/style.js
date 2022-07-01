@@ -146,6 +146,7 @@ export const IoCamera = styled(IoCameraOutline)`
 export const IoPencil = styled(IoPencilOutline)`
 	width: 20px;
 	height: 20px;
+	cursor: pointer;
 
 	&:hover {
 		opacity: 0.5;

@@ -21,7 +21,7 @@ const doc = [
 	{
 		card: "Editar perfil",
 		icon: <IoIdCardOutline />,
-		link: "",
+		link: "/editprofile",
 	},
 	{
 		card: "Postar",
