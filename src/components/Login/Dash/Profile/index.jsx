@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // import AvatarImage from "../../../../assets/logo.jpeg";
 import {
 	Container,
@@ -30,7 +31,9 @@ function Profile(props) {
 					<Name>{props.name}</Name>
 					<Old>{props.email}</Old>
 					<Old>Membro desde: {""}</Old>
-					<IoPencil></IoPencil>
+					<Link to="/editprofile">
+						<IoPencil></IoPencil>
+					</Link>
 				</NameProfession>
 			</Card>
 		</Container>
