@@ -16,6 +16,7 @@ import {
 	IoExtensionPuzzleOutline,
 } from "react-icons/io5";
 import Profile from "../Profile";
+import Join from "../Join";
 const doc = [
 	{
 		card: "Editar perfil",
@@ -69,6 +70,7 @@ const Options = (props) => {
 				</ContentData>
 				<ContentData></ContentData>
 			</Data>
+			<Join></Join>
 			{/* <div class="data">
 				<div class="content-data">
 					<div class="head">

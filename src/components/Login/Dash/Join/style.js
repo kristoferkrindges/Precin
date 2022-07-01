@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const JoinChannel = styled.div`
 	background-color: ${({ theme }) => theme.feedInter};
 	height: 100%;
-	/* margin-top: 6.5rem; */
+	margin-top: 1.5rem;
 	width: 100%;
 	border-radius: 1rem;
 	display: flex;
@@ -11,12 +11,13 @@ export const JoinChannel = styled.div`
 	transition: 0.4s ease-in-out;
 	padding: 24px 20px 20px 20px;
 	&:hover {
-		background-color: ${({ theme }) => theme.feedInter};
+		opacity: 0.5;
 	}
 	@media screen and (min-width: 320px) and (max-width: 1080px) {
 		margin-top: 2rem;
 		margin-bottom: 2rem;
 		height: max-content;
+		padding: 0px;
 		width: 100%;
 	}
 `;
