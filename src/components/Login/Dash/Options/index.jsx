@@ -44,7 +44,7 @@ const Options = (props) => {
 	return (
 		<Layout>
 			<Title>
-				Bem-vindo <span>Kristofer</span>
+				Bem-vindo <span>{props.name}</span>
 			</Title>
 			{/* <BreadCrumbs>
 				<li>
@@ -66,7 +66,12 @@ const Options = (props) => {
 			</InfoData>
 			<Data>
 				<ContentData>
-					<Profile></Profile>
+					<Profile
+						name={props.name}
+						email={props.email}
+						img={props.img}
+						time={props.time}
+					></Profile>
 				</ContentData>
 				<ContentData></ContentData>
 			</Data>
