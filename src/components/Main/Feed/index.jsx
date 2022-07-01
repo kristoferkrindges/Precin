@@ -25,11 +25,32 @@ export default function Feed(props) {
 		orderBy(props.filter, props.order)
 		// orderBy(props.filter, "desc")
 	);
+
+	//Getting the usersP collection from Firestore
+	const [users, setUsers] = useState([]);
+	const userCollectionRef = query(
+		collection(db, "usersP"),
+		orderBy("name", props.order)
+	);
+	console.log(users);
+	useEffect(() => {
+		const getUsers = async () => {
+			const data = await getDocs(userCollectionRef);
+			setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+			// console.log(data);
+		};
+
+		getUsers();
+	}, []);
+
 	// const [commentButton, setCommentButton] = useState(false);
 	//Loader
 	const [removeLoading, setRemoveLoading] = useState(false);
 
+	let x;
+
 	let result;
+
 	if (props.product != undefined) {
 		result = props.product;
 	} else {
@@ -71,6 +92,13 @@ export default function Feed(props) {
 								<Feeds
 									className="join"
 									key={key}
+									name={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == value.user_email)
+											.map((value, key) => value.name)
+									}
+									time={"2h"}
 									product={value.product}
 									price={value.price}
 									market={value.market}
@@ -79,7 +107,9 @@ export default function Feed(props) {
 									precao={value.precao}
 									comments={value.comments}
 									openComment={true}
-									img_product={Tomate}
+									img_product={
+										"https://firebasestorage.googleapis.com/v0/b/precinauthentication.appspot.com/o/images%2Fusers%2Fa8DNF9P0ymPyetlAfsF0tAIG7ng2?alt=media&token=12c3a30f-d691-4b9f-b31c-35330a19dd37"
+									}
 									// button={commentButton}
 									// setButton={setCommentButton}
 								/>
@@ -88,6 +118,10 @@ export default function Feed(props) {
 								)}
 								{props.comments && commentButton && <Comment></Comment>} */}
 							</>
+							// if (users.includes(value.email) == true) {
+							// 	x = users.indexOf(value.email);
+							// } else {
+							// }
 						))}
 			</Ulex>
 		);
@@ -109,6 +143,13 @@ export default function Feed(props) {
 							<>
 								<Feeds
 									key={key}
+									name={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == value.user_email)
+											.map((value, key) => value.name)
+									}
+									time={"2h"}
 									product={value.product}
 									price={value.price}
 									market={value.market}
@@ -118,7 +159,7 @@ export default function Feed(props) {
 									comments={value.comments}
 									openComment={false}
 									img_product={
-										"https://3.bp.blogspot.com/-w540SySxjhg/Ubj-2KRYbxI/AAAAAAAAEhM/TbMTia8dCZo/s1600/02.png"
+										"https://firebasestorage.googleapis.com/v0/b/precinauthentication.appspot.com/o/images%2Fusers%2Fa8DNF9P0ymPyetlAfsF0tAIG7ng2?alt=media&token=12c3a30f-d691-4b9f-b31c-35330a19dd37"
 									}
 								/>
 								{props.comments && <Post name="Kristofer"></Post>}

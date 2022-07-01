@@ -23,6 +23,26 @@ export const Context = styled.div`
 	}
 `;
 
+export const ContextTwo = styled.div`
+	width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
+	background: ${({ theme }) => theme.navbar};
+	/* border-radius: 10px; */
+	height: 720px;
+	padding: ${v.lgSpacing};
+	position: fixed;
+	z-index: 999;
+	margin-top: 5%;
+
+	& a h2 {
+		color: ${({ theme }) => theme.title};
+		text-decoration: none;
+	}
+
+	@media only screen and (max-width: 768px) {
+		/* display: none; */
+	}
+`;
+
 export const Button = styled.button`
 	${btnReset};
 	position: absolute;
@@ -49,6 +69,14 @@ export const Logo = styled.div`
 	border-radius: 50%;
 	cursor: pointer;
 	margin-bottom: ${v.lgSpacing};
+
+	& svg {
+		max-width: 100%;
+		height: auto;
+		/* border-radius: 50%; */
+		color: ${({ theme }) => theme.title};
+		font-size: 50px;
+	}
 `;
 
 export const Img = styled.img`

@@ -122,7 +122,7 @@ export default function Feeds(props) {
 									<Logo src={props.img_url} />
 								</Image>
 								<Avatar>
-									<Name>{`${props.name}`}</Name>
+									<Name>{props.name}</Name>
 									<Time>{props.time}</Time>
 								</Avatar>
 								<Icon src={merk}></Icon>
