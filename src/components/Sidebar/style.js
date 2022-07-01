@@ -80,9 +80,11 @@ export const Logo = styled.div`
 `;
 
 export const Img = styled.img`
-	max-width: 100%;
-	height: auto;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
 	border-radius: 50%;
+	border: 1px solid ${({ theme }) => theme.buttons};
 `;
 
 export const Name = styled.h2`

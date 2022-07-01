@@ -13,8 +13,13 @@ const Dash = () => {
 		<Layout>
 			<Sidebar name="Desconhecido" total={true} />
 			<Content>
-				<Navbar />
-				<Options />
+				<Navbar img={photoURL} />
+				<Options
+					img={photoURL}
+					name={user.displayName}
+					email={user.email}
+					time={user.metadata.creationTime}
+				/>
 				{/* <Join></Join> */}
 			</Content>
 		</Layout>
