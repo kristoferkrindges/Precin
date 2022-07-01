@@ -7,7 +7,7 @@ import Options from "./Options";
 import Join from "./Join";
 
 const Dash = () => {
-	const { user, logoutUser } = useUserContext();
+	const { user, logoutUser, photoURL } = useUserContext();
 	// logoutUser={logoutUser}
 	return (
 		<Layout>
