@@ -15,7 +15,7 @@ const Dash = () => {
 			<Content>
 				<Navbar />
 				<Options />
-				<Join></Join>
+				{/* <Join></Join> */}
 			</Content>
 		</Layout>
 	);
