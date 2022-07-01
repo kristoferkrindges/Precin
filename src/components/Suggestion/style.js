@@ -8,7 +8,7 @@ export const Container = styled.div`
 	width: 24vh;
 	border-radius: 25px;
 	margin-top: 5%;
-	margin-right: 1%;
+	margin-right: 19%;
 	/* margin-right: 1%; */
 `;
 

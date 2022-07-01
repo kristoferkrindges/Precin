@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { User } from "../../../Main/Feed/Feeds/style";
 // import AvatarImage from "../../../../assets/logo.jpeg";
 import {
 	Container,
@@ -19,7 +20,7 @@ function Profile(props) {
 		<Container>
 			<Card>
 				<Image>
-					<img className="logo" src={""} />
+					<img className="logo" src={props.img} />
 				</Image>
 				<Icons>
 					<FacebookIcon></FacebookIcon>
@@ -29,7 +30,7 @@ function Profile(props) {
 				<NameProfession>
 					<Name>{props.name}</Name>
 					<Old>{props.email}</Old>
-					<Old>Membro desde: {""}</Old>
+					<Old>Membro desde: {props.time}</Old>
 					<IoPencil></IoPencil>
 				</NameProfession>
 			</Card>
