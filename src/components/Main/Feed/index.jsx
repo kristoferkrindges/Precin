@@ -4,10 +4,19 @@ import Feeds from "../Feed/Feeds";
 import { db } from "../../../firebase/index";
 import { SearchContext } from "../../../context/searchContext";
 import { IoTabletLandscapeSharp } from "react-icons/io5";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import {
+	collection,
+	getDocs,
+	query,
+	orderBy,
+	doc,
+	getDoc,
+	where,
+} from "firebase/firestore";
 import Post from "../Post";
 import Comment from "../Comment";
 import Tomate from "../../../imagens/tomate2.jpg";
+import { usePostContext } from "../../../context/postContext";
 
 // async function getFeeds() {
 // 	let response = await fetch(`http://localhost:3000/api/feeds.json`);
@@ -32,7 +41,7 @@ export default function Feed(props) {
 		collection(db, "usersP"),
 		orderBy("name", props.order)
 	);
-	console.log(users);
+
 	useEffect(() => {
 		const getUsers = async () => {
 			const data = await getDocs(userCollectionRef);
@@ -64,15 +73,22 @@ export default function Feed(props) {
 	// 	setProductName(productName)
 	// }, [productName])
 
+	const { productURL } = usePostContext();
+
 	useEffect(() => {
 		const getPosts = async () => {
 			const data = await getDocs(postsCollectionRef);
-			setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-			// console.log(data);
+			setPosts(
+				data.docs.map((doc) => ({
+					...doc.data(),
+					id: doc.id,
+				}))
+			);
+			console.log(doc.data);
 		};
-
 		getPosts();
 	}, []);
+
 	if (props.comments == true) {
 		return (
 			<Ulex>
@@ -107,9 +123,7 @@ export default function Feed(props) {
 									precao={value.precao}
 									comments={value.comments}
 									openComment={true}
-									img_product={
-										"https://firebasestorage.googleapis.com/v0/b/precinauthentication.appspot.com/o/images%2Fusers%2Fa8DNF9P0ymPyetlAfsF0tAIG7ng2?alt=media&token=12c3a30f-d691-4b9f-b31c-35330a19dd37"
-									}
+									product_image={value.product_image}
 									// button={commentButton}
 									// setButton={setCommentButton}
 								/>
@@ -158,9 +172,7 @@ export default function Feed(props) {
 									precao={value.precao}
 									comments={value.comments}
 									openComment={false}
-									img_product={
-										"https://firebasestorage.googleapis.com/v0/b/precinauthentication.appspot.com/o/images%2Fusers%2Fa8DNF9P0ymPyetlAfsF0tAIG7ng2?alt=media&token=12c3a30f-d691-4b9f-b31c-35330a19dd37"
-									}
+									img_product={value.product_image}
 								/>
 								{props.comments && <Post name="Kristofer"></Post>}
 								{/* {props.comments && <Comments></Comments>} */}

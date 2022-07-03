@@ -49,6 +49,8 @@ import React, { useState, useEffect } from "react";
 import {
 	Container,
 	Image,
+	DeleteImage,
+	DeleteIcon,
 	InputImage,
 	LabelImage,
 	SendImage,
@@ -59,25 +61,28 @@ import {
 import { storage } from "../../../firebase/index";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
+import { usePostContext } from "../../../context/postContext";
 
 function ProductImage() {
-	const [imageUpload, setImageUpload] = useState(null);
-	const [imageList, setImageList] = useState([]);
-	const [imageURL, setImageURL] = useState();
+	const { preview, handleImage, deleteImage } = usePostContext();
+	// const [imageUpload, setImageUpload] = useState(null);
+	// const [imageList, setImageList] = useState([]);
+	// const [imageURL, setImageURL] = useState();
 
-	const imageListRef = ref(storage, "images/products");
+	// const imageListRef = ref(storage, "images/products");
 
-	const uploadImage = () => {
-		if (imageUpload == null) return;
+	// const uploadImage = () => {
+	// 	if (imageUpload == null) return;
 
-		const imageRef = ref(storage, `images/products/${imageUpload.name + v4()}`);
+	// 	const imageRef = ref(storage, `images/products/${imageUpload.name + v4()}`);
 
-		uploadBytes(imageRef, imageUpload).then((snaphsot) => {
-			getDownloadURL(snaphsot.ref).then((url) => {
-				setImageList((prev) => [...prev, url]);
-			});
-		});
-	};
+	// 	uploadBytes(imageRef, imageUpload).then((snaphsot) => {
+	// 		getDownloadURL(snaphsot.ref).then((url) => {
+	// 			setImageList((prev) => [...prev, url]);
+	// 			console.log(imageURL);
+	// 		});
+	// 	});
+	// };
 
 	// useEffect(() => {
 	// 	listAll(imageListRef).then((response) => {
@@ -91,25 +96,30 @@ function ProductImage() {
 
 	return (
 		<Container>
-			{imageList.map((url) => {
-				return <Image src={url} />;
-			})}
+			{preview ? (
+				<>
+					<Image src={preview} />
+					<DeleteImage>
+						<DeleteIcon onClick={deleteImage} />
+					</DeleteImage>
+				</>
+			) : (
+				<LabelImage htmlFor="file">
+					<IoImage2></IoImage2>
+				</LabelImage>
+			)}
 			<InputImage
 				type="file"
 				id="file"
-				acceppt="image/*"
+				acceppt="image/*, png, jpeg, jpg"
 				// value={productImg}
-				onChange={(event) => {
-					setImageUpload(event.target.files[0]);
-				}}
+				onChange={handleImage}
 			/>
-			<LabelImage htmlFor="file">
-				<IoImage2></IoImage2>
-			</LabelImage>
-			<SendImage onClick={uploadImage}>
+
+			{/* <SendImage onClick={uploadImage}>
 				Enviar Imagem
 				<UploadIcon />
-			</SendImage>
+			</SendImage> */}
 			{/* <BarProgress>Enviado {progress} %</BarProgress> */}
 		</Container>
 	);
