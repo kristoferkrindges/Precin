@@ -22,6 +22,7 @@ export const UserContextProvider = ({ children }) => {
 	const [photoURL, setPhotoURL] = useState(
 		"https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"
 	);
+	const [profilePreview, setProfilePreview] = useState();
 	const [loading, setLoading] = useState();
 	const [error, setError] = useState("");
 
@@ -46,6 +47,17 @@ export const UserContextProvider = ({ children }) => {
 	function handleChange(e) {
 		if (e.target.files[0]) {
 			setPhoto(e.target.files[0]);
+			handlePreview();
+		}
+	}
+
+	function handlePreview(e) {
+		const file = e.target.files[0];
+		if (file && file.type.substr(0, 5) === "image") {
+			setPhoto(file);
+			console.log(file);
+		} else {
+			setPhoto(null);
 		}
 	}
 
@@ -56,9 +68,21 @@ export const UserContextProvider = ({ children }) => {
 	useEffect(() => {
 		if (user?.photoURL) {
 			setPhotoURL(user.photoURL);
-			console.log(user.photoURL);
+			setProfilePreview();
 		}
 	}, [user]);
+
+	useEffect(() => {
+		if (photo) {
+			const reader = new FileReader();
+			reader.onloadend = () => {
+				setProfilePreview(reader.result);
+			};
+			reader.readAsDataURL(photo);
+		} else {
+			setProfilePreview(null);
+		}
+	}, [photo]);
 
 	useEffect(() => {
 		setLoading(true);
@@ -92,9 +116,25 @@ export const UserContextProvider = ({ children }) => {
 			.finally(() => setLoading(false));
 	};
 
+	async function handleRefreshClick() {
+		caches.keys().then((keyList) => {
+			return Promise.all(
+				keyList.map((key) => {
+					return caches.delete(key);
+				})
+			);
+		});
+		setTimeout(() => {
+			window.location.reload();
+		}, 5);
+	}
+
 	const logoutUser = () => {
 		//
-		signOut(auth);
+		setTimeout(() => {
+			signOut(auth);
+		}, 3);
+		handleRefreshClick();
 	};
 
 	const forgotPassword = (email) => {
@@ -104,7 +144,9 @@ export const UserContextProvider = ({ children }) => {
 
 	const contextValue = {
 		user,
+		photo,
 		photoURL,
+		profilePreview,
 		loading,
 		error,
 		registerUser,

@@ -30,10 +30,11 @@ import {
 	IoPencil,
 } from "./style";
 import { useUserContext } from "../../../../context/userContext";
+import { usePostContext } from "../../../../context/postContext";
 import logo from "../../../../imagens/logo.png";
 
 function EditProfile(props) {
-	const { user, setPhoto, photoURL, handleChange, handleClick } =
+	const { user, photoURL, profilePreview, handleChange, handleClick } =
 		useUserContext();
 
 	const [clickName, setClickName] = useState(false);
@@ -91,6 +92,11 @@ function EditProfile(props) {
 					<Top>
 						<CardContent>
 							<Image>
+								{/* {photoURL ? (
+									<Logo src={photoURL} />
+								) : (
+									<Logo src={profilePreview} />
+								)} */}
 								<Logo src={photoURL} />
 								<InputImage
 									type="file"

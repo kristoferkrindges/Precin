@@ -16,6 +16,7 @@ import { isAuthenticated } from "./auth";
 import { UserContextProvider } from "./context/userContext";
 import { PrivateRouter } from "./context/PrivateRouter";
 import EditProfileScreen from "./Pages/EditProfile";
+import { PostContextProvider } from "./context/postContext";
 
 // const PrivateRoute = ({ component: Component, ...rest }) => (
 // 	<Route
@@ -33,28 +34,30 @@ import EditProfileScreen from "./Pages/EditProfile";
 export default function Routess() {
 	return (
 		<UserContextProvider>
-			<Router>
-				<Routes>
-					<Route path="/" element={<HomeScreen />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/about" element={<About />} />
-					<Route path="/profile" element={<Profile />} />
-					<Route path="/editprofile" element={<PrivateRouter />}>
-						<Route path="/editprofile" element={<EditProfileScreen />} />
-					</Route>
-					<Route path="/profile/:username" element={<Profile />} />
-					{/* <Route path="/publication" element={<Post />} /> */}
-					<Route path="/publication" element={<PrivateRouter />}>
-						<Route path="/publication" element={<Post />}></Route>
-					</Route>
-					<Route path="/search_result" element={<SearchResultScreen />} />
-					<Route
-						path="/search_result/:product"
-						element={<SearchResultScreen />}
-					/>
-					<Route path="*" element={<ErrorPage />} />
-				</Routes>
-			</Router>
+			<PostContextProvider>
+				<Router>
+					<Routes>
+						<Route path="/" element={<HomeScreen />} />
+						<Route path="/login" element={<Login />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/profile" element={<Profile />} />
+						<Route path="/editprofile" element={<PrivateRouter />}>
+							<Route path="/editprofile" element={<EditProfileScreen />} />
+						</Route>
+						<Route path="/profile/:username" element={<Profile />} />
+						{/* <Route path="/publication" element={<Post />} /> */}
+						<Route path="/publication" element={<PrivateRouter />}>
+							<Route path="/publication" element={<Post />}></Route>
+						</Route>
+						<Route path="/search_result" element={<SearchResultScreen />} />
+						<Route
+							path="/search_result/:product"
+							element={<SearchResultScreen />}
+						/>
+						<Route path="*" element={<ErrorPage />} />
+					</Routes>
+				</Router>
+			</PostContextProvider>
 		</UserContextProvider>
 	);
 }

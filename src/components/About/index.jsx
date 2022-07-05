@@ -1,13 +1,13 @@
-import React from 'react';
-import Menu from '../Shared/Menu';
+import React from "react";
+import Menu from "../Shared/Menu";
 
 function About() {
-  return (
-    <>
-      <Menu></Menu>
-      <div>About</div>
-    </>
-  )
+	return (
+		<>
+			<Menu></Menu>
+			<div>About</div>
+		</>
+	);
 }
 
-export default About
+export default About;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	Lil,
 	Header,
@@ -48,6 +48,9 @@ import Outro from "../../../../imagens/outros_mercados.png";
 import { Modal } from "../../../Shared/Modal/index";
 import Post from "../../Post";
 import Comment from "../../Comment";
+import { usePostContext } from "../../../../context/postContext";
+import { db } from "../../../../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 export default function Feeds(props) {
 	//Icone mercado
@@ -74,6 +77,8 @@ export default function Feeds(props) {
 	const [precinButton, setPrecinButton] = useState(false);
 	const [precaoButton, setPrecaoButton] = useState(false);
 	const [commentButton, setCommentButton] = useState(false);
+
+	const { preview, productURL, image } = usePostContext();
 
 	function HandlerButtonPrecin() {
 		if (precinButton == false) {
@@ -111,6 +116,19 @@ export default function Feeds(props) {
 		}
 	}
 
+	function ProductImage() {
+		const [productImage, setProductImage] = useState([]);
+		const productImageCollectionRef = collection(db, "posts");
+
+		useEffect(() => {
+			const getProductImage = async () => {
+				const data = await getDocs(productImageCollectionRef);
+				setProductImage(data.docs.map((doc) => ({ ...doc.data() })));
+			};
+			getProductImage();
+		}, []);
+	}
+
 	if (props.openComment == false) {
 		return (
 			<>
@@ -131,7 +149,9 @@ export default function Feeds(props) {
 						<Product>
 							<Content>
 								<ImgProduct>
-									<Img src={props.img_product} />
+									{/* {Feeds.productImage.map((productImage) => { */}
+									<Img src={productURL} />
+									{/* })} */}
 								</ImgProduct>
 								<Locate>
 									<IoCart />
@@ -204,7 +224,7 @@ export default function Feeds(props) {
 						<Product>
 							<Content>
 								<ImgProduct>
-									<Img src={props.img_product} />
+									<Img src={preview} />
 								</ImgProduct>
 								<Locate>
 									<IoCart />
