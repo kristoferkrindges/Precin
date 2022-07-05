@@ -99,6 +99,12 @@ export default function Feed(props) {
 											.map((value, key) => value.name)
 									}
 									time={"2h"}
+									img_user={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == value.user_email)
+											.map((value, key) => value.img_url)
+									}
 									product={value.product}
 									price={value.price}
 									market={value.market}
@@ -107,9 +113,7 @@ export default function Feed(props) {
 									precao={value.precao}
 									comments={value.comments}
 									openComment={true}
-									img_product={
-										"https://firebasestorage.googleapis.com/v0/b/precinauthentication.appspot.com/o/images%2Fusers%2Fa8DNF9P0ymPyetlAfsF0tAIG7ng2?alt=media&token=12c3a30f-d691-4b9f-b31c-35330a19dd37"
-									}
+									img_product={Tomate}
 									// button={commentButton}
 									// setButton={setCommentButton}
 								/>
@@ -149,6 +153,12 @@ export default function Feed(props) {
 											.filter((item) => item.email == value.user_email)
 											.map((value, key) => value.name)
 									}
+									img_user={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == value.user_email)
+											.map((value, key) => value.img_url)
+									}
 									time={"2h"}
 									product={value.product}
 									price={value.price}
@@ -158,9 +168,7 @@ export default function Feed(props) {
 									precao={value.precao}
 									comments={value.comments}
 									openComment={false}
-									img_product={
-										"https://firebasestorage.googleapis.com/v0/b/precinauthentication.appspot.com/o/images%2Fusers%2Fa8DNF9P0ymPyetlAfsF0tAIG7ng2?alt=media&token=12c3a30f-d691-4b9f-b31c-35330a19dd37"
-									}
+									img_product={Tomate}
 								/>
 								{props.comments && <Post name="Kristofer"></Post>}
 								{/* {props.comments && <Comments></Comments>} */}

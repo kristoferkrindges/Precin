@@ -26,7 +26,7 @@ export const Container = styled.div`
 		content: "";
 		position: absolute;
 		height: 20%;
-		width: 44%;
+		width: 37.5%;
 		background-color: ${({ theme }) => theme.buttons};
 		border-radius: 20px 20px 0 0;
 	}
@@ -57,6 +57,11 @@ export const NameProfession = styled.div`
 	align-items: center;
 	margin-top: 10px;
 	color: ${({ theme }) => theme.title};
+
+	a {
+		text-decoration: none;
+		color: ${({ theme }) => theme.title};
+	}
 `;
 
 export const Image = styled.div`
@@ -118,7 +123,8 @@ export const Old = styled.span`
 	font-weight: 600;
 	color: ${({ theme }) => theme.title};
 	/* background-color: rgba(146, 166, 255, 0.3); */
-	border-radius: 10px;
+	/* border-radius: 10px; */
+	margin-bottom: 2%;
 `;
 
 export const FacebookIcon = styled(IoLogoFacebook)`

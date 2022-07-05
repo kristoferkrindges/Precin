@@ -43,6 +43,9 @@ export const InfoData = styled.div`
 	a {
 		color: white;
 	}
+	a:hover {
+		opacity: 0.5;
+	}
 `;
 
 export const Data = styled.div`
