@@ -129,9 +129,7 @@ export default function Feed(props) {
 									precao={value.precao}
 									comments={value.comments}
 									openComment={true}
-
-								 {/*img_product={Tomate} */}
-									product_image={value.product_image}
+									img_product={value.product_image}
 									// button={commentButton}
 									// setButton={setCommentButton}
 								/>
