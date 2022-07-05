@@ -119,7 +119,7 @@ function EditProfile(props) {
 							</Social>
 							<NameSubject>
 								<Name style={open ? { margin: "20% 0% 0% 0%" } : {}}>
-									{open ? "Estudante" : user.displayName}
+									{open ? user.displayName : user.displayName}
 								</Name>
 							</NameSubject>
 							<Buttons

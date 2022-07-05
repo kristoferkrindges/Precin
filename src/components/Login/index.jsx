@@ -13,7 +13,7 @@ function Login() {
 	return (
 		<Container>
 			<div className="container">
-				{/* <Menu type="não" search="não" /> */}
+				{user ? <NoFooter /> : <Menu type="não" search="não" />}
 				{error && <p className="error"> {error}</p>}
 				{loading ? (
 					<h2 className="carregando">Carregando...</h2>

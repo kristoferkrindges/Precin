@@ -8,7 +8,37 @@ import {
 	IoNotificationsOutline,
 	IoExtensionPuzzleOutline,
 	IoSearchOutline,
+	IoIdCardOutline,
+	IoCartOutline,
+	IoLogOutOutline,
 } from "react-icons/io5";
+
+export const IoLogOut = styled(IoLogOutOutline)`
+	width: 20px;
+	height: 20px;
+
+	&:hover {
+		opacity: 0.5;
+	}
+`;
+
+export const IoCart = styled(IoCartOutline)`
+	width: 20px;
+	height: 20px;
+
+	&:hover {
+		opacity: 0.5;
+	}
+`;
+
+export const IoIdCard = styled(IoIdCardOutline)`
+	width: 20px;
+	height: 20px;
+
+	&:hover {
+		opacity: 0.5;
+	}
+`;
 
 export const IoExtensionPuzzle = styled(IoExtensionPuzzleOutline)`
 	width: 20px;
@@ -148,7 +178,7 @@ export const Badge = styled.span`
 	height: 20px;
 	border-radius: 50%;
 	border: 2px solid ${({ theme }) => theme.navbar};
-	background-color: ${({ theme }) => theme.navbar};
+	background-color: ${({ theme }) => theme.buttons};
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -174,7 +204,7 @@ export const ProfileLink = styled.ul`
 	border-radius: 10px;
 	width: 160px;
 	opacity: 1;
-	pointer-events: none;
+	/* pointer-events: none; */
 	transition: all 0.3s ease;
 `;
 // nav .profile .profile-link.show {
@@ -192,9 +222,10 @@ export const Li = styled.li`
 		color: ${({ theme }) => theme.title};
 		align-items: center;
 		transition: all 0.3s ease;
+		cursor: pointer;
 	}
 
-	a:hover {
-		background: var(--grey);
+	& a:hover {
+		background: ${({ theme }) => theme.buttons};
 	}
 `;

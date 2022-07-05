@@ -13,6 +13,9 @@ import {
 	IoExtensionPuzzle,
 	Precin,
 	IoSearch,
+	IoIdCard,
+	IoCart,
+	IoLogOut,
 } from "./style";
 import { Link } from "react-router-dom";
 import SearchBar from "../../../SearchBar";
@@ -42,11 +45,11 @@ const Navbar = (props) => {
 					<IoSearch></IoSearch>
 				</FormGroup>
 			</form> */}
-			<Link to="#" className="nav-link">
+			{/* <Link to="#" className="nav-link">
 				<IoExtensionPuzzle></IoExtensionPuzzle>
 				<Badge>5</Badge>
-			</Link>
-			<Link to="#" className="nav-link">
+			</Link> */}
+			<Link to="/" className="nav-link">
 				<IoNotifications></IoNotifications>
 				<Badge>8</Badge>
 			</Link>
@@ -56,17 +59,22 @@ const Navbar = (props) => {
 				<ProfileLink style={hero ? { opacity: "1" } : { opacity: "0" }}>
 					<Li>
 						<Link to="#">
-							<IoCamera></IoCamera> Profile
+							<IoIdCard></IoIdCard> Perfil
 						</Link>
 					</Li>
 					<Li>
 						<Link to="#">
-							<IoCamera></IoCamera> Settings
+							<IoExtensionPuzzle></IoExtensionPuzzle> Publicar
 						</Link>
 					</Li>
 					<Li>
 						<Link to="#">
-							<IoCamera></IoCamera> Logout
+							<IoCart></IoCart> Sua lista
+						</Link>
+					</Li>
+					<Li>
+						<Link to="#">
+							<IoLogOut></IoLogOut> Sair
 						</Link>
 					</Li>
 				</ProfileLink>

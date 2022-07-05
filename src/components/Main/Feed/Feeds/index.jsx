@@ -137,7 +137,7 @@ export default function Feeds(props) {
 						<User>
 							<CardContent>
 								<Image>
-									<Logo src={props.img_url} />
+									<Logo src={props.img_user} />
 								</Image>
 								<Avatar>
 									<Name>{props.name}</Name>
@@ -212,7 +212,7 @@ export default function Feeds(props) {
 						<User>
 							<CardContent>
 								<Image>
-									<Logo src={props.img_url} />
+									<Logo src={props.img_user} />
 								</Image>
 								<Avatar>
 									<Name>{`${props.name}`}</Name>

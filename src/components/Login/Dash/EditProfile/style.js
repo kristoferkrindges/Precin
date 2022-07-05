@@ -45,7 +45,7 @@ export const Container = styled.div`
 	/* display: flex; */
 	height: 100vh;
 	/* width: 100%; */
-	background: #4f4f4f;
+	background: ${({ theme }) => theme.fundo};
 `;
 
 export const Context = styled.div`
@@ -67,11 +67,11 @@ export const Layout = styled.div`
 	margin-top: 1%;
 	border-radius: 25px;
 	/* border: 1px solid black; */
-	background: #fff;
+	/* background: ${({ theme }) => theme.bg}; */
 `;
 
 export const Top = styled.div`
-	background: #94449e;
+	background: ${({ theme }) => theme.buttons};
 	border-radius: 20px;
 	/* position: relative; */
 	margin: 0px 0;
@@ -93,7 +93,7 @@ export const Image = styled.div`
 	width: 220px;
 	border-radius: 50%;
 	padding: 3px;
-	background: #94449e;
+	background: ${({ theme }) => theme.buttons};
 `;
 export const Logo = styled.img`
 	height: 100%;
@@ -159,7 +159,7 @@ export const NameSubject = styled.div`
 	flex-direction: column;
 	align-items: center;
 	margin-top: 20px;
-	color: white;
+	color: ${({ theme }) => theme.title};
 `;
 export const Name = styled.span`
 	font-size: 2rem;
@@ -180,7 +180,7 @@ export const Buttons = styled.div`
 export const HireMe = styled.button`
 	background: #333;
 	outline: none;
-	border: 1px solid #94449e;
+	border: 1px solid ${({ theme }) => theme.buttons};
 	color: white;
 	padding: 8px 22px;
 	border-radius: 20px;
@@ -200,7 +200,7 @@ export const HireMe = styled.button`
 export const Bottom = styled.div`
 	height: 40vh;
 	width: 100vh;
-	background-color: #fff;
+	background-color: ${({ theme }) => theme.navbar};
 	padding: 25px 30px;
 	border-radius: 25px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);

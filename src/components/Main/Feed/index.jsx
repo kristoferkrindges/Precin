@@ -115,6 +115,12 @@ export default function Feed(props) {
 											.map((value, key) => value.name)
 									}
 									time={"2h"}
+									img_user={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == value.user_email)
+											.map((value, key) => value.img_url)
+									}
 									product={value.product}
 									price={value.price}
 									market={value.market}
@@ -123,6 +129,8 @@ export default function Feed(props) {
 									precao={value.precao}
 									comments={value.comments}
 									openComment={true}
+
+								 {/*img_product={Tomate} */}
 									product_image={value.product_image}
 									// button={commentButton}
 									// setButton={setCommentButton}
@@ -162,6 +170,12 @@ export default function Feed(props) {
 										users
 											.filter((item) => item.email == value.user_email)
 											.map((value, key) => value.name)
+									}
+									img_user={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == value.user_email)
+											.map((value, key) => value.img_url)
 									}
 									time={"2h"}
 									product={value.product}
