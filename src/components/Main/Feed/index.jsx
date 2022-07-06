@@ -130,6 +130,7 @@ export default function Feed(props) {
 									comments={value.comments}
 									openComment={true}
 									img_product={value.product_image}
+									preview={true}
 									// button={commentButton}
 									// setButton={setCommentButton}
 								/>

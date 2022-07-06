@@ -72,7 +72,7 @@ export const Image = styled.div`
 export const Logo = styled.img`
 	height: 100%;
 	width: 100%;
-	object-fit: cover;
+	object-fit: contain;
 	border-radius: 50%;
 	border: 3px solid #fff;
 `;
