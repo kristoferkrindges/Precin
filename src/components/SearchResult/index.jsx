@@ -15,7 +15,7 @@ function SearchResult() {
 				<Container>
 					<Context>
 						<Pharase>
-							Resultado:{" "}
+							Resultado para:{" "}
 							<span>
 								<strong>{product}</strong>
 							</span>

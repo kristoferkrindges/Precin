@@ -27,7 +27,8 @@ import { usePostContext } from "../../../context/postContext";
 // export default function Feed() {
 // 	const [feeds, setFeed] = useState([]);
 export default function Feed(props) {
-	//Getting the posts collection from Firestore
+	// const { posts } = usePostContext();
+	//Reading the posts collection from Firestore
 	const [posts, setPosts] = useState([]);
 	const postsCollectionRef = query(
 		collection(db, "posts"),
@@ -35,7 +36,21 @@ export default function Feed(props) {
 		// orderBy(props.filter, "desc")
 	);
 
-	//Getting the usersP collection from Firestore
+	useEffect(() => {
+		const getPosts = async () => {
+			const data = await getDocs(postsCollectionRef);
+			setPosts(
+				data.docs.map((doc) => ({
+					...doc.data(),
+					id: doc.id,
+				}))
+			);
+			// console.log(posts);
+		};
+		getPosts();
+	}, []);
+
+	//Reading the usersP collection from Firestore
 	const [users, setUsers] = useState([]);
 	const userCollectionRef = query(
 		collection(db, "usersP"),
@@ -72,22 +87,6 @@ export default function Feed(props) {
 	// useEffect(()=> {
 	// 	setProductName(productName)
 	// }, [productName])
-
-	const { productURL } = usePostContext();
-
-	useEffect(() => {
-		const getPosts = async () => {
-			const data = await getDocs(postsCollectionRef);
-			setPosts(
-				data.docs.map((doc) => ({
-					...doc.data(),
-					id: doc.id,
-				}))
-			);
-			console.log(doc.data);
-		};
-		getPosts();
-	}, []);
 
 	if (props.comments == true) {
 		return (
@@ -131,6 +130,7 @@ export default function Feed(props) {
 									openComment={true}
 									img_product={value.product_image}
 									preview={true}
+									id={value.id}
 									// button={commentButton}
 									// setButton={setCommentButton}
 								/>
@@ -186,6 +186,7 @@ export default function Feed(props) {
 									comments={value.comments}
 									openComment={false}
 									img_product={value.product_image}
+									id={value.id}
 								/>
 								{props.comments && <Post name="Kristofer"></Post>}
 								{/* {props.comments && <Comments></Comments>} */}

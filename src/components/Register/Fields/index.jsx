@@ -5,7 +5,8 @@ import { BsPerson } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { db } from "../../../firebase/index";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, setDoc, doc } from "firebase/firestore";
+import { usePostContext } from "../../../context/postContext";
 // import api from "../../../services/api";
 
 // export default function Fields() {
@@ -15,6 +16,7 @@ const Signup = () => {
 	const nameRef = useRef();
 	const psdRef = useRef();
 	const { registerUser } = useUserContext();
+	const { photoURL } = usePostContext();
 
 	const onSubmit = (e) => {
 		e.preventDefault();
@@ -41,16 +43,18 @@ const Signup = () => {
 		});
 
 	// Create collection inside Firestore with inputs
-	const usersPCollectionRef = collection(db, "usersP");
+	const usersPCollectionRef = doc(collection(db, "usersP"));
 
 	const creatUserP = async () => {
-		await addDoc(usersPCollectionRef, {
+		await setDoc(usersPCollectionRef, {
 			name: nameRef.current.value,
 			email: emailRef.current.value,
 			precin: ["0"],
 			precao: ["0"],
 			listPublic: ["0"],
 			listShoop: ["0"],
+			idP: usersPCollectionRef.id,
+			img_url: "",
 		});
 	};
 

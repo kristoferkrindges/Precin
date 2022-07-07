@@ -50,7 +50,8 @@ import Post from "../../Post";
 import Comment from "../../Comment";
 import { usePostContext } from "../../../../context/postContext";
 import { db } from "../../../../firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDocs, query, updateDoc } from "firebase/firestore";
+import { useUserContext } from "../../../../context/userContext";
 
 export default function Feeds(props) {
 	//Icone mercado
@@ -78,7 +79,8 @@ export default function Feeds(props) {
 	const [precaoButton, setPrecaoButton] = useState(false);
 	const [commentButton, setCommentButton] = useState(false);
 
-	const { preview, productURL, image } = usePostContext();
+	const { preview } = usePostContext();
+	const { user } = useUserContext();
 
 	function HandlerButtonPrecin() {
 		if (precinButton == false) {
@@ -87,12 +89,34 @@ export default function Feeds(props) {
 			if (precaoButton == true) {
 				setPrecaoButton(false);
 				setPrecao(precao - 1);
+				// updateIncreasePrecin(props.id, props.precin);
 			}
 		} else {
 			setPrecinButton(false);
 			setPrecin(precin - 1);
+			// updateDecreasePrecin(props.id, props.precin);
 		}
 	}
+
+	//Firestore Update - IncreasePrecin & DecreasePrecin
+
+	const updateIncreasePrecin = async (id, precin) => {
+		const postDoc = doc(db, "posts", id);
+		const newFields = { precin: precin + 1 };
+		await updateDoc(postDoc, newFields);
+		console.log("Precin increased!");
+	};
+
+	// console.log(props.id);
+
+	const updateDecreasePrecin = async (id, precin) => {
+		const postDoc = doc(db, "posts", id);
+		const newFields = { precao: precin - 1 };
+		await updateDoc(postDoc, newFields);
+		console.log("Precin decreased!");
+	};
+
+	//
 
 	function HandlerButtonPrecao() {
 		if (precaoButton == false) {
@@ -181,7 +205,12 @@ export default function Feeds(props) {
 						</Product>
 					</Header>
 					<Interaction>
-						<ButtonPrecin type="button" onClick={HandlerButtonPrecin}>
+						<ButtonPrecin
+							type="button"
+							onClick={() => {
+								HandlerButtonPrecin();
+							}}
+						>
 							<AiFillLike
 								style={precinButton ? { color: "black" } : {}}
 							></AiFillLike>
