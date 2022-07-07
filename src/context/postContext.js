@@ -16,6 +16,7 @@ export const PostContextProvider = ({ children }) => {
 	);
 	const [loadingImage, setLoadingImage] = useState();
 
+	//Preview image and handle the file
 	function handleImage(e) {
 		const productImage = e.target.files[0];
 		if (productImage && productImage.type.substr(0, 5) === "image") {
@@ -38,10 +39,12 @@ export const PostContextProvider = ({ children }) => {
 		}
 	}, [image]);
 
+	//Delete the image preview
 	function deleteImage(e) {
 		setImage(null);
 	}
 
+	//Upload the image and get the URL
 	async function uploadProductImage(file, setLoadingImage) {
 		if (image === null) return;
 		const productRef = ref(storage, `images/products/${file.name + v4()}`);
@@ -58,6 +61,7 @@ export const PostContextProvider = ({ children }) => {
 		setLoadingImage(false);
 	}
 
+	//Upload event to trigger the async function of product image
 	function handleUpload() {
 		uploadProductImage(image, setLoadingImage);
 	}

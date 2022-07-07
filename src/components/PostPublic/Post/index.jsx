@@ -83,10 +83,10 @@ export default function Post() {
 	const breakPoints = [{ width: 500, itemsToShow: 1 }];
 
 	// Create collection inside Firestore with inputs
-	const postsCollectionRef = collection(db, "posts");
+	const postsCollectionRef = doc(collection(db, "posts"));
 
 	const createPost = async () => {
-		await addDoc(postsCollectionRef, {
+		await setDoc(postsCollectionRef, {
 			product: productName,
 			price: productPrice,
 			market: market,
@@ -98,6 +98,7 @@ export default function Post() {
 			user_uid: user.uid,
 			user_email: user.email,
 			product_image: preview,
+			id: postsCollectionRef.id,
 		});
 	};
 
