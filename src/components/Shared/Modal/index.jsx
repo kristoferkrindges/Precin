@@ -7,7 +7,7 @@ import {
 	CloseModalButton,
 } from "./style";
 
-export const Modal = ({ closeModal }) => {
+export const Modal = ({ closeModal, market, address }) => {
 	return (
 		<>
 			<Background>
@@ -17,8 +17,9 @@ export const Modal = ({ closeModal }) => {
 						alt="market"
 					/>
 					<ModalContent>
-						<h1>Supermercado Zaffari Cabral</h1>
-						<p>R. Cabral, 600 - Rio Branco, Porto Alegre - RS, 90420-121</p>
+						<h1>Supermercado {market}</h1>
+						{/* R. Cabral, 600 - Rio Branco, Porto Alegre - RS, 90420-121 */}
+						<p>{address}</p>
 						<button>Abrir no Maps</button>
 					</ModalContent>
 					<CloseModalButton onClick={() => closeModal(false)} />

@@ -55,6 +55,7 @@ import Nacional from "../../../imagens/nacional_logo.png";
 import Carrefour from "../../../imagens/carrefour_logo.png";
 import Outro from "../../../imagens/outros_mercados.png";
 import logo from "../../../imagens/logo.png";
+import PreviewFeed from "../PreviewFeed";
 import { db } from "../../../firebase/index";
 import {
 	collection,
@@ -390,7 +391,7 @@ export default function Post() {
 								</ImageContent>
 								<CardContent>
 									<Ul>
-										<Feeds
+										<PreviewFeed
 											name={user.displayName}
 											time={"1h"}
 											public={""}
