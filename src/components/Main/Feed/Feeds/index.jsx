@@ -50,10 +50,44 @@ import Post from "../../Post";
 import Comment from "../../Comment";
 import { usePostContext } from "../../../../context/postContext";
 import { db } from "../../../../firebase";
-import { collection, doc, getDocs, query, updateDoc } from "firebase/firestore";
+import {
+	collection,
+	doc,
+	getDocs,
+	query,
+	updateDoc,
+	setDoc,
+	orderBy,
+} from "firebase/firestore";
 import { useUserContext } from "../../../../context/userContext";
 
 export default function Feeds(props) {
+	const { user } = useUserContext();
+	// let dk;
+	// const [users, setUsers] = useState([]);
+	// const userCollectionRef = query(
+	// 	collection(db, "usersP"),
+	// 	orderBy("name", "desc")
+	// );
+
+	// useEffect(() => {
+	// 	const getUsers = async () => {
+	// 		const data = await getDocs(userCollectionRef);
+	// 		setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+	// 		// console.log(data);
+	// 	};
+
+	// 	getUsers();
+	// }, []);
+	// console.log(users);
+
+	// dk =
+	// 	users.length > 0 &&
+	// 	users
+	// 		.filter((item) => item.email == user.email)
+	// 		.map((value, key) => value.idP);
+	// console.log(dk.toString());
+
 	//Icone mercado
 	let merk;
 	if (props.market == "Zaffari") {
@@ -69,32 +103,74 @@ export default function Feeds(props) {
 	if (props.comments == 0) {
 		c = false;
 	}
+	// Modal
 	const [openModal, setOpenModal] = useState(false);
+
+	// States array userP precin and precao
+	const [userPrecin, setUserPrecin] = useState(props.userPrecin[0]);
+	const [userPrecao, setUserPrecao] = useState(props.userPrecao[0]);
+	//Setar fora
+	// console.log(userPrecin);
+	// console.log(userPrecao);
+	let pres;
+	let prec;
+	// let arrayPrecin;
+	// let arrayPrecao;
+	let arrayPrecin = props.userPrecin[0];
+	let arrayPrecao = props.userPrecao[0];
+	// console.log(props.id);
+	// console.log(arrayPrecin);
+	if (Array.isArray(arrayPrecin) ? arrayPrecin.includes(props.id) : false) {
+		pres = true;
+	} else {
+		pres = false;
+	}
+
+	if (Array.isArray(userPrecao) ? userPrecao.includes(props.id) : false) {
+		prec = true;
+	} else {
+		prec = false;
+	}
+
+	// Controller precin and precao
 	let controllerPrecin = props.precin;
 	let controllerPrecao = props.precao;
 	const [precin, setPrecin] = useState(controllerPrecin); //Aqui pega o context precin
 	const [precao, setPrecao] = useState(controllerPrecao); //Aqui pega o context precao
 
-	const [precinButton, setPrecinButton] = useState(false);
-	const [precaoButton, setPrecaoButton] = useState(false);
+	const [precinButton, setPrecinButton] = useState(pres); // Colocar a let pres
+	const [precaoButton, setPrecaoButton] = useState(prec); // Colocar a let prec
 	const [commentButton, setCommentButton] = useState(false);
 
 	const { preview } = usePostContext();
-	const { user } = useUserContext();
 
 	function HandlerButtonPrecin() {
 		if (precinButton == false) {
 			setPrecinButton(true);
 			setPrecin(precin + 1);
+			arrayPrecin.push(props.id);
+			updateIncreasePrecin(props.id, precin);
+			updatePrecin();
 			if (precaoButton == true) {
 				setPrecaoButton(false);
 				setPrecao(precao - 1);
-				// updateIncreasePrecin(props.id, props.precin);
+				updateDecreasePrecao(props.id, precao);
+				arrayPrecao = arrayPrecao.filter((p) => p !== props.id);
+				updatePrecao();
+				// setUserPrecao(
+				// 	Array.isArray(arrayPrecao)
+				// 		? arrayPrecao.filter((p) => p !== props.id)
+				// 		: arrayPrecao
+				// );
 			}
 		} else {
 			setPrecinButton(false);
 			setPrecin(precin - 1);
-			// updateDecreasePrecin(props.id, props.precin);
+			console.log(arrayPrecin);
+			arrayPrecin = arrayPrecin.filter((p) => p !== props.id);
+			console.log(arrayPrecin);
+			updatePrecin();
+			updateDecreasePrecin(props.id, precin);
 		}
 	}
 
@@ -107,28 +183,34 @@ export default function Feeds(props) {
 		console.log("Precin increased!");
 	};
 
-	// console.log(props.id);
-
 	const updateDecreasePrecin = async (id, precin) => {
 		const postDoc = doc(db, "posts", id);
-		const newFields = { precao: precin - 1 };
+		const newFields = { precin: precin - 1 };
 		await updateDoc(postDoc, newFields);
 		console.log("Precin decreased!");
 	};
-
-	//
 
 	function HandlerButtonPrecao() {
 		if (precaoButton == false) {
 			setPrecaoButton(true);
 			setPrecao(precao + 1);
+			updateIncreasePrecao(props.id, precao);
+			arrayPrecao.push(props.id);
+			updatePrecao();
 			if (precinButton == true) {
 				setPrecinButton(false);
 				setPrecin(precin - 1);
+				updateDecreasePrecin(props.id, precin);
+				arrayPrecin = arrayPrecin.filter((p) => p !== props.id);
+				updatePrecin();
 			}
 		} else {
 			setPrecaoButton(false);
 			setPrecao(precao - 1);
+			updateDecreasePrecao(props.id, precao);
+			arrayPrecao = arrayPrecao.filter((p) => p !== props.id);
+			console.log(arrayPrecao);
+			updatePrecao();
 		}
 	}
 
@@ -139,6 +221,50 @@ export default function Feeds(props) {
 			setCommentButton(false);
 		}
 	}
+
+	//Firestore Update - IncreasePrecin & DecreasePrecin
+
+	const updateIncreasePrecao = async (id, precao) => {
+		const postDoc = doc(db, "posts", id);
+		const newFields = { precao: precao + 1 };
+		await updateDoc(postDoc, newFields);
+		console.log("Precao increased!");
+	};
+
+	const updateDecreasePrecao = async (id, precao) => {
+		const postDoc = doc(db, "posts", id);
+		const newFields = { precao: precao - 1 };
+		await updateDoc(postDoc, newFields);
+		console.log("Precao decreased!");
+	};
+	// Arrays Precin and Precao Updates dk.toString()
+	// const postsCollectionRef = doc(db, "usersP", props.idP[0]);
+	let postsCollectionRef;
+	if (user) {
+		postsCollectionRef = doc(db, "usersP", props.idP.toString());
+	} else {
+		postsCollectionRef = doc(db, "usersP", "kJyjN2C2D8SzaeaoIsOx");
+	}
+
+	const updatePrecin = async () => {
+		await setDoc(
+			postsCollectionRef,
+			{
+				precin: arrayPrecin,
+			},
+			{ merge: true }
+		);
+	};
+
+	const updatePrecao = async () => {
+		await setDoc(
+			postsCollectionRef,
+			{
+				precao: arrayPrecao,
+			},
+			{ merge: true }
+		);
+	};
 
 	function ProductImage() {
 		const [productImage, setProductImage] = useState([]);
@@ -200,7 +326,13 @@ export default function Feeds(props) {
 										</HireMe>
 									</Buttons>
 								</Collection>
-								{openModal && <Modal closeModal={setOpenModal} />}
+								{openModal && (
+									<Modal
+										closeModal={setOpenModal}
+										market={props.market}
+										address={props.address}
+									/>
+								)}
 							</Content>
 						</Product>
 					</Header>
@@ -287,7 +419,13 @@ export default function Feeds(props) {
 										</HireMe>
 									</Buttons>
 								</Collection>
-								{openModal && <Modal closeModal={setOpenModal} />}
+								{openModal && (
+									<Modal
+										closeModal={setOpenModal}
+										market={props.market}
+										address={props.address}
+									/>
+								)}
 							</Content>
 						</Product>
 					</Header>

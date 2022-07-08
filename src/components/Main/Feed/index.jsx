@@ -17,6 +17,7 @@ import Post from "../Post";
 import Comment from "../Comment";
 import Tomate from "../../../imagens/tomate2.jpg";
 import { usePostContext } from "../../../context/postContext";
+import { useUserContext } from "../../../context/userContext";
 
 // async function getFeeds() {
 // 	let response = await fetch(`http://localhost:3000/api/feeds.json`);
@@ -27,6 +28,7 @@ import { usePostContext } from "../../../context/postContext";
 // export default function Feed() {
 // 	const [feeds, setFeed] = useState([]);
 export default function Feed(props) {
+	const { user } = useUserContext();
 	// const { posts } = usePostContext();
 	//Reading the posts collection from Firestore
 	const [posts, setPosts] = useState([]);
@@ -35,6 +37,12 @@ export default function Feed(props) {
 		orderBy(props.filter, props.order)
 		// orderBy(props.filter, "desc")
 	);
+	let email;
+	if (user == undefined) {
+		email = "z";
+	} else {
+		email = user.email;
+	}
 
 	useEffect(() => {
 		const getPosts = async () => {
@@ -120,6 +128,24 @@ export default function Feed(props) {
 											.filter((item) => item.email == value.user_email)
 											.map((value, key) => value.img_url)
 									}
+									idP={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == email)
+											.map((value, key) => value.idP)
+									}
+									userPrecin={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == email)
+											.map((value, key) => value.precin)
+									}
+									userPrecao={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == email)
+											.map((value, key) => value.precao)
+									}
 									product={value.product}
 									price={value.price}
 									market={value.market}
@@ -131,6 +157,7 @@ export default function Feed(props) {
 									img_product={value.product_image}
 									preview={true}
 									id={value.id}
+									email_product={value.user_email}
 									// button={commentButton}
 									// setButton={setCommentButton}
 								/>
@@ -175,6 +202,24 @@ export default function Feed(props) {
 										users
 											.filter((item) => item.email == value.user_email)
 											.map((value, key) => value.img_url)
+									}
+									idP={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == email)
+											.map((value, key) => value.idP)
+									}
+									userPrecin={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == email)
+											.map((value, key) => value.precin)
+									}
+									userPrecao={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == email)
+											.map((value, key) => value.precao)
 									}
 									time={"2h"}
 									product={value.product}
