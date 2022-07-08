@@ -53,7 +53,6 @@ export default function Feed(props) {
 					id: doc.id,
 				}))
 			);
-			// console.log(posts);
 		};
 		getPosts();
 	}, []);

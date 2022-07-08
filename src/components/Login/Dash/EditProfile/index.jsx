@@ -32,10 +32,18 @@ import {
 import { useUserContext } from "../../../../context/userContext";
 import { usePostContext } from "../../../../context/postContext";
 import logo from "../../../../imagens/logo.png";
+import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
+import { db } from "../../../../firebase";
 
 function EditProfile(props) {
-	const { user, photoURL, profilePreview, handleChange, handleClick } =
-		useUserContext();
+	const {
+		user,
+		photoURL,
+		handlePreview,
+		profilePreview,
+		handleChange,
+		handleClick,
+	} = useUserContext();
 
 	const [clickName, setClickName] = useState(false);
 	const [clickPhone, setClickPhone] = useState(false);
@@ -43,6 +51,27 @@ function EditProfile(props) {
 	const [clickYear, setClickYear] = useState(false);
 
 	const [open, setOpen] = useState(false);
+
+	const [users, setUsers] = useState([]);
+
+	let id =
+		users.length > 0 &&
+		users
+			.filter((item) => item.email == user.email)
+			.map((value, key) => value.idP);
+
+	// users.filter((value) => {
+	// 	if (value.email == user.email) {
+	// 		return value;
+	// 	}
+	// });
+
+	const data = JSON.stringify(id);
+	const data_replaced = data.replace("[", "");
+	const data_replaced2 = data_replaced.replace("]", "");
+	const data_replaced3 = data_replaced2.replace(/['"]+/g, "");
+
+	// console.log(data_replaced3);
 
 	function HandlerOpen() {
 		if (open == false) {
@@ -84,6 +113,27 @@ function EditProfile(props) {
 		}
 	}
 
+	// Update img_url collection usersP Firestore
+	const userCollectionRef = collection(db, "usersP");
+
+	useEffect(() => {
+		const getUsers = async () => {
+			const data = await getDocs(userCollectionRef);
+			setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+		};
+		getUsers();
+	}, []);
+
+	// function updatePhotoURL() {
+	const updateImgURL = async (id, photoURL) => {
+		const userDoc = doc(db, "usersP", id);
+		const newFields = { img_url: photoURL };
+		await updateDoc(userDoc, newFields);
+		console.log("photoURL updated!");
+	};
+	// 	updateImgURL(id, photoURL);
+	// }
+
 	return (
 		<Container>
 			<Sidebar logo={logo} name={user.displayName} type={props.type} msg={4} />
@@ -92,18 +142,18 @@ function EditProfile(props) {
 					<Top>
 						<CardContent>
 							<Image>
-								{/* {photoURL ? (
-									<Logo src={photoURL} />
-								) : (
+								{profilePreview ? (
 									<Logo src={profilePreview} />
-								)} */}
-								<Logo src={photoURL} />
+								) : (
+									<Logo src={photoURL} />
+								)}
+								{/* <Logo src={profilePreview} /> */}
 								<InputImage
 									type="file"
 									id="file"
 									name="image"
 									acceppt="image/*, png, jpeg, jpg"
-									onChange={handleChange}
+									onChange={handlePreview}
 								/>
 								<LabelImage
 									htmlFor="file"
@@ -177,7 +227,14 @@ function EditProfile(props) {
 										onClick={HandlerOpen}
 										style={open ? { margin: "8% 0% 0% 0%" } : {}}
 									>
-										<HireMe onClick={handleClick}>Pronto</HireMe>
+										<HireMe
+											onClick={() => {
+												handleClick();
+												updateImgURL(data_replaced3, photoURL);
+											}}
+										>
+											Pronto
+										</HireMe>
 									</Buttons>
 								</UserDetails>
 							</form>
