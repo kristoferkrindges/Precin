@@ -397,7 +397,7 @@ export default function Post() {
 											product={productName}
 											price={productPrice}
 											market={market}
-											img_url={photoURL}
+											img_user={photoURL}
 											// product_image={productURL}
 										/>
 									</Ul>

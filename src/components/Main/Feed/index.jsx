@@ -16,7 +16,6 @@ import {
 import Post from "../Post";
 import Comment from "../Comment";
 import Tomate from "../../../imagens/tomate2.jpg";
-import { usePostContext } from "../../../context/postContext";
 
 // async function getFeeds() {
 // 	let response = await fetch(`http://localhost:3000/api/feeds.json`);
@@ -27,7 +26,6 @@ import { usePostContext } from "../../../context/postContext";
 // export default function Feed() {
 // 	const [feeds, setFeed] = useState([]);
 export default function Feed(props) {
-	// const { posts } = usePostContext();
 	//Reading the posts collection from Firestore
 	const [posts, setPosts] = useState([]);
 	const postsCollectionRef = query(
@@ -45,7 +43,6 @@ export default function Feed(props) {
 					id: doc.id,
 				}))
 			);
-			// console.log(posts);
 		};
 		getPosts();
 	}, []);

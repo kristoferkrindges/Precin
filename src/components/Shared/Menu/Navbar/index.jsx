@@ -19,8 +19,10 @@ import SearchBar from "../../../SearchBar";
 import FeedData from "../../../../api/feeds.json";
 import { db } from "../../../../firebase/index";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { useUserContext } from "../../../../context/userContext";
 
 export default function Navbar({ toggle, resp, type, search }) {
+	const { user } = useUserContext();
 	const [posts, setPosts] = useState([]);
 	const postsCollectionRef = query(
 		collection(db, "posts"),
@@ -39,7 +41,7 @@ export default function Navbar({ toggle, resp, type, search }) {
 
 	let pha;
 	let route;
-	if (type == "logado") {
+	if (user !== null) {
 		pha = "Publicar";
 		route = "/publication";
 	} else {
