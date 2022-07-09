@@ -145,6 +145,12 @@ export default function Feed(props) {
 											.filter((item) => item.email == email)
 											.map((value, key) => value.precao)
 									}
+									listShop={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == email)
+											.map((value, key) => value.listShoop)
+									}
 									product={value.product}
 									price={value.price}
 									market={value.market}
@@ -219,6 +225,12 @@ export default function Feed(props) {
 										users
 											.filter((item) => item.email == email)
 											.map((value, key) => value.precao)
+									}
+									listShop={
+										users.length > 0 &&
+										users
+											.filter((item) => item.email == email)
+											.map((value, key) => value.listShoop)
 									}
 									time={"2h"}
 									product={value.product}

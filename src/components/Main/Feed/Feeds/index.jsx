@@ -58,6 +58,7 @@ import {
 	updateDoc,
 	setDoc,
 	orderBy,
+	arrayUnion,
 } from "firebase/firestore";
 import { useUserContext } from "../../../../context/userContext";
 
@@ -278,6 +279,23 @@ export default function Feeds(props) {
 			getProductImage();
 		}, []);
 	}
+	// ListShop
+	function HandlerButtonShop() {
+		if (
+			Array.isArray(props.listShop) ? props.listShop.includes(props.id) : false
+		) {
+			console.log("not");
+		} else {
+			updateList(props.idP.toString(), props.id);
+		}
+	}
+
+	const updateList = async (id, shop) => {
+		const postDoc = doc(db, "usersP", id);
+		const newFields = { listShoop: arrayUnion(shop) };
+		await updateDoc(postDoc, newFields);
+		console.log("Add list!");
+	};
 
 	if (props.openComment == false) {
 		return (
@@ -309,7 +327,11 @@ export default function Feeds(props) {
 									{/* })} */}
 								</ImgProduct>
 								<Locate>
-									<IoCart />
+									<IoCart
+										onClick={() => {
+											HandlerButtonShop();
+										}}
+									/>
 								</Locate>
 								<Collection>
 									<Info>
@@ -402,7 +424,11 @@ export default function Feeds(props) {
 									)}
 								</ImgProduct>
 								<Locate>
-									<IoCart />
+									<IoCart
+										onClick={() => {
+											HandlerButtonShop();
+										}}
+									/>
 								</Locate>
 								<Collection>
 									<Info>
