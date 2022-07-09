@@ -31,7 +31,7 @@ function Profile(props) {
 				<NameProfession>
 					<Name>{props.name}</Name>
 					<Old>{props.email}</Old>
-					<Old>Membro desde: {props.time}</Old>
+					{/* <Old>Membro desde: {props.time}</Old> */}
 					<Link to="/editprofile">
 						<IoPencil></IoPencil>
 					</Link>

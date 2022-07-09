@@ -12,6 +12,7 @@ import Login from "./Pages/Login";
 import ErrorPage from "./Pages/ErrorPage";
 import SearchResultScreen from "./Pages/SearchResult";
 import Post from "./Pages/Post";
+import List from "./Pages/ListPage";
 import { isAuthenticated } from "./auth";
 import { UserContextProvider } from "./context/userContext";
 import { PrivateRouter } from "./context/PrivateRouter";
@@ -48,6 +49,9 @@ export default function Routess() {
 						{/* <Route path="/publication" element={<Post />} /> */}
 						<Route path="/publication" element={<PrivateRouter />}>
 							<Route path="/publication" element={<Post />}></Route>
+						</Route>
+						<Route path="/listshop" element={<PrivateRouter />}>
+							<Route path="/listshop" element={<List />}></Route>
 						</Route>
 						<Route path="/search_result" element={<SearchResultScreen />} />
 						<Route

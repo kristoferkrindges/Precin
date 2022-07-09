@@ -37,7 +37,7 @@ const doc = [
 	{
 		card: "Sua lista",
 		icon: <IoCartOutline />,
-		link: "",
+		link: "/listshop",
 	},
 ];
 

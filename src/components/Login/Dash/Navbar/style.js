@@ -98,7 +98,7 @@ export const Content = styled.nav`
 	position: sticky;
 	top: 0;
 	left: 0;
-	z-index: 100;
+	z-index: 900;
 	/* margin-left: 15%; */
 
 	& form {

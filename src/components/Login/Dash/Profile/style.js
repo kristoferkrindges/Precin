@@ -26,7 +26,7 @@ export const Container = styled.div`
 		content: "";
 		position: absolute;
 		height: 20%;
-		width: 37.5%;
+		width: 35.5%;
 		background-color: ${({ theme }) => theme.buttons};
 		border-radius: 20px 20px 0 0;
 	}
@@ -36,8 +36,8 @@ export const Container = styled.div`
 		margin: 2rem 0;
 
 		&::before {
-			height: 20%;
-			width: 74%;
+			height: 7%;
+			width: 75%;
 			border-radius: 20px 20px 20px 20px;
 		}
 	}
@@ -109,7 +109,7 @@ export const Icons = styled.div`
 `;
 
 export const Name = styled.div`
-	margin-top: 10px;
+	margin-top: 40px;
 	margin-bottom: 10px;
 	font-size: 1.5rem;
 	font-weight: 600;

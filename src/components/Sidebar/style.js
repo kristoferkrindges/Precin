@@ -2,6 +2,17 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { btnReset, v } from "../../styles/variables";
+import { IoApps } from "react-icons/io5";
+
+export const IoAppss = styled(IoApps)`
+	/* width: 50px;
+	height: 50px; */
+
+	&:hover {
+		transform: rotate(-180deg);
+		opacity: 0.5;
+	}
+`;
 
 export const Context = styled.div`
 	width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
@@ -76,6 +87,11 @@ export const Logo = styled.div`
 		/* border-radius: 50%; */
 		color: ${({ theme }) => theme.title};
 		font-size: 50px;
+		transition: all 0.3s ease;
+	}
+
+	svg:hover {
+		transform: rotate(-180deg);
 	}
 `;
 
