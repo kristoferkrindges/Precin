@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
-import { 
-	IoLogoFacebook, 
-	IoLogoTwitter, 
+import { Link } from "react-router-dom";
+import {
+	IoLogoFacebook,
+	IoLogoTwitter,
 	IoLogoWhatsapp,
 	IoLogoYoutube,
-	IoLogoInstagram
+	IoLogoInstagram,
 } from "react-icons/io5";
-
 
 export const Container = styled.footer`
 	background: ${({ theme }) => theme.background};
@@ -27,7 +26,7 @@ export const FooterLinksContainer = styled.div`
 	display: flex;
 	justify-content: center;
 
-	@media screen and (max-width: 820px){
+	@media screen and (max-width: 820px) {
 		padding-top: 32px;
 	}
 `;
@@ -35,7 +34,7 @@ export const FooterLinksContainer = styled.div`
 export const FooterLinksWrapper = styled.div`
 	display: flex;
 
-	@media screen and (max-width: 820px){
+	@media screen and (max-width: 820px) {
 		flex-direction: column;
 	}
 `;
@@ -50,8 +49,7 @@ export const FooterLinkItems = styled.div`
 	box-sizing: border-box;
 	color: ${({ theme }) => theme.title};
 
-
-	@media screen and (max-width: 420px){
+	@media screen and (max-width: 420px) {
 		margin: 0;
 		padding: 10px;
 		width: 100%;
@@ -66,10 +64,10 @@ export const FooterLinkTitle = styled.h1`
 export const FooterLink = styled(Link)`
 	color: ${({ theme }) => theme.title};
 	text-decoration: none;
-	font-size: 1.0rem;
+	font-size: 1rem;
 	margin-bottom: 0.5rem;
 
-	&:hover{
+	&:hover {
 		color: ${({ theme }) => theme.buttons};
 		transition: 0.3s ease-out;
 	}
@@ -87,7 +85,7 @@ export const SocialMediaWrap = styled.div`
 	max-width: 1100px;
 	margin: 40px auto 0 auto;
 
-	@media screen and (max-width: 820px){
+	@media screen and (max-width: 820px) {
 		flex-direction: column;
 	}
 `;
@@ -98,7 +96,7 @@ export const SocialLogo = styled(Link)`
 	cursor: pointer;
 	text-decoration: none;
 	font-size: 1.5rem;
-	display:flex;
+	display: flex;
 	align-items: center;
 	margin-bottom: 16px;
 	font-weight: bold;
@@ -107,47 +105,38 @@ export const SocialLogo = styled(Link)`
 export const WebsiteRights = styled.small`
 	color: ${({ theme }) => theme.title};
 	margin-bottom: 16px;
-
 `;
 
 export const SocialIcons = styled.div`
-	display:flex;
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 240px;
-	
 `;
 
 export const SocialIconLink = styled.a`
 	color: ${({ theme }) => theme.title};
 	font-size: 24px;
-
-	
 `;
 
 export const FacebookIcon = styled(IoLogoFacebook)`
-    width: 20px;
+	width: 20px;
 	height: 20px;
-
-`
+`;
 export const TwitterIcon = styled(IoLogoTwitter)`
-    width: 20px;
+	width: 20px;
 	height: 20px;
-
-`
+`;
 export const WhatsappIcon = styled(IoLogoWhatsapp)`
-    width: 20px;
+	width: 20px;
 	height: 20px;
-
-`
+`;
 export const YoutubeIcon = styled(IoLogoYoutube)`
-    width: 20px;
+	width: 20px;
 	height: 20px;
-
-`
+`;
 
 export const InstagramIcon = styled(IoLogoInstagram)`
-    width: 20px;
+	width: 20px;
 	height: 20px;
-
-`
+`;

@@ -1,82 +1,141 @@
 import styled from "styled-components";
+import Register from "../../../imagens/register.svg";
 
 export const Container = styled.div`
-	.form {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		justify-self: center;
+	width: 100vw;
+	height: 77vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media only screen and (max-width: 600px) {
 		flex-direction: column;
-		max-width: 600px;
-		padding: 15%;
-		background: ${({ theme }) => theme.feed};
-		box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
-		border: 1px solid black;
-		border-radius: 6px;
-		margin-top: 10%;
-		color: ${({ theme }) => theme.title};
-
-		.formIcons {
-			font-size: 25px;
-			margin-right: 1%;
-		}
 	}
+`;
 
-	input {
-		border-radius: 6px;
-		padding: 2%;
-		margin: 2% 0;
-		width: 90%;
-		font-size: 18px;
-	}
+export const LeftRegister = styled.div`
+	width: 50vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 
-	.form h2 {
-		text-align: center;
-		margin-bottom: 5%;
-		font-weight: 400;
-	}
-
-	.form h3 {
-		text-align: center;
-		margin-bottom: 2%;
-	}
-
-	.form p {
-		cursor: pointer;
-		text-align: center;
-		font-weight: 700;
-	}
-
-	.form button {
-		border-radius: 6px;
-		border: none;
-		font-size: 18px;
-		width: 50%;
-		padding: 2%;
-		margin: 5% 25%;
-		background-color: #256ce1;
-		color: white;
-		cursor: pointer;
-		transition: background 0.5s;
-
-		:hover {
-			background: rgb(37, 108, 225, 0.7);
-		}
-	}
-
-	select {
+	@media only screen and (max-width: 600px) {
 		width: 100%;
-		min-width: 40ch;
-		max-width: 50ch;
-		border: 1px solid var(--select-border);
-		border-radius: 0.25em;
-		padding: 0.25em 0.5em;
-		margin-top: 5%;
-		font-size: 1.25rem;
-		cursor: pointer;
-		line-height: 1.1;
-		background-color: #fff;
-		background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
-		text-align-last: center;
+		height: auto;
+	}
+`;
+
+export const TextTitle = styled.h1`
+	color: ${({ theme }) => theme.title};
+	margin-top: 10%;
+	font-size: 4vh;
+
+	@media only screen and (max-width: 1800px) {
+		margin-left: 5%;
+	}
+
+	@media only screen and (max-width: 600px) {
+		display: none;
+	}
+`;
+
+export const RightRegister = styled.div`
+	width: 50vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media only screen and (max-width: 600px) {
+		width: 80vw;
+		height: auto;
+	}
+`;
+
+export const SubmitRegister = styled.form``;
+
+export const CardRegister = styled.div`
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px 35px;
+	background: ${({ theme }) => theme.feed};
+	border-radius: 20px;
+	box-shadow: 0px 10px 40px #00000056;
+
+	@media only screen and (max-width: 950px) {
+		width: 85%;
+	}
+
+	@media only screen and (max-width: 600px) {
+		width: 100%;
+	}
+`;
+
+export const CardTitle = styled.h1`
+	color: ${({ theme }) => theme.title};
+	font-weight: 800px;
+	margin-bottom: 10%;
+`;
+
+export const SingupImage = styled.img`
+	width: 35vw;
+
+	@media only screen and (max-width: 600px) {
+		width: 50vw;
+	}
+`;
+
+SingupImage.defaultProps = {
+	src: Register,
+};
+
+export const TextField = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+`;
+
+export const Field = styled.input`
+	width: 100%;
+	border-radius: 10px;
+	padding: 15px;
+	color: black;
+	font-size: 12pt;
+	border: none;
+	box-shadow: 0px 10px 40px #00000056;
+	outline: none;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+`;
+
+export const LabelField = styled.label`
+	color: ${({ theme }) => theme.title};
+	margin-bottom: 10px;
+`;
+
+export const RegisterButton = styled.button`
+	width: 100%;
+	padding: 16px 0px;
+	margin: 25px;
+	border: none;
+	background-color: #256ce1;
+	border-radius: 8px;
+	outline: none;
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 3px;
+	color: white;
+	cursor: pointer;
+	box-shadow: 0px 10px 40px -12px #256ce1;
+
+	:hover {
+		background: rgb(37, 108, 225, 0.7);
 	}
 `;

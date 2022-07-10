@@ -1,9 +1,19 @@
 import React, { useState, useRef } from "react";
-import { Container } from "./style";
+import {
+	Container,
+	LeftRegister,
+	TextTitle,
+	RightRegister,
+	SubmitRegister,
+	CardRegister,
+	CardTitle,
+	SingupImage,
+	TextField,
+	Field,
+	LabelField,
+	RegisterButton,
+} from "./style";
 import { useUserContext } from "../../../context/userContext";
-import { BsPerson } from "react-icons/bs";
-import { AiOutlineMail } from "react-icons/ai";
-import { RiLockPasswordLine } from "react-icons/ri";
 import { db } from "../../../firebase/index";
 import { collection, addDoc, setDoc, doc } from "firebase/firestore";
 import { usePostContext } from "../../../context/postContext";
@@ -60,49 +70,52 @@ const Signup = () => {
 
 	return (
 		<Container>
-			<div className="form">
-				<h2>Cadastro</h2>
-				<form onSubmit={onSubmit}>
-					<BsPerson className="formIcons" />
-					<input
-						placeholder="Nome"
-						id="name"
-						name="name"
-						type="name"
-						ref={nameRef}
-						value={fields.name}
-						onChange={handleFieldsChange}
-					/>
-					<AiOutlineMail className="formIcons" />
-					<input
-						placeholder="Email"
-						id="email"
-						name="email"
-						type="email"
-						ref={emailRef}
-						/*value={fields.email}*/
-						onChange={handleFieldsChange}
-					/>
-					<RiLockPasswordLine className="formIcons" />
-					<input
-						placeholder="Senha"
-						id="password"
-						name="password"
-						type="password"
-						ref={psdRef}
-						/*value={fields.password}*/
-						onChange={handleFieldsChange}
-					/>
-					{/* <input
-						placeholder="Confirmar Senha"
-						id="confirm-password"
-						name="confirm-password"
-						type="password"
-						value={""}
-					/> */}
-					<button type="submit">Registrar</button>
-				</form>
-			</div>
+			<LeftRegister>
+				<TextTitle>Tenha acesso completo ao Precin</TextTitle>
+				<SingupImage
+					href="https://storyset.com/marketing"
+					alt="Marketing illustrations by Storyset"
+				/>
+			</LeftRegister>
+			<SubmitRegister onSubmit={onSubmit}>
+				<RightRegister>
+					<CardRegister>
+						<CardTitle>Cadastro</CardTitle>
+						<TextField>
+							{/* Nome */}
+							<LabelField for="name">Nome</LabelField>
+							<Field
+								placeholder="Nome"
+								id="name"
+								type="name"
+								ref={nameRef}
+								onChange={handleFieldsChange}
+							/>
+							{/* Email */}
+							<LabelField for="email">Email</LabelField>
+							<Field
+								placeholder="Email"
+								id="email"
+								name="email"
+								type="email"
+								ref={emailRef}
+								onChange={handleFieldsChange}
+							/>
+							{/* Senha */}
+							<LabelField for="senha">Senha</LabelField>
+							<Field
+								placeholder="Senha"
+								id="password"
+								name="password"
+								type="password"
+								ref={psdRef}
+								onChange={handleFieldsChange}
+							/>
+						</TextField>
+						<RegisterButton type="submit">Cadastrar</RegisterButton>
+					</CardRegister>
+				</RightRegister>
+			</SubmitRegister>
 		</Container>
 	);
 };
