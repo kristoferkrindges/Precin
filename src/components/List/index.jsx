@@ -105,6 +105,8 @@ const List = () => {
 										img={value.product_image}
 										name={value.product}
 										price={value.price}
+										market={value.market}
+										address={value.address}
 										onClick={HandlerButtonShop}
 									/>
 								))}

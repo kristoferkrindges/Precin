@@ -33,6 +33,11 @@ export const Container = styled.div`
         height: 44vh; */
 		/* opacity: 0.5; */
 	}
+
+	@media (max-width: 768px) {
+		height: 35vh;
+		width: 22vh;
+	}
 `;
 export const Image = styled.div`
 	height: 200px;
@@ -40,6 +45,11 @@ export const Image = styled.div`
 	border-radius: 25px;
 	padding: 3px;
 	background: ${({ theme }) => theme.buttons};
+
+	@media (max-width: 768px) {
+		height: 150px;
+		width: 150px;
+	}
 `;
 export const Logo = styled.img`
 	height: 100%;

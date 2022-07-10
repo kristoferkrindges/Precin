@@ -61,6 +61,7 @@ import {
 	arrayUnion,
 } from "firebase/firestore";
 import { useUserContext } from "../../../../context/userContext";
+import { Link } from "react-router-dom";
 
 export default function Feeds(props) {
 	const { user } = useUserContext();
@@ -359,29 +360,35 @@ export default function Feeds(props) {
 						</Product>
 					</Header>
 					<Interaction>
-						<ButtonPrecin
-							type="button"
-							onClick={() => {
-								HandlerButtonPrecin();
-							}}
-						>
-							<AiFillLike
-								style={precinButton ? { color: "black" } : {}}
-							></AiFillLike>
-							Precin {precin}
-						</ButtonPrecin>
-						<ButtonPrecao type="button" onClick={HandlerButtonPrecao}>
-							<AiFillDislike
-								style={precaoButton ? { color: "black" } : {}}
-							></AiFillDislike>
-							Preção {precao}
-						</ButtonPrecao>
-						<ButtonComment type="button" onClick={HandlerButtonComment}>
-							<BiCommentDetail
-								style={props.button ? { color: "black" } : {}}
-							></BiCommentDetail>
-							Comentários {props.comments}
-						</ButtonComment>
+						<Link to={user ? "" : "/login"}>
+							<ButtonPrecin
+								type="button"
+								onClick={() => {
+									HandlerButtonPrecin();
+								}}
+							>
+								<AiFillLike
+									style={precinButton ? { color: "black" } : {}}
+								></AiFillLike>
+								Precin {precin}
+							</ButtonPrecin>
+						</Link>
+						<Link to={user ? "" : "/login"}>
+							<ButtonPrecao type="button" onClick={HandlerButtonPrecao}>
+								<AiFillDislike
+									style={precaoButton ? { color: "black" } : {}}
+								></AiFillDislike>
+								Preção {precao}
+							</ButtonPrecao>
+						</Link>
+						<Link to={user ? "" : "/login"}>
+							<ButtonComment type="button" onClick={HandlerButtonComment}>
+								<BiCommentDetail
+									style={props.button ? { color: "black" } : {}}
+								></BiCommentDetail>
+								Comentários {props.comments}
+							</ButtonComment>
+						</Link>
 					</Interaction>
 				</Lil>
 				{props.openComment && commentButton && (
@@ -456,24 +463,35 @@ export default function Feeds(props) {
 						</Product>
 					</Header>
 					<Interaction>
-						<ButtonPrecin type="button" onClick={HandlerButtonPrecin}>
-							<AiFillLike
-								style={precinButton ? { color: "black" } : {}}
-							></AiFillLike>
-							Precin {precin}
-						</ButtonPrecin>
-						<ButtonPrecao type="button" onClick={HandlerButtonPrecao}>
-							<AiFillDislike
-								style={precaoButton ? { color: "black" } : {}}
-							></AiFillDislike>
-							Preção {precao}
-						</ButtonPrecao>
-						<ButtonComment type="button" onClick={HandlerButtonComment}>
-							<BiCommentDetail
-								style={props.button ? { color: "black" } : {}}
-							></BiCommentDetail>
-							Comentários {props.comments}
-						</ButtonComment>
+						<Link to={user ? "" : "/login"}>
+							<ButtonPrecin
+								type="button"
+								onClick={() => {
+									HandlerButtonPrecin();
+								}}
+							>
+								<AiFillLike
+									style={precinButton ? { color: "black" } : {}}
+								></AiFillLike>
+								Precin {precin}
+							</ButtonPrecin>
+						</Link>
+						<Link to={user ? "" : "/login"}>
+							<ButtonPrecao type="button" onClick={HandlerButtonPrecao}>
+								<AiFillDislike
+									style={precaoButton ? { color: "black" } : {}}
+								></AiFillDislike>
+								Preção {precao}
+							</ButtonPrecao>
+						</Link>
+						<Link to={user ? "" : "/login"}>
+							<ButtonComment type="button" onClick={HandlerButtonComment}>
+								<BiCommentDetail
+									style={props.button ? { color: "black" } : {}}
+								></BiCommentDetail>
+								Comentários {props.comments}
+							</ButtonComment>
+						</Link>
 					</Interaction>
 				</Lile>
 				{props.openComment && commentButton && (

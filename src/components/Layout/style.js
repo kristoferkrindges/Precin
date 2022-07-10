@@ -5,6 +5,10 @@ export const DLayout = styled.div`
 
 	& main {
 		margin-left: 32%;
+
+		@media (max-width: 768px) {
+			margin-left: 5%;
+		}
 	}
 `;
 

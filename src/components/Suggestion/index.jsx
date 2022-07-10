@@ -13,12 +13,32 @@ import {
 	License,
 	Colleter,
 	STrends,
+	Join,
+	NavBtn,
+	NavBtnLink,
+	Icons,
+	IoPersonCircle,
+	IoCart,
+	IoBookmark,
 } from "./style";
 import { SearchContext } from "../../context/searchContext";
+import { useUserContext } from "../../context/userContext";
+import logo from "../../imagens/logo.png";
+import { Link } from "react-router-dom";
 
 function Suggestion(props) {
+	const { user } = useUserContext;
 	const { tokenProduct, setTokenProduct } = useContext(SearchContext);
 	console.log(tokenProduct);
+	let pha;
+	let route;
+	if (user !== null) {
+		pha = "Publicar";
+		route = "/publication";
+	} else {
+		pha = "Entrar";
+		route = "/login";
+	}
 
 	useEffect(() => {}, []);
 	return (
@@ -33,45 +53,78 @@ function Suggestion(props) {
 						onChange={(e) => setTokenProduct(e.target.value)}
 					/>
 				</Search> */}
+				<Join>
+					{/* <Trend>Poste agora</Trend> */}
+					<Icons>
+						<IoPersonCircle></IoPersonCircle>
+						<IoCart></IoCart>
+						<IoBookmark></IoBookmark>
+					</Icons>
+					<NavBtn>
+						<NavBtnLink to={route}>{pha}</NavBtnLink>
+					</NavBtn>
+				</Join>
 				{/* <Divider /> */}
 				<Trends>
 					<Trend>Em Alta</Trend>
 					<Colleter>
-						<span className="search">#Frutas</span>
-						<span className="item">🍇 Uva</span>
-						<span className="item">🍍 Abacaxi</span>
+						<Link to="/search_result/Tomate">
+							<span className="search"># Tomate</span>
+						</Link>
+						{/* <span className="item">🍇 Uva</span>
+						<span className="item">🍍 Abacaxi</span> */}
 					</Colleter>
 					<Colleter>
-						<span className="search">#FastFood</span>
-						<span className="item">🍕 Pizza</span>
-						<span className="item">🍔 Hambúrguer</span>
+						<Link to="/search_result/Tomate">
+							<span className="search"># Pera</span>
+						</Link>
 					</Colleter>
 					<Colleter>
-						<span className="search">#Verduras</span>
-						<span className="item">🌽 Milho</span>
-						<span className="item">🥕 Cenoura</span>
+						<Link to="/search_result/Tomate">
+							<span className="search"># Limão</span>
+						</Link>
 					</Colleter>
 					<Colleter>
-						<span className="search">#Doces</span>
-						<span className="item">🍫 Chocolate</span>
-						<span className="item">🍪 Biscoito</span>
+						<Link to="/search_result/Tomate">
+							<span className="search"># Banana</span>
+						</Link>
 					</Colleter>
 					<Colleter>
-						<span className="search">#Higiene</span>
-						<span className="item">🪥 Escova de Dentes</span>
-						<span className="item">🧻 Rolo de Papel</span>
+						<Link to="/search_result/Tomate">
+							<span className="search"># Cereja</span>
+						</Link>
 					</Colleter>
-					{/* 
-					<List>
-						<Item>🍅 Tomate</Item>
-						<Item>🍇 Uva</Item>
-						<Item>🍍 Abacaxi</Item>
-						<Item>🍕 Pizza</Item>
-						<Item>🍫 Chocolate</Item>
-						<Item>🧄 Alho</Item>
-					</List> */}
+					<Colleter>
+						<Link to="/search_result/Tomate">
+							<span className="search"># Pizza</span>
+						</Link>
+					</Colleter>
+					<Colleter>
+						<Link to="/search_result/Tomate">
+							<span className="search"># Suco</span>
+						</Link>
+					</Colleter>
+					<Colleter>
+						<Link to="/search_result/Tomate">
+							<span className="search"># Arroz</span>
+						</Link>
+					</Colleter>
+					<Colleter>
+						<Link to="/search_result/Tomate">
+							<span className="search"># Feijão</span>
+						</Link>
+					</Colleter>
+					<Colleter>
+						<Link to="/search_result/Tomate">
+							<span className="search"># Manga</span>
+						</Link>
+					</Colleter>
 				</Trends>
-				<Divider />
+				{/* <Divider /> */}
+				<STrends>
+					<License>#TáNoPrecin</License>
+					<img src={logo}></img>
+				</STrends>
 				<STrends>
 					<License>Precin © Todos os direitos Reservados</License>
 				</STrends>
