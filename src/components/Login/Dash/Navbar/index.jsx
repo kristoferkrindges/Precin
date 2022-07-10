@@ -21,8 +21,10 @@ import { Link } from "react-router-dom";
 import SearchBar from "../../../SearchBar";
 import logo from "../../../../imagens/logo.png";
 import { PropaneSharp } from "@mui/icons-material";
+import { useUserContext } from "../../../../context/userContext";
 
 const Navbar = (props) => {
+	const { logoutUser } = useUserContext();
 	const [hero, setHero] = useState(false);
 
 	function HandlerOpen() {
@@ -51,29 +53,29 @@ const Navbar = (props) => {
 			</Link> */}
 			<Link to="/" className="nav-link">
 				<IoNotifications></IoNotifications>
-				<Badge>8</Badge>
+				<Badge>1</Badge>
 			</Link>
 			<Divider></Divider>
 			<Profile>
 				<img onClick={HandlerOpen} src={props.img} alt="" />
 				<ProfileLink style={hero ? { opacity: "1" } : { opacity: "0" }}>
 					<Li>
-						<Link to="#">
+						<Link to="/login">
 							<IoIdCard></IoIdCard> Perfil
 						</Link>
 					</Li>
 					<Li>
-						<Link to="#">
+						<Link to="/publication">
 							<IoExtensionPuzzle></IoExtensionPuzzle> Publicar
 						</Link>
 					</Li>
 					<Li>
-						<Link to="#">
+						<Link to="/listshop">
 							<IoCart></IoCart> Sua lista
 						</Link>
 					</Li>
-					<Li>
-						<Link to="#">
+					<Li onClick={logoutUser ? logoutUser : ""}>
+						<Link to="/">
 							<IoLogOut></IoLogOut> Sair
 						</Link>
 					</Li>

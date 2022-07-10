@@ -131,7 +131,6 @@ export const Content = styled.div`
 	max-width: 45vh;
 `;
 export const ImgProduct = styled.div`
-	object-fit: cover;
 	margin-top: 2%;
 	height: 150px;
 	width: 350px;
@@ -143,7 +142,6 @@ export const ImgProduct = styled.div`
 export const Img = styled.img`
 	height: 100%;
 	width: 100%;
-	object-fit: cover;
 `;
 export const Collection = styled.div`
 	display: flex;

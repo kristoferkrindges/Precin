@@ -27,12 +27,12 @@ export const SidebarData = [
 		to: "/login",
 		notification: 0,
 	},
-	// {
-	// 	label: "Publicações",
-	// 	icon: <IoBookmarkOutline />,
-	// 	to: "/public",
-	// 	notification: 0,
-	// },
+	{
+		label: "Publicações",
+		icon: <IoBookmarkOutline />,
+		to: "/public",
+		notification: 0,
+	},
 	{
 		label: "Minha Lista",
 		icon: <IoCartOutline />,

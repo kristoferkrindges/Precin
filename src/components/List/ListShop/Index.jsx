@@ -29,12 +29,53 @@ export default function ListShop({
 	updateList,
 	id,
 	onClick,
+	market,
+	address,
+	type,
 }) {
 	const eventClick = (event) => {
 		event.stopPropagation();
 		if (onClick) onClick(id);
 	};
 	const [openModal, setOpenModal] = useState(false);
+	if (type == "slide") {
+		return (
+			<li>
+				<Container>
+					<CardContent>
+						<Image>
+							<Logo src={img} />
+						</Image>
+						{/* <Icons>
+							<IoCloseCircle onClick={eventClick} />
+						</Icons> */}
+						<NameSubject>
+							<Name>{name}</Name>
+							<Subject>
+								<SubjectUl>R$ {price}</SubjectUl>
+							</Subject>
+						</NameSubject>
+						<Buttons>
+							<HireMe
+								onClick={() => {
+									setOpenModal(true);
+								}}
+							>
+								<GoLocation></GoLocation>
+							</HireMe>
+						</Buttons>
+						{openModal && (
+							<Modal
+								closeModal={setOpenModal}
+								market={market}
+								address={address}
+							/>
+						)}
+					</CardContent>
+				</Container>
+			</li>
+		);
+	}
 	return (
 		<li>
 			<Container>
@@ -61,7 +102,11 @@ export default function ListShop({
 						</HireMe>
 					</Buttons>
 					{openModal && (
-						<Modal closeModal={setOpenModal} market={""} address={""} />
+						<Modal
+							closeModal={setOpenModal}
+							market={market}
+							address={address}
+						/>
 					)}
 				</CardContent>
 			</Container>

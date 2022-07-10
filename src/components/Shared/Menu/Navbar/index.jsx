@@ -12,6 +12,13 @@ import {
 	Title,
 	Logo,
 	Linker,
+	Profile,
+	ProfileLink,
+	Li,
+	IoIdCard,
+	IoExtensionPuzzle,
+	IoCart,
+	IoLogOut,
 } from "./style";
 import { FaBars } from "react-icons/fa";
 import logo from "../../../../imagens/logo.png";
@@ -20,9 +27,10 @@ import FeedData from "../../../../api/feeds.json";
 import { db } from "../../../../firebase/index";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { useUserContext } from "../../../../context/userContext";
+import { Link } from "react-router-dom";
 
 export default function Navbar({ toggle, resp, type, search }) {
-	const { user } = useUserContext();
+	const { user, logoutUser, photoURL } = useUserContext();
 	const [posts, setPosts] = useState([]);
 	const postsCollectionRef = query(
 		collection(db, "posts"),
@@ -48,6 +56,15 @@ export default function Navbar({ toggle, resp, type, search }) {
 		pha = "Entrar";
 		route = "/login";
 	}
+	const [hero, setHero] = useState(false);
+
+	function HandlerOpen() {
+		if (hero == false) {
+			setHero(true);
+		} else {
+			setHero(false);
+		}
+	}
 
 	if (search == "home") {
 		return (
@@ -68,7 +85,34 @@ export default function Navbar({ toggle, resp, type, search }) {
 							<FaBars></FaBars>
 						</MobileIcon>
 						<NavBtn>
-							<NavBtnLink to={route}>{pha}</NavBtnLink>
+							{/* <NavBtnLink to={route}>{pha}</NavBtnLink> */}
+							<Profile>
+								<img onClick={HandlerOpen} src={photoURL} alt="" />
+								<ProfileLink
+									style={hero ? { display: "block" } : { display: "none" }}
+								>
+									<Li>
+										<Link to="/login">
+											<IoIdCard></IoIdCard> Perfil
+										</Link>
+									</Li>
+									<Li>
+										<Link to="/publication">
+											<IoExtensionPuzzle></IoExtensionPuzzle> Publicar
+										</Link>
+									</Li>
+									<Li>
+										<Link to="/listshop">
+											<IoCart></IoCart> Sua lista
+										</Link>
+									</Li>
+									<Li onClick={logoutUser ? logoutUser : ""}>
+										<Link to={user ? "" : "/login"}>
+											<IoLogOut></IoLogOut> {user ? "Sair" : "Entrar"}
+										</Link>
+									</Li>
+								</ProfileLink>
+							</Profile>
 						</NavBtn>
 					</NavbarContainer>
 				</Nav>
