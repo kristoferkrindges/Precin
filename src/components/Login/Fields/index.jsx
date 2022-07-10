@@ -1,11 +1,22 @@
 import React, { useRef } from "react";
-import { Container } from "./style";
-import { useNavigate } from "react-router-dom";
+import {
+	Container,
+	BackgroundImage,
+	LeftLogin,
+	TextTitle,
+	RightLogin,
+	CardLogin,
+	CardTitle,
+	SubmitLogin,
+	TextField,
+	Field,
+	LabelField,
+	LoginButton,
+	ProductHunt,
+	ForgotPassword,
+} from "./style";
 import { useUserContext } from "../../../context/userContext";
-import { AiOutlineMail } from "react-icons/ai";
-import { RiLockPasswordLine } from "react-icons/ri";
 
-// function FieldsLogin() {
 const Signin = () => {
 	const emailRef = useRef();
 	const psdRef = useRef();
@@ -27,43 +38,36 @@ const Signin = () => {
 			});
 	};
 
-	const navigate = useNavigate();
-
 	return (
 		<Container>
-			<div className="form">
-				<h2>Login</h2>
-				<form onSubmit={onSubmit}>
-					<AiOutlineMail className="formIcons" />
-					<input
-						placeholder="Email"
-						// id="email"
-						type="email"
-						// name="email"
-						ref={emailRef}
-					/>
-					<RiLockPasswordLine className="formIcons" />
-					<input
-						placeholder="Senha"
-						// id="password"
-						type="password"
-						// name="password"
-						ref={psdRef}
-					/>
-					<button
-						type="submit"
-						// onClick={() => {
-						// 	navigate("/profile");
-						// }}
-					>
-						Entrar
-					</button>
-					<p onClick={forgotPasswordHandler}>Esqueceu a senha?</p>
-				</form>
-			</div>
+			<LeftLogin>
+				<TextTitle>Entre e aproveite os melhores Precinhos</TextTitle>
+				<ProductHunt
+					href="https://storyset.com/marketing"
+					alt="Marketing illustrations by Storyset"
+				/>
+			</LeftLogin>
+			<SubmitLogin onSubmit={onSubmit}>
+				<RightLogin>
+					<CardLogin>
+						<CardTitle>Login</CardTitle>
+						<TextField>
+							{/* Usuário */}
+							<LabelField for="usuario">Usuário</LabelField>
+							<Field placeholder="Email" type="email" ref={emailRef} />
+							{/* Senha */}
+							<LabelField for="senha">Senha</LabelField>
+							<Field placeholder="Senha" type="password" ref={psdRef} />
+						</TextField>
+						<LoginButton type="submit">Entrar</LoginButton>
+						<ForgotPassword onClick={forgotPasswordHandler}>
+							Esqueceu a senha?
+						</ForgotPassword>
+					</CardLogin>
+				</RightLogin>
+			</SubmitLogin>
 		</Container>
 	);
 };
 
-// export default FieldsLogin;
 export default Signin;
