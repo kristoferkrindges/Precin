@@ -29,7 +29,7 @@ export const Context = styled.div`
 		text-decoration: none;
 	}
 
-	@media only screen and (max-width: 768px) {
+	@media only screen and (max-width: 963px) {
 		display: none;
 	}
 `;

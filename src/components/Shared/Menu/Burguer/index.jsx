@@ -22,7 +22,7 @@ export default function Burguer({ isOpen, toggle }) {
 						Home
 					</SidebarLink>
 					<SidebarLink to="/publication" onClick={toggle}>
-						Públicar
+						Publicar
 					</SidebarLink>
 					<SidebarLink to="/login" onClick={toggle}>
 						Perfil

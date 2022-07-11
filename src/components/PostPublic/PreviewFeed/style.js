@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { IoCartOutline } from "react-icons/io5";
 
 export const Lil = styled.li`
-	margin-top: 3%;
+	/* margin-top: 3%; */
 	/* margin-bottom: 50px; */
 	width: 100%;
 	height: 40vh;
@@ -12,10 +12,11 @@ export const Lil = styled.li`
 	box-shadow: 0 50px 70px -40px rgba(0, 0, 0, 0.8);
 	border: 1px solid black;
 	background: ${({ theme }) => theme.feed};
+	background-color: green;
 `;
 
 export const Lile = styled.li`
-	margin-top: 5%;
+	/* margin-top: 5%; */
 	/* margin-bottom: 50px; */
 	width: 100%;
 	height: 100%;

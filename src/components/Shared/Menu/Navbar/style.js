@@ -160,7 +160,7 @@ export const Title = styled.h1`
 
 export const MobileIcon = styled.div`
 	display: none;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 963px) {
 		display: block;
 		position: absolute;
 		top: 0;
@@ -211,7 +211,7 @@ export const NavBtn = styled.nav`
 	display: flex;
 	align-items: center;
 	/* margin-left: 5%; */
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 963px) {
 		display: none;
 	}
 `;
