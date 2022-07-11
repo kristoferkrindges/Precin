@@ -1,15 +1,28 @@
 import React from "react";
-import { Container } from "./styles";
-import Layout from "../Layout"
+import { Layout, Controller, Direction } from "./styles";
 import Menu from "../Shared/Menu";
-import BottomBar from "../BottomBar";
+import Sidebar from "../Sidebar";
+import Suggestion from "../Suggestion";
+import Feed from "../Feed";
 
-export default function Home(){
-    return(
-            <Container>
-                <Menu type="logado" search="home"/>
-                <Layout></Layout>
-                {/* <BottomBar></BottomBar> */}
-            </Container>
-    )
+export default function Home() {
+	return (
+		<>
+			<Menu type="logado" search="home" />
+			<Sidebar></Sidebar>
+			<Layout>
+				<Controller>
+					<Direction>
+						<Feed filter="timestamp" order="desc" comments={false} />
+						<Suggestion></Suggestion>
+					</Direction>
+				</Controller>
+			</Layout>
+		</>
+		// <Container>
+		//     <Menu type="logado" search="home"/>
+		//     <Layout></Layout>
+		//     {/* <BottomBar></BottomBar> */}
+		// </Container>
+	);
 }

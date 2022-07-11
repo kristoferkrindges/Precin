@@ -57,7 +57,7 @@ function SearchBar({ placeholder, data }) {
 					{filteredData.slice(0, 5).map((value, key) => {
 						return (
 							<Link className="dataItem" to={`/search_result/${value.product}`}>
-								<Result> {value.product} </Result>
+								<Result onClick={clearInput}> {value.product} </Result>
 							</Link>
 						);
 					})}

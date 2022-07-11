@@ -28,8 +28,8 @@ import { Link } from "react-router-dom";
 
 function Suggestion(props) {
 	const { user } = useUserContext;
-	const { tokenProduct, setTokenProduct } = useContext(SearchContext);
-	console.log(tokenProduct);
+	// const { tokenProduct, setTokenProduct } = useContext(SearchContext);
+	// console.log(tokenProduct);
 	let pha;
 	let route;
 	if (user !== null) {
@@ -56,9 +56,15 @@ function Suggestion(props) {
 				<Join>
 					{/* <Trend>Poste agora</Trend> */}
 					<Icons>
-						<IoPersonCircle></IoPersonCircle>
-						<IoCart></IoCart>
-						<IoBookmark></IoBookmark>
+						<Link to="/login">
+							<IoPersonCircle></IoPersonCircle>
+						</Link>
+						<Link to="/listshop">
+							<IoCart></IoCart>
+						</Link>
+						<Link to="/">
+							<IoBookmark></IoBookmark>
+						</Link>
 					</Icons>
 					<NavBtn>
 						<NavBtnLink to={route}>{pha}</NavBtnLink>

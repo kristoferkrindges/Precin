@@ -4,7 +4,7 @@ import { IoImagesOutline } from "react-icons/io5";
 export const Container = styled.div`
 	/* newPost */
 	background: ${({ theme }) => theme.feed};
-	width: 100%;
+	width: 81%;
 	height: 230px;
 	margin: 0;
 	padding: 3%;
@@ -129,5 +129,5 @@ export const InfoUser = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 200px;
+	width: 300px;
 `;
