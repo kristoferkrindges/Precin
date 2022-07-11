@@ -22,7 +22,7 @@ export default function Join() {
 					</SlackLogo>
 					<SlackText>
 						<SlackHead>Faça uma publicação</SlackHead>
-						<SlackFoot>#TáNoPrecin</SlackFoot>
+						<SlackFoot>Precin</SlackFoot>
 					</SlackText>
 				</Slack>
 				<Link to="/publication">

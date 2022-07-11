@@ -12,7 +12,8 @@ export const Container = styled.div`
 	border-radius: 1rem;
 	height: 100%;
 	padding: 1rem;
-	background-color: ${({ theme }) => theme.feedInter};
+	/* background-color: ${({ theme }) => theme.feedInter}; */
+	background-color: ${({ theme }) => theme.buttons};
 	width: 100%;
 	box-shadow: red;
 	transition: 0.4s ease-in-out;
@@ -22,14 +23,14 @@ export const Container = styled.div`
 		opacity: 0.8; */
 	}
 
-	&::before {
+	/* &::before {
 		content: "";
 		position: absolute;
 		height: 20%;
 		width: 40.5%;
 		background-color: ${({ theme }) => theme.buttons};
 		border-radius: 20px 20px 0 0;
-	}
+	} */
 	@media screen and (min-width: 320px) and (max-width: 1080px) {
 		height: max-content;
 		width: 100%;
@@ -116,6 +117,10 @@ export const Name = styled.div`
 	color: ${({ theme }) => theme.title};
 	/* background-color: rgba(146, 166, 255, 0.3); */
 	border-radius: 10px;
+
+	@media (max-width: 768px) {
+		font-size: 1rem;
+	}
 `;
 
 export const Old = styled.span`
@@ -125,6 +130,10 @@ export const Old = styled.span`
 	/* background-color: rgba(146, 166, 255, 0.3); */
 	/* border-radius: 10px; */
 	margin-bottom: 2%;
+
+	@media (max-width: 768px) {
+		font-size: 1rem;
+	}
 `;
 
 export const FacebookIcon = styled(IoLogoFacebook)`

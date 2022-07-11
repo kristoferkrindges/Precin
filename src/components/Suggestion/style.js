@@ -40,9 +40,14 @@ export const Container = styled.div`
 	height: 37vw;
 	width: 24vh;
 	border-radius: 25px;
-	margin-top: 1%;
-	margin-right: 17%;
+	margin-top: 2%;
+	margin-left: 5%;
+	/* margin-right: 17%; */
 	/* margin-right: 1%; */
+
+	@media (max-width: 800px) {
+		display: none;
+	}
 `;
 
 export const Context = styled.div`
@@ -85,6 +90,11 @@ export const Icons = styled.div`
 	justify-content: space-around;
 	width: 100%;
 
+	a {
+		text-decoration: none;
+		color: ${({ theme }) => theme.title};
+	}
+
 	/* margin-left: 5%; */
 `;
 
@@ -101,11 +111,15 @@ export const NavBtnLink = styled(LinkR)`
 	transition: all 0.2s ease-in-out;
 	text-decoration: none;
 	text-align: center;
-	width: 13rem;
+	width: 12rem;
 	&:hover {
 		transition: all 0.2s ease-in-out;
 		background: ${({ theme }) => theme.buttons_hover};
 	}
+
+	/* @media (max-width: 1800px) {
+		display: none;
+	} */
 `;
 
 export const Divider = styled.div`

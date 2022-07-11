@@ -54,6 +54,7 @@ export const IoExtensionPuzzle = styled(IoExtensionPuzzleOutline)`
 // Menu bolinha
 export const Profile = styled.div`
 	position: relative;
+	margin-right: 85%;
 
 	img {
 		width: 45px;
@@ -62,7 +63,8 @@ export const Profile = styled.div`
 		object-fit: cover;
 		cursor: pointer;
 		margin-top: 15%;
-		/* margin-right: 30%; */
+		margin-right: 35%;
+		/* margin-left: 5%; */
 	}
 `;
 
@@ -114,11 +116,11 @@ export const Nav = styled.nav`
 
 export const NavbarContainer = styled.div`
 	display: flex;
-	justify-content: space-between;
+
 	height: 80px;
 	z-index: 1;
 	width: 100%;
-	padding: 0 24px;
+	/* padding: 0 24px; */
 	max-width: 1100px;
 `;
 
@@ -173,13 +175,13 @@ export const MobileIcon = styled.div`
 `;
 
 export const NavMenu = styled.ul`
-	display: flex;
-	align-items: center;
+	/* display: flex;
+	align-items: center; */
 	list-style: none;
-	width: 100%;
-	text-align: center;
+	width: 80%;
+	/* text-align: center; */
 	/* margin-right: -22px; */
-	padding: 0 5px;
+	/* padding: 0 5px; */
 
 	@media screen and (max-width: 768px) {
 		display: none;

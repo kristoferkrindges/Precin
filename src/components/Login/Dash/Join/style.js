@@ -10,6 +10,7 @@ export const JoinChannel = styled.div`
 	align-items: center;
 	transition: 0.4s ease-in-out;
 	padding: 24px 20px 20px 20px;
+	/* border: 3px solid ${({ theme }) => theme.buttons}; */
 	&:hover {
 		/* opacity: 0.5; */
 	}
@@ -52,15 +53,30 @@ export const SlackLogo = styled.div`
 
 export const SlackText = styled.div`
 	color: ${({ theme }) => theme.title};
+	font-size: 2rem;
+
+	@media (max-width: 768px) {
+		font-size: 1rem;
+	}
 `;
 
 export const SlackHead = styled.h2`
 	color: ${({ theme }) => theme.title};
 	font-weight: 500;
+	font-size: 1.5rem;
+
+	@media (max-width: 768px) {
+		font-size: 1rem;
+	}
 `;
 export const SlackFoot = styled.h5`
 	color: ${({ theme }) => theme.title};
 	font-weight: normal;
+	font-size: 1.5rem;
+
+	@media (max-width: 768px) {
+		font-size: 1rem;
+	}
 `;
 export const SlackJoin = styled.button`
 	background-color: ${({ theme }) => theme.buttons};
@@ -75,5 +91,9 @@ export const SlackJoin = styled.button`
 
 	&:hover {
 		opacity: 0.7;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 1rem;
 	}
 `;

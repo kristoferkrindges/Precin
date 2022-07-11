@@ -101,12 +101,20 @@ export const NameSubject = styled.div`
 	color: ${({ theme }) => theme.title};
 `;
 export const Name = styled.span`
-	font-size: 2rem;
+	font-size: 1.5rem;
 	font-weight: 600;
+
+	@media (max-width: 768px) {
+		font-size: 0.8rem;
+	}
 `;
 export const Subject = styled.span`
 	font-size: 1.5rem;
 	font-weight: 500;
+
+	@media (max-width: 768px) {
+		font-size: 1rem;
+	}
 `;
 export const SubjectUl = styled.ul``;
 export const Li = styled.li``;

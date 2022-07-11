@@ -11,7 +11,7 @@ export const Container = styled.div`
 	height: 100%; */
 	width: 90vh;
 
-	@media (max-width: 768px) {
+	@media (max-width: 965px) {
 		width: 103%;
 	}
 `;

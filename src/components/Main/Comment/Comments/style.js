@@ -7,7 +7,7 @@ import {
 
 export const Li = styled.li`
 	/* margin-bottom: 50px; */
-	width: 100%;
+	width: 81%;
 	background: ${({ theme }) => theme.feed};
 	border-radius: 10px;
 	border-bottom: 1px solid black;
