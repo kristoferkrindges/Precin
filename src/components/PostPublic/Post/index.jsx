@@ -390,6 +390,7 @@ export default function Post() {
 									</CardImage>
 								</ImageContent>
 								<CardContent>
+									<NameProduct>Como ficará a sua publicação</NameProduct>
 									<Ul>
 										<PreviewFeed
 											name={user.displayName}
