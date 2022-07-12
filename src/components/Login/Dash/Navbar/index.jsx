@@ -58,7 +58,7 @@ const Navbar = (props) => {
 			<Divider></Divider>
 			<Profile>
 				<img onClick={HandlerOpen} src={props.img} alt="" />
-				<ProfileLink style={hero ? { opacity: "1" } : { opacity: "0" }}>
+				<ProfileLink style={hero ? { display: "block" } : { display: "none" }}>
 					<Li>
 						<Link to="/login">
 							<IoIdCard></IoIdCard> Perfil

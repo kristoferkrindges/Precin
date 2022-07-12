@@ -9,13 +9,6 @@ import {
 	Title,
 } from "./style";
 import Carrousel from "react-elastic-carousel";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import SwiperCore, { Navigation, Pagination, EffectCoverflow } from "swiper";
-import tomate from "../../../../imagens/dog_sorridente.jpeg";
 import List from "../../../List/ListShop/Index";
 import { db } from "../../../..//firebase/index";
 import {
@@ -32,8 +25,7 @@ import {
 	where,
 } from "firebase/firestore";
 import { useUserContext } from "../../../../context/userContext";
-
-SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
+import Loading from "../../../Shared/Loader";
 
 function Slider(props) {
 	const { user } = useUserContext();
@@ -80,6 +72,20 @@ function Slider(props) {
 		{ width: 768, itemsToShow: 2 },
 		{ width: 1200, itemsToShow: 2 },
 	];
+
+	const [removeLoading, setRemoveLoading] = useState(false);
+	function determi() {
+		const len =
+			users.length > 0 &&
+			users
+				.filter((item) => item.email == user.email)
+				.map((value, key) => value.listShoop);
+		if (len.length > 0) {
+			return true;
+		}
+		return false;
+	}
+
 	return (
 		<Container>
 			<Context>
@@ -99,47 +105,12 @@ function Slider(props) {
 									type={"slide"}
 								/>
 							))}
+					{/* {!removeLoading && <Loading />} */}
+					{!determi() && <Loading />}
 				</Carrousel>
 			</Context>
 		</Container>
 	);
-	// return (
-	// 	<Controller>
-	// 		<Container>
-	// 			{/* <TitleWrapper>
-	// 				<TitleCont>
-	// 					<Title>Sua Lista</Title>
-	// 				</TitleCont>
-	// 			</TitleWrapper> */}
-	// 			<Swiper
-	// 				modules={[EffectCoverflow, Pagination, Navigation]}
-	// 				navigation={true}
-	// 				effect={"coverflow"}
-	// 				centeredSlides={true}
-	// 				slidesPerView={window.innerWidth < 768 ? 1 : "auto"}
-	// 				loop={true}
-	// 				coverflowEffect={{
-	// 					rotate: 50,
-	// 					stretch: 0,
-	// 					depth: 100,
-	// 					modifier: 1,
-	// 					slideShadows: true,
-	// 				}}
-	// 				pagination={{
-	// 					clickable: true,
-	// 				}}
-	// 				className="mySwiper"
-	// 			>
-	// 				<SwiperSlide>
-	// 					<List market={"Zaffari"} type={"slide"}></List>
-	// 					<List market={"Zaffari"} type={"slide"}></List>
-	// 					<List market={"Zaffari"} type={"slide"}></List>
-	// 					{/* <img src={tomate}></img> */}
-	// 				</SwiperSlide>
-	// 			</Swiper>
-	// 		</Container>
-	// 	</Controller>
-	// );
 }
 
 export default Slider;

@@ -23,6 +23,7 @@ export const Context = styled.div`
 	position: fixed;
 	z-index: 999;
 	margin-top: 5%;
+	/* margin-left: 20%; */
 
 	& a h2 {
 		color: ${({ theme }) => theme.title};

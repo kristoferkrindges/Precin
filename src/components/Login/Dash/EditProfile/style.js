@@ -6,7 +6,76 @@ import {
 	IoCameraOutline,
 	IoPencilOutline,
 	IoCloseOutline,
+	IoPersonOutline,
+	IoLockClosedOutline,
+	IoMailOutline,
 } from "react-icons/io5";
+
+export const IoPerson = styled(IoPersonOutline)`
+	width: 20px;
+	height: 20px;
+	stroke: white;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.5;
+	}
+`;
+
+export const IoLock = styled(IoLockClosedOutline)`
+	width: 20px;
+	height: 20px;
+	stroke: white;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.5;
+	}
+`;
+
+export const IoMail = styled(IoMailOutline)`
+	width: 20px;
+	height: 20px;
+	stroke: white;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.5;
+	}
+`;
+
+export const IoPerson2 = styled(IoPersonOutline)`
+	width: 40px;
+	height: 40px;
+	stroke: white;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.5;
+	}
+`;
+
+export const IoLock2 = styled(IoLockClosedOutline)`
+	width: 40px;
+	height: 40px;
+	stroke: white;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.5;
+	}
+`;
+
+export const IoMail2 = styled(IoMailOutline)`
+	width: 40px;
+	height: 40px;
+	stroke: white;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.5;
+	}
+`;
 
 export const IoClose = styled(IoCloseOutline)`
 	width: 20px;
@@ -32,8 +101,8 @@ export const IoPencil = styled(IoPencilOutline)`
 `;
 
 export const IoCamera = styled(IoCameraOutline)`
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
 	stroke: white;
 
 	&:hover {
@@ -42,44 +111,36 @@ export const IoCamera = styled(IoCameraOutline)`
 `;
 
 export const Container = styled.div`
-	/* display: flex; */
 	height: 100vh;
-	/* width: 100%; */
-	background: ${({ theme }) => theme.fundo};
 `;
 
 export const Context = styled.div`
-	display: flex;
+	/* display: flex;
 	justify-content: center;
-	/* align-items: center; */
+	align-items: center; */
 	/* background: red; */
-	width: 100%;
-	height: 91.8vh;
+	/* width: 100%; */
+	/* height: 91.8vh; */
 `;
 
 export const Layout = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* justify-content: center; */
+	justify-content: center;
 	height: 80vh;
-	margin-left: 15%;
 	margin-top: 1%;
 	border-radius: 25px;
-	/* border: 1px solid black; */
-	/* background: ${({ theme }) => theme.bg}; */
 `;
 
 export const Top = styled.div`
 	background: ${({ theme }) => theme.buttons};
 	border-radius: 20px;
-	/* position: relative; */
 	margin: 0px 0;
-	height: 40vh;
+	height: 36vh;
 	width: 100vh;
 	cursor: pointer;
 	transition: opacity 0.5s ease-out;
-	/* border: 1px solid black; */
 
 	&:hover {
 		/* width: 38vh;
@@ -143,31 +204,29 @@ export const Social = styled.div`
 	align-items: center;
 
 	svg {
-		color: #fff;
-		opacity: 0.6;
+		/* color: #fff; */
+		opacity: 0.8;
 		margin-top: 10px;
 		transition: all 0.3s ease;
 		cursor: pointer;
-	}
-
-	svg:hover {
-		opacity: 1;
 	}
 `;
 export const NameSubject = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 20px;
-	color: ${({ theme }) => theme.title};
+	/* margin-top: 10px; */
+	color: white;
 `;
 export const Name = styled.span`
 	font-size: 2rem;
 	font-weight: 600;
+	color: white;
 `;
 export const Subject = styled.span`
 	font-size: 1.5rem;
 	font-weight: 500;
+	color: ${({ theme }) => theme.title};
 `;
 
 export const Buttons = styled.div`
@@ -178,10 +237,10 @@ export const Buttons = styled.div`
 `;
 
 export const HireMe = styled.button`
-	background: #333;
+	background: ${({ theme }) => theme.title};
 	outline: none;
 	border: 1px solid ${({ theme }) => theme.buttons};
-	color: white;
+	color: ${({ theme }) => theme.buttons};
 	padding: 8px 22px;
 	border-radius: 20px;
 	font-size: 1.5rem;
@@ -198,7 +257,7 @@ export const HireMe = styled.button`
 // Second Container
 
 export const Bottom = styled.div`
-	height: 40vh;
+	height: 50vh;
 	width: 100vh;
 	background-color: ${({ theme }) => theme.navbar};
 	padding: 25px 30px;
@@ -209,44 +268,136 @@ export const Bottom = styled.div`
 `;
 
 export const Title = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-size: 25px;
 	font-weight: 500;
 	position: relative;
+	color: ${({ theme }) => theme.title};
+	height: 5vh;
 
 	&::before {
 		content: "";
 		position: absolute;
-		left: 0;
+		left: 50;
 		bottom: 0;
 		height: 3px;
-		width: 30px;
+		width: 150px;
 		border-radius: 5px;
 		background: linear-gradient(135deg, #71b7e6, #9b59b6);
 	}
 `;
 
-export const Collection = styled.div``;
+export const Collection = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
 
 export const UserDetails = styled.div`
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin: 20px 0 12px 0;
+	/* flex-wrap: wrap; */
+	align-items: center;
+	justify-content: space-around;
+	/* margin: 20px 0 12px 0; */
+	width: 60vw;
+	/* margin-top: 5%; */
 
-	span {
+	/* span {
 		display: block;
 		font-weight: 500;
 		margin-bottom: 5px;
-	}
+	} */
 
-	input {
+	/* input {
 		margin-bottom: 15px;
 		width: calc(100% / 2 - 20px);
+	} */
+`;
+
+export const Left = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 30vw;
+`;
+export const Right = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 30vw;
+`;
+
+export const Controller = styled.div`
+	display: flex;
+	/* align-items: center; */
+	flex-direction: column;
+	/* justify-content: center; */
+	width: 20vw;
+	margin-top: 5%;
+
+	span {
+		display: flex;
+		justify-content: start;
+		margin-left: 5%;
+		margin-bottom: 2%;
+		font-size: 1.2rem;
+		color: ${({ theme }) => theme.title};
 	}
 `;
 
+export const ContainerInput = styled.div`
+	position: relative;
+	height: 45px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	margin: auto;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 25px;
+	transition: all 0.3s ease;
+	margin-bottom: 5%;
+`;
+export const InputName = styled.input`
+	position: absolute;
+	height: 45px;
+	/* width: 300px; */
+	width: 100%;
+	border-radius: 25px;
+	background: #fff;
+	outline: none;
+	padding-left: 20px;
+	font-size: 16px;
+	color: black;
+	transition: background-color 0.5s ease-in;
+
+	padding-left: 15px;
+	border: 1px solid #ccc;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease;
+
+	&:focus {
+		background-color: rgba(0, 0, 0, 0.1);
+		color: #fff;
+	}
+`;
+
+export const TextInput = styled.h3`
+	position: absolute;
+	right: -2px;
+	top: 0;
+	width: 50px;
+	background-color: #4070f4;
+	height: 100%;
+	border-radius: 0 25px 25px 0;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	font-size: 20px;
+`;
+
 export const InputBox = styled.div`
-	& input {
+	/* & input {
 		height: 45px;
 		width: 400px;
 		outline: none;
@@ -256,7 +407,7 @@ export const InputBox = styled.div`
 		border: 1px solid #ccc;
 		border-bottom-width: 2px;
 		transition: all 0.3s ease;
-	}
+	} */
 
 	h3 {
 		height: 45px;
@@ -268,39 +419,16 @@ export const InputBox = styled.div`
 		transition: all 0.3s ease;
 		/* color: #94449e; */
 	}
+	span {
+		color: ${({ theme }) => theme.title};
+	}
 
 	input:focus {
-		border-color: #9b59b6;
+		border-color: ${({ theme }) => theme.buttons};
 	}
 
 	input:valid {
-		border-color: #9b59b6;
-	}
-`;
-
-export const ButtonResult = styled.div`
-	height: 45px;
-	margin: 45px 0;
-
-	input {
-		height: 100%;
-		width: 100%;
-		border-radius: 5px;
-		border: none;
-		color: #fff;
-		font-size: 18px;
-		font-weight: 500;
-		letter-spacing: 1px;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		background: linear-gradient(135deg, #71b7e6, #9b59b6);
-	}
-
-	input {
-		:hover {
-			/* transform: scale(0.99); */
-			background: linear-gradient(-135deg, #71b7e6, #9b59b6);
-		}
+		border-color: ${({ theme }) => theme.buttons};
 	}
 `;
 

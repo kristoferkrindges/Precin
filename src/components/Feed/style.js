@@ -10,6 +10,6 @@ export const Ulex = styled.div`
 export const Ul = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-left: 13%;
+	margin-left: 17%;
 	margin-top: 1%;
 `;

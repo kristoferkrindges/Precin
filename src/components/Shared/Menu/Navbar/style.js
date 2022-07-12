@@ -116,11 +116,11 @@ export const Nav = styled.nav`
 
 export const NavbarContainer = styled.div`
 	display: flex;
-
+	justify-content: space-between;
 	height: 80px;
 	z-index: 1;
 	width: 100%;
-	/* padding: 0 24px; */
+	padding: 0 24px;
 	max-width: 1100px;
 `;
 
@@ -174,11 +174,11 @@ export const MobileIcon = styled.div`
 	}
 `;
 
-export const NavMenu = styled.ul`
+export const NavMenu = styled.div`
 	/* display: flex;
 	align-items: center; */
 	list-style: none;
-	width: 80%;
+	width: 100%;
 	/* text-align: center; */
 	/* margin-right: -22px; */
 	/* padding: 0 5px; */
@@ -213,9 +213,9 @@ export const NavBtn = styled.nav`
 	display: flex;
 	align-items: center;
 	/* margin-left: 5%; */
-	@media screen and (max-width: 963px) {
+	/* @media screen and (max-width: 963px) {
 		display: none;
-	}
+	} */
 `;
 
 export const NavBtnLink = styled(LinkR)`

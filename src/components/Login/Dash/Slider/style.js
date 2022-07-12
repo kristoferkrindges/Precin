@@ -9,14 +9,19 @@ export const Container = styled.div`
 	background-color: ${({ theme }) => theme.feedInter};
 	width: 100%;
 	height: 100%; */
-	width: 90vh;
+	width: 100vh;
+	height: 50vh;
 
 	@media (max-width: 965px) {
-		width: 103%;
+		width: 100%;
 	}
 `;
 export const Context = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
+	height: 100%;
 	button.rec-dot {
 		background-color: ${({ theme }) => theme.buttons};
 		/* box-shadow: 0 0 1px 3px rgba(235, 16, 16, 0.5); */
