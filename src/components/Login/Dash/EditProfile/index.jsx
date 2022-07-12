@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Sidebar from "../../../Sidebar/index";
 import {
 	Container,
 	Context,
@@ -28,14 +27,24 @@ import {
 	Collection,
 	IoClose,
 	IoPencil,
+	InputName,
+	TextInput,
+	Left,
+	Right,
+	ContainerInput,
+	Controller,
+	IoMail,
+	IoLock,
+	IoPerson,
+	IoMail2,
+	IoLock2,
+	IoPerson2,
 } from "./style";
 import { useUserContext } from "../../../../context/userContext";
-import { usePostContext } from "../../../../context/postContext";
-import logo from "../../../../imagens/logo.png";
 import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "../../../../firebase";
 
-function EditProfile(props) {
+function EditProfile() {
 	const {
 		user,
 		photoURL,
@@ -136,7 +145,6 @@ function EditProfile(props) {
 
 	return (
 		<Container>
-			<Sidebar logo={logo} name={user.displayName} type={props.type} msg={4} />
 			<Context>
 				<Layout style={!open ? { background: "none" } : {}}>
 					<Top>
@@ -163,12 +171,12 @@ function EditProfile(props) {
 								</LabelImage>
 							</Image>
 							<Social>
-								<FacebookIcon></FacebookIcon>
-								<TwitterIcon></TwitterIcon>
-								<WhatsappIcon></WhatsappIcon>
+								<IoPerson2></IoPerson2>
+								<IoMail2></IoMail2>
+								<IoLock2></IoLock2>
 							</Social>
 							<NameSubject>
-								<Name style={open ? { margin: "20% 0% 0% 0%" } : {}}>
+								<Name style={open ? { display: "none" } : {}}>
 									{open ? user.displayName : user.displayName}
 								</Name>
 							</NameSubject>
@@ -182,63 +190,77 @@ function EditProfile(props) {
 					</Top>
 					<Bottom style={!open ? { display: "none" } : {}}>
 						<Title>Editar perfil</Title>
-						<Collection>
-							<form>
-								<UserDetails>
-									<InputBox>
-										<span class="details">Nome</span>
-
-										<input
+						<UserDetails>
+							<Left>
+								<Controller>
+									<span>Nome</span>
+									<ContainerInput>
+										<InputName
 											type="text"
-											placeholder="Digite seu Nome..."
-											required
+											placeholder="Nome do produto"
 											value={user.displayName}
 										/>
-									</InputBox>
-									<InputBox>
-										<span class="details">Email</span>
-										<input
+										<TextInput>
+											<IoPerson></IoPerson>
+										</TextInput>
+									</ContainerInput>
+								</Controller>
+								<Controller>
+									<span>Senha</span>
+									<ContainerInput>
+										<InputName
 											type="text"
-											placeholder="Digite seu Email..."
-											required
+											placeholder="Nome"
+											value={"**********"}
+										/>
+										<TextInput>
+											<IoLock></IoLock>
+										</TextInput>
+									</ContainerInput>
+								</Controller>
+							</Left>
+							<Right>
+								<Controller>
+									<span>Email</span>
+									<ContainerInput>
+										<InputName
+											type="text"
+											placeholder="Email"
 											value={user.email}
 										/>
-									</InputBox>
-									<InputBox>
-										<span class="details">Telefone</span>
-										<input
+										<TextInput>
+											<IoMail></IoMail>
+										</TextInput>
+									</ContainerInput>
+								</Controller>
+								<Controller>
+									<span>Confirmar senha</span>
+									<ContainerInput>
+										<InputName
 											type="text"
-											placeholder="Digite seu Telefone..."
-											required
+											placeholder="Senha"
+											value={"**********"}
 										/>
-									</InputBox>
-									<InputBox>
-										<span class="details">Senha</span>
-										<input
-											type="text"
-											placeholder="Digite seu Senha..."
-											required
-										/>
-									</InputBox>
-									{/* <ButtonResult>
-										<input type="submit" value="Register" />
-									</ButtonResult> */}
-									<Buttons
-										onClick={HandlerOpen}
-										style={open ? { margin: "8% 0% 0% 0%" } : {}}
-									>
-										<HireMe
-											onClick={() => {
-												handleClick();
-												updateImgURL(data_replaced3, photoURL);
-											}}
-										>
-											Pronto
-										</HireMe>
-									</Buttons>
-								</UserDetails>
-							</form>
-						</Collection>
+										<TextInput>
+											<IoLock></IoLock>
+										</TextInput>
+									</ContainerInput>
+								</Controller>
+							</Right>
+						</UserDetails>
+						<Buttons
+							onClick={HandlerOpen}
+							style={open ? { margin: "8% 0% 0% 0%" } : {}}
+						>
+							<HireMe
+								onClick={() => {
+									handleClick();
+									updateImgURL(data_replaced3, photoURL);
+								}}
+							>
+								Pronto
+							</HireMe>
+						</Buttons>
 					</Bottom>
 				</Layout>
 			</Context>

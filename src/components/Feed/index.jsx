@@ -13,6 +13,7 @@ import {
 import Post from "../Main/Post";
 import { useUserContext } from "../../context/userContext";
 import Feeds from "./Feeds";
+import Loading from "../Shared/Loader";
 
 export default function Feed(props) {
 	const { user } = useUserContext();
@@ -37,6 +38,7 @@ export default function Feed(props) {
 					id: doc.id,
 				}))
 			);
+			setRemoveLoading(true);
 		};
 		getPosts();
 	}, []);
@@ -56,6 +58,8 @@ export default function Feed(props) {
 
 		getUsers();
 	}, []);
+	//Loader
+	const [removeLoading, setRemoveLoading] = useState(false);
 	let x;
 
 	let result;
@@ -146,6 +150,7 @@ export default function Feed(props) {
 							// } else {
 							// }
 						))}
+				{!removeLoading && <Loading />}
 			</Ulex>
 		);
 	} else {
@@ -218,6 +223,7 @@ export default function Feed(props) {
 								{/* {props.comments && <Comments></Comments>} */}
 							</>
 						))}
+				{!removeLoading && <Loading />}
 			</Ul>
 		);
 	}

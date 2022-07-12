@@ -131,7 +131,34 @@ export default function Navbar({ toggle, resp, type, search }) {
 							<FaBars></FaBars>
 						</MobileIcon>
 						<NavBtn>
-							<NavBtnLink to={route}>{pha}</NavBtnLink>
+							{/* <NavBtnLink to={route}>{pha}</NavBtnLink> */}
+							<Profile>
+								<img onClick={HandlerOpen} src={photoURL} alt="" />
+								<ProfileLink
+									style={hero ? { display: "block" } : { display: "none" }}
+								>
+									<Li>
+										<Link to="/login">
+											<IoIdCard></IoIdCard> Perfil
+										</Link>
+									</Li>
+									<Li>
+										<Link to="/publication">
+											<IoExtensionPuzzle></IoExtensionPuzzle> Publicar
+										</Link>
+									</Li>
+									<Li>
+										<Link to="/listshop">
+											<IoCart></IoCart> Sua lista
+										</Link>
+									</Li>
+									<Li onClick={logoutUser ? logoutUser : ""}>
+										<Link to={user ? "" : "/login"}>
+											<IoLogOut></IoLogOut> {user ? "Sair" : "Entrar"}
+										</Link>
+									</Li>
+								</ProfileLink>
+							</Profile>
 						</NavBtn>
 					</NavbarContainer>
 				</Nav>

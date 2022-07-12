@@ -4,6 +4,7 @@ import Menu from "../Shared/Menu";
 import Sidebar from "../Sidebar";
 import Suggestion from "../Suggestion";
 import Feed from "../Feed";
+import BottomBar from "../BottomBar";
 
 export default function Home() {
 	return (
@@ -18,6 +19,7 @@ export default function Home() {
 					</Direction>
 				</Controller>
 			</Layout>
+			{/* <BottomBar></BottomBar> */}
 		</>
 		// <Container>
 		//     <Menu type="logado" search="home"/>

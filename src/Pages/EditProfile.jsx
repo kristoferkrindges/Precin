@@ -1,8 +1,8 @@
 import React from "react";
-import EditProfile from "../components/Login/Dash/EditProfile";
+import Edit from "../components/Edit";
 
 function EditProfileScreen() {
-	return <EditProfile />;
+	return <Edit />;
 }
 
 export default EditProfileScreen;
