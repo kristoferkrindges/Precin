@@ -27,7 +27,7 @@ export const NavSearchBar = styled.div`
 		}
 		@media screen and (max-width: 768px) {
 			width: 90%;
-			margin-top: 2%;
+			/* margin-top: 2%; */
 		}
 		:focus {
 			outline: none;
@@ -40,6 +40,7 @@ export const NavSearchBar = styled.div`
 		display: grid;
 		place-items: center;
 		padding-right: 1%;
+
 		@media screen and (max-width: 600px) {
 			display: none;
 		}
