@@ -7,6 +7,7 @@ export const Lil = styled.li`
 	width: 100%;
 	height: 40vh;
 	width: 70vh;
+	font-size: 100%;
 	border-radius: 10px;
 	padding: 3%;
 	box-shadow: 0 50px 70px -40px rgba(0, 0, 0, 0.8);
@@ -32,6 +33,7 @@ export const Header = styled.div`
 	justify-content: space-between;
 	height: 32vh;
 	width: 68vh;
+	background-color: red;
 `;
 
 // ===============================

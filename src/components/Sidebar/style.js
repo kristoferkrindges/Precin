@@ -29,10 +29,10 @@ export const Context = styled.div`
 		color: ${({ theme }) => theme.title};
 		text-decoration: none;
 	}
-
-	@media only screen and (max-width: 963px) {
+	/* 
+	@media only screen and (max-width: 768px) {
 		display: none;
-	}
+	} */
 `;
 
 export const ContextTwo = styled.div`

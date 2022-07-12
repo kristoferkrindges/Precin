@@ -3,12 +3,13 @@ import Register from "../../../imagens/register.svg";
 
 export const Container = styled.div`
 	width: 100vw;
+	max-width: 100%;
 	height: 77vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 768px) {
 		flex-direction: column;
 	}
 `;
@@ -21,9 +22,8 @@ export const LeftRegister = styled.div`
 	align-items: center;
 	flex-direction: column;
 
-	@media only screen and (max-width: 600px) {
-		width: 100%;
-		height: auto;
+	@media only screen and (max-width: 768px) {
+		width: 80vw;
 	}
 `;
 
@@ -33,10 +33,14 @@ export const TextTitle = styled.h1`
 	font-size: 4vh;
 
 	@media only screen and (max-width: 1800px) {
-		margin-left: 5%;
+		text-align: center;
 	}
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 1600px) {
+		font-size: 3.5vh;
+	}
+
+	@media only screen and (max-width: 768px) {
 		display: none;
 	}
 `;
@@ -48,9 +52,10 @@ export const RightRegister = styled.div`
 	justify-content: center;
 	align-items: center;
 
-	@media only screen and (max-width: 600px) {
-		width: 80vw;
+	@media only screen and (max-width: 768px) {
+		width: 100%;
 		height: auto;
+		width: 80vw;
 	}
 `;
 
@@ -67,8 +72,12 @@ export const CardRegister = styled.div`
 	border-radius: 20px;
 	box-shadow: 0px 10px 40px #00000056;
 
-	@media only screen and (max-width: 950px) {
-		width: 85%;
+	@media only screen and (max-width: 1800px) {
+		width: 70%;
+	}
+
+	@media only screen and (max-width: 1600px) {
+		width: 80%;
 	}
 
 	@media only screen and (max-width: 600px) {
@@ -85,8 +94,25 @@ export const CardTitle = styled.h1`
 export const SingupImage = styled.img`
 	width: 35vw;
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 1600px) {
+		width: 40vw;
+	}
+
+	@media only screen and (max-width: 1024px) {
+		width: 45vw;
+	}
+
+	@media only screen and (max-width: 768px) {
 		width: 50vw;
+		margin-top: 35%;
+	}
+
+	@media only screen and (max-width: 600px) {
+		width: 60vw;
+	}
+
+	@media only screen and (max-width: 480px) {
+		width: 70vw;
 	}
 `;
 

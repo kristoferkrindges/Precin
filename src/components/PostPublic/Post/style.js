@@ -14,11 +14,16 @@ import {
 export const Container = styled.main`
 	width: 100vw;
 	height: 100vh;
+	font-size: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	position: fixed;
+
+	@media only screen and (max-width: 1024px) {
+		align-items: flex-end;
+	}
 `;
 
 export const Description = styled.div`
@@ -28,30 +33,98 @@ export const Description = styled.div`
 
 export const Title = styled.h1`
 	text-align: center;
-	font-size: 2rem;
+	font-size: 2em;
 	font-weight: 700;
 	color: ${({ theme }) => theme.title};
+
+	@media only screen and (max-width: 1024px) {
+		text-align: right;
+		margin-right: 7%;
+	}
+
+	@media only screen and (max-width: 968px) {
+		text-align: right;
+		margin-right: 5%;
+	}
+
+	@media only screen and (max-width: 880px) {
+		text-align: right;
+		margin-right: 3%;
+	}
+
+	@media only screen and (max-width: 824px) {
+		text-align: right;
+		margin-right: 0%;
+	}
+
+	@media only screen and (max-width: 824px) {
+		font-size: 1.9em;
+	}
+
+	@media only screen and (max-width: 768px) {
+		font-size: 1.8em;
+	}
+
+	@media only screen and (max-width: 730px) {
+		font-size: 1.7em;
+	}
+
+	@media only screen and (max-width: 698px) {
+		font-size: 1.6em;
+	}
+
+	@media only screen and (max-width: 660px) {
+		font-size: 1.5em;
+	}
+
+	@media only screen and (max-width: 630px) {
+		font-size: 1.4em;
+	}
+
+	@media only screen and (max-width: 600px) {
+		font-size: 1.3em;
+	}
+
+	@media only screen and (max-width: 560px) {
+		font-size: 1.2em;
+	}
+
+	@media only screen and (max-width: 530px) {
+		font-size: 1.1em;
+	}
+
+	@media only screen and (max-width: 500px) {
+		font-size: 1em;
+	}
 `;
 // Cards
 export const Sliders = styled.div`
 	width: 60%;
 	height: 100%;
 
-	@media only screen and (max-width: 1200px) {
+	@media only screen and (max-width: 1800px) {
+		width: 65%;
+	}
+
+	@media only screen and (max-width: 1600px) {
 		width: 70%;
 	}
 
-	@media only screen and (max-width: 963px) {
-		width: 80%;
+	@media only screen and (max-width: 1200px) {
+		width: 75%;
 	}
 
-	@media only screen and (max-width: 630px) {
+	@media only screen and (max-width: 1024px) {
+		width: 85%;
+	}
+
+	/* @media only screen and (max-width: 630px) {
 		width: 90%;
-	}
+	} */
 
-	@media only screen and (max-width: 540px) {
+	/* @media only screen and (max-width: 540px) {
 		width: 100%;
-	}
+	} */
 
 	.rec.rec-dot {
 		background: #256ce1;
@@ -74,6 +147,10 @@ export const Sliders = styled.div`
 	.rec-arrow {
 		background-color: #256ce1;
 		color: white;
+
+		@media only screen and (max-width: 665px) {
+			display: none;
+		}
 	}
 	.rec-arrow:hover {
 		background-color: #256ce1;
@@ -92,6 +169,25 @@ export const Sliders = styled.div`
 export const Controller = styled.div`
 	width: 100%;
 	height: 100%;
+
+	@media only screen and (max-width: 665px) {
+		width: 90%;
+		margin-left: 10%;
+	}
+
+	@media only screen and (max-width: 580px) {
+		width: 85%;
+		margin-left: 13%;
+	}
+
+	@media only screen and (max-width: 500px) {
+		width: 80%;
+		margin-left: 15%;
+	}
+
+	@media only screen and (max-width: 480px) {
+		margin-left: 20%;
+	}
 `;
 
 // export const SliderContainer = styled.div`
@@ -154,6 +250,14 @@ export const Overlay = styled.span`
 	top: 0; */
 	/* width: 100%; */
 
+	@media only screen and (max-width: 824px) {
+		height: 20vh;
+	}
+
+	@media only screen and (max-width: 768px) {
+		height: 18vh;
+	}
+
 	&::before,
 	&::after {
 		content: "";
@@ -176,10 +280,16 @@ export const Overlay = styled.span`
 export const CardImage = styled.div`
 	height: 150px;
 	width: 150px;
+
 	/* position: relative; */
 	/* border-radius: 50%;
     background: ${({ theme }) => theme.navbar}; */
 	/* padding: 3px; */
+
+	@media only screen and (max-width: 824px) {
+		height: 120px;
+		width: 120px;
+	}
 
 	/* & img {
 		width: 180px;
@@ -205,11 +315,51 @@ export const CardContent = styled.div`
 `;
 
 export const NameProduct = styled.h2`
-	font-size: 2rem;
+	font-size: 2em;
 	font-weight: 500;
 	color: ${({ theme }) => theme.title};
 	margin: 3%;
 	text-align: center;
+
+	@media only screen and (max-width: 824px) {
+		font-size: 1.9em;
+	}
+
+	@media only screen and (max-width: 768px) {
+		font-size: 1.8em;
+	}
+
+	@media only screen and (max-width: 730px) {
+		font-size: 1.7em;
+	}
+
+	@media only screen and (max-width: 698px) {
+		font-size: 1.6em;
+	}
+
+	@media only screen and (max-width: 660px) {
+		font-size: 1.5em;
+	}
+
+	@media only screen and (max-width: 630px) {
+		font-size: 1.4em;
+	}
+
+	@media only screen and (max-width: 600px) {
+		font-size: 1.3em;
+	}
+
+	@media only screen and (max-width: 560px) {
+		font-size: 1.2em;
+	}
+
+	@media only screen and (max-width: 530px) {
+		font-size: 1.1em;
+	}
+
+	@media only screen and (max-width: 500px) {
+		font-size: 1em;
+	}
 `;
 
 // export const Instruction = styled.p`
@@ -229,6 +379,14 @@ export const ContainerInput = styled.div`
 	border-radius: 25px;
 	transition: all 0.3s ease;
 	margin-bottom: 5%;
+
+	@media only screen and (max-width: 768px) {
+		width: 60%;
+	}
+
+	@media only screen and (max-width: 768px) {
+		width: 60%;
+	}
 `;
 
 export const InputName = styled.input`
@@ -240,9 +398,25 @@ export const InputName = styled.input`
 	outline: none;
 	border: none;
 	padding-left: 20px;
-	font-size: 18px;
+	font-size: 1em;
 	color: black;
 	transition: background-color 0.5s ease-in;
+
+	@media only screen and (max-width: 500px) {
+		font-size: 0.9em;
+	}
+
+	@media only screen and (max-width: 490px) {
+		font-size: 0.8em;
+	}
+
+	@media only screen and (max-width: 456px) {
+		font-size: 0.7em;
+	}
+
+	@media only screen and (max-width: 420px) {
+		font-size: 0.6em;
+	}
 
 	&:focus {
 		background-color: rgba(0, 0, 0, 0.1);
@@ -266,7 +440,7 @@ export const TextInput = styled.h3`
 
 export const Writer = styled.span`
 	text-align: center;
-	font-size: 4.5rem;
+	font-size: 3em;
 	font-weight: bold;
 	color: #4070f4;
 
