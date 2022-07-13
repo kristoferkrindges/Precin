@@ -64,13 +64,13 @@ export default function ListShop({
 								<GoLocation></GoLocation>
 							</HireMe>
 						</Buttons>
-						{openModal && (
+						{/* {openModal && (
 							<Modal
 								closeModal={setOpenModal}
 								market={market}
 								address={address}
 							/>
-						)}
+						)} */}
 					</CardContent>
 				</Container>
 			</li>
@@ -101,13 +101,13 @@ export default function ListShop({
 							<GoLocation></GoLocation>
 						</HireMe>
 					</Buttons>
-					{openModal && (
+					{/* {openModal && (
 						<Modal
 							closeModal={setOpenModal}
 							market={market}
 							address={address}
 						/>
-					)}
+					)} */}
 				</CardContent>
 			</Container>
 		</li>

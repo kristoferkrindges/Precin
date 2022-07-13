@@ -376,13 +376,6 @@ export default function Feeds(props) {
 							/>
 						</Icon>
 					</Profile>
-					{openModal && (
-						<Modal
-							closeModal={setOpenModal}
-							market={props.market}
-							address={props.address}
-						/>
-					)}
 					<Product>
 						<Photo>
 							<img
@@ -406,6 +399,13 @@ export default function Feeds(props) {
 								</HireMe>
 							</Buttons>
 						</Register>
+						{openModal && (
+							<Modal
+								closeModal={setOpenModal}
+								market={props.market}
+								address={props.address}
+							/>
+						)}
 					</Product>
 					<Interaction>
 						<Link to={user ? "" : "/login"}>

@@ -5,7 +5,6 @@ export const Background = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 900;
 `;
 
 export const ModalWrapper = styled.div`
@@ -17,8 +16,9 @@ export const ModalWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	position: relative;
-	z-index: 900;
+	z-index: 5;
 	border-radius: 10px;
+	top: -300px;
 `;
 
 export const ModalImg = styled.img`
@@ -26,7 +26,6 @@ export const ModalImg = styled.img`
 	height: 100%;
 	border-radius: 10px 0 0 10px;
 	background: #000;
-	z-index: 900;
 `;
 
 export const ModalContent = styled.div`
@@ -36,7 +35,7 @@ export const ModalContent = styled.div`
 	align-items: center;
 	line-height: 1.8;
 	color: ${({ theme }) => theme.title};
-	z-index: 900;
+
 	h1 {
 		font-size: 1.5rem;
 	}
@@ -66,5 +65,4 @@ export const CloseModalButton = styled(MdClose)`
 	width: 32px;
 	height: 32px;
 	padding: 0;
-	z-index: 900;
 `;
