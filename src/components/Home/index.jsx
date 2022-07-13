@@ -10,7 +10,7 @@ export default function Home() {
 	return (
 		<>
 			<Menu type="logado" search="home" />
-			<Sidebar></Sidebar>
+			<Sidebar name="Desconhecido"></Sidebar>
 			<Layout>
 				<Controller>
 					<Direction>

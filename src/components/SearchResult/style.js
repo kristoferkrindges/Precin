@@ -19,7 +19,6 @@ export const Direction = styled.div`
 	/* align-items: center; */
 	& div {
 		margin-left: 0%;
-		margin-bottom: 0%;
 	}
 `;
 

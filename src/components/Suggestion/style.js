@@ -40,7 +40,7 @@ export const Container = styled.div`
 	height: 37vw;
 	width: 24vh;
 	border-radius: 25px;
-	margin-top: 2%;
+	margin-top: 1.3%;
 	margin-left: 2%;
 	/* margin-right: 17%; */
 	/* margin-right: 1%; */
