@@ -57,7 +57,7 @@ export const NameProfession = styled.div`
 	flex-direction: column;
 	align-items: center;
 	margin-top: 10px;
-	color: ${({ theme }) => theme.title};
+	color: white;
 
 	a {
 		text-decoration: none;
@@ -114,7 +114,7 @@ export const Name = styled.div`
 	margin-bottom: 10px;
 	font-size: 1.5rem;
 	font-weight: 600;
-	color: ${({ theme }) => theme.title};
+	color: white;
 	/* background-color: rgba(146, 166, 255, 0.3); */
 	border-radius: 10px;
 
@@ -126,7 +126,7 @@ export const Name = styled.div`
 export const Old = styled.span`
 	font-size: 1rem;
 	font-weight: 600;
-	color: ${({ theme }) => theme.title};
+	color: white;
 	/* background-color: rgba(146, 166, 255, 0.3); */
 	/* border-radius: 10px; */
 	margin-bottom: 2%;
@@ -162,6 +162,7 @@ export const IoPencil = styled(IoPencilOutline)`
 	width: 20px;
 	height: 20px;
 	cursor: pointer;
+	stroke: white;
 
 	&:hover {
 		opacity: 0.5;

@@ -49,7 +49,7 @@ import {
 
 import Carrousel from "react-elastic-carousel";
 import { Typewriter } from "react-simple-typewriter";
-import Feeds from "../../Main/Feed/Feeds";
+// import Feeds from "../../Main/Feed/Feeds";
 import Coelhao from "../../../imagens/logo_zaffari.png";
 import Nacional from "../../../imagens/nacional_logo.png";
 import Carrefour from "../../../imagens/carrefour_logo.png";
@@ -69,6 +69,7 @@ import {
 import ProductImage from "../ProductImage";
 import { useUserContext } from "../../../context/userContext";
 import { usePostContext } from "../../../context/postContext";
+import Feeds from "../../Feed/Feeds/index";
 
 export default function Post() {
 	const [productName, setProductName] = useState("");
@@ -392,7 +393,7 @@ export default function Post() {
 								<CardContent>
 									<NameProduct>Como ficará a sua publicação</NameProduct>
 									<Ul>
-										<PreviewFeed
+										{/* <Feeds
 											name={user.displayName}
 											time={"1h"}
 											public={""}
@@ -400,8 +401,8 @@ export default function Post() {
 											price={productPrice}
 											market={market}
 											img_user={photoURL}
-											// product_image={productURL}
-										/>
+											product_image={productURL}
+										/> */}
 									</Ul>
 								</CardContent>
 							</Card>
