@@ -62,7 +62,7 @@ function Suggestion(props) {
 						<Link to="/listshop">
 							<IoCart></IoCart>
 						</Link>
-						<Link to="/">
+						<Link to="/yourpublic">
 							<IoBookmark></IoBookmark>
 						</Link>
 					</Icons>

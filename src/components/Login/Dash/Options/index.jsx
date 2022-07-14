@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 import Tags from "../Tags";
 import {
 	IoCartOutline,
-	IoFileTrayFull,
 	IoIdCardOutline,
 	IoExtensionPuzzleOutline,
+	IoBookmarkOutline,
 } from "react-icons/io5";
 import Profile from "../Profile";
 import Join from "../Join";
@@ -31,7 +31,7 @@ const doc = [
 	},
 	{
 		card: "Suas publicações",
-		icon: <IoFileTrayFull />,
+		icon: <IoBookmarkOutline />,
 		link: "",
 	},
 	{

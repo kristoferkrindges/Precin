@@ -13,24 +13,12 @@ import ErrorPage from "./Pages/ErrorPage";
 import SearchResultScreen from "./Pages/SearchResult";
 import Post from "./Pages/Post";
 import List from "./Pages/ListPage";
+import YourPublic from "./Pages/YourPublic";
 import { isAuthenticated } from "./auth";
 import { UserContextProvider } from "./context/userContext";
 import { PrivateRouter } from "./context/PrivateRouter";
 import EditProfileScreen from "./Pages/EditProfile";
 import { PostContextProvider } from "./context/postContext";
-
-// const PrivateRoute = ({ component: Component, ...rest }) => (
-// 	<Route
-// 		{...rest}
-// 		render={(props) =>
-// 			isAuthenticated() ? (
-// 				<Component {...props} />
-// 			) : (
-// 				<Navigate to={{ pathname: "/", state: { from: props.location } }} />
-// 			)
-// 		}
-// 	/>
-// );
 
 export default function Routess() {
 	return (
@@ -46,12 +34,14 @@ export default function Routess() {
 							<Route path="/editprofile" element={<EditProfileScreen />} />
 						</Route>
 						<Route path="/profile/:username" element={<Profile />} />
-						{/* <Route path="/publication" element={<Post />} /> */}
 						<Route path="/publication" element={<PrivateRouter />}>
 							<Route path="/publication" element={<Post />}></Route>
 						</Route>
 						<Route path="/listshop" element={<PrivateRouter />}>
 							<Route path="/listshop" element={<List />}></Route>
+						</Route>
+						<Route path="/yourpublic" element={<PrivateRouter />}>
+							<Route path="/yourpublic" element={<YourPublic />}></Route>
 						</Route>
 						<Route path="/search_result" element={<SearchResultScreen />} />
 						<Route

@@ -13,11 +13,11 @@ import {
 	WebsiteRights,
 	SocialIcons,
 	SocialIconLink,
-	FacebookIcon,
-	TwitterIcon,
-	WhatsappIcon,
+	IoCart,
+	IoIdCard,
+	IoExtensionPuzzle,
+	IoBookmark,
 	InstagramIcon,
-	YoutubeIcon,
 } from "./styles";
 
 export default function Footer() {
@@ -27,7 +27,7 @@ export default function Footer() {
 				<FooterLinksContainer>
 					<FooterLinksWrapper>
 						<FooterLinkItems>
-							<FooterLinkTitle>Sobre nós</FooterLinkTitle>
+							<FooterLinkTitle>Sobre</FooterLinkTitle>
 							<FooterLink to="/">Termos de serviço</FooterLink>
 							<FooterLink to="/">Investidores</FooterLink>
 							<FooterLink to="/">Corporação</FooterLink>
@@ -39,26 +39,26 @@ export default function Footer() {
 							<FooterLink to="/">Contato</FooterLink>
 							<FooterLink to="/">Suporte</FooterLink>
 							<FooterLink to="/">Empresa</FooterLink>
-							<FooterLink to="/">Professores</FooterLink>
-							<FooterLink to="/">Alunos</FooterLink>
+							<FooterLink to="/">Email</FooterLink>
+							<FooterLink to="/">Redes</FooterLink>
 						</FooterLinkItems>
 					</FooterLinksWrapper>
 					<FooterLinksWrapper>
 						<FooterLinkItems>
-							<FooterLinkTitle>Hello World</FooterLinkTitle>
-							<FooterLink to="/">Hello World</FooterLink>
-							<FooterLink to="/">Hello World</FooterLink>
-							<FooterLink to="/">Hello World</FooterLink>
-							<FooterLink to="/">Hello World</FooterLink>
-							<FooterLink to="/">Hello World</FooterLink>
+							<FooterLinkTitle>Projeto</FooterLinkTitle>
+							<FooterLink to="/">Precin</FooterLink>
+							<FooterLink to="/">SenacRS</FooterLink>
+							<FooterLink to="/">TCC</FooterLink>
+							{/* <FooterLink to="/">Hello World</FooterLink>
+							<FooterLink to="/">Hello World</FooterLink> */}
 						</FooterLinkItems>
 						<FooterLinkItems>
-							<FooterLinkTitle>Redes</FooterLinkTitle>
-							<FooterLink to="/">Instagram</FooterLink>
-							<FooterLink to="/">Facebook</FooterLink>
-							<FooterLink to="/">Twitter</FooterLink>
-							<FooterLink to="/">Youtube</FooterLink>
-							<FooterLink to="/">WhatsApp</FooterLink>
+							<FooterLinkTitle>Funções</FooterLinkTitle>
+							<FooterLink to="/">Publicar</FooterLink>
+							<FooterLink to="/">Sua Lista</FooterLink>
+							<FooterLink to="/">Suas Publicações</FooterLink>
+							<FooterLink to="/">Dashboard</FooterLink>
+							<FooterLink to="/">Feed</FooterLink>
 						</FooterLinkItems>
 					</FooterLinksWrapper>
 				</FooterLinksContainer>
@@ -69,20 +69,20 @@ export default function Footer() {
 							Precin {new Date().getFullYear()}© Todos os direitos Reservados.
 						</WebsiteRights>
 						<SocialIcons>
+							{/* <SocialIconLink>
+								<InstagramIcon />
+							</SocialIconLink> */}
 							<SocialIconLink>
-								<InstagramIcon></InstagramIcon>
+								<IoCart />
 							</SocialIconLink>
 							<SocialIconLink>
-								<FacebookIcon></FacebookIcon>
+								<IoExtensionPuzzle />
 							</SocialIconLink>
 							<SocialIconLink>
-								<TwitterIcon></TwitterIcon>
+								<IoBookmark />
 							</SocialIconLink>
 							<SocialIconLink>
-								<YoutubeIcon></YoutubeIcon>
-							</SocialIconLink>
-							<SocialIconLink>
-								<WhatsappIcon></WhatsappIcon>
+								<IoIdCard />
 							</SocialIconLink>
 						</SocialIcons>
 					</SocialMediaWrap>
