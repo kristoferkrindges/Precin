@@ -10,6 +10,7 @@ export const Controller = styled.div`
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	font-size: 100%;
 	/* align-items: center; */
 `;
 
@@ -32,13 +33,12 @@ export const Context = styled.div`
 
 export const Pharase = styled.h2`
 	color: ${({ theme }) => theme.title};
-	font-size: 2.7rem;
+	font-size: 2em;
 	white-space: nowrap;
 	text-align: center;
 	/* border: 1px dashed ${({ theme }) => theme.title}; */
 	padding: 2%;
 	margin-top: 1%;
-	width: 74vh;
 
 	& span {
 		color: rgba(37, 108, 225, 1);

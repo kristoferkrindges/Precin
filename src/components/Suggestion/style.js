@@ -41,11 +41,11 @@ export const Container = styled.div`
 	width: 24vh;
 	border-radius: 25px;
 	margin-top: 1.3%;
-	margin-left: 2%;
+	margin-left: 5%;
 	/* margin-right: 17%; */
 	/* margin-right: 1%; */
 
-	@media (max-width: 800px) {
+	@media (max-width: 1000px) {
 		display: none;
 	}
 `;

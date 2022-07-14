@@ -8,17 +8,17 @@ export const Background = styled.div`
 `;
 
 export const ModalWrapper = styled.div`
-	width: 1200px;
-	height: 520px;
+	width: 60vw;
+	height: 50vh;
 	box-shadow: 0 5px 40px rgba(0, 0, 0, 0.6);
 	background: ${({ theme }) => theme.feed};
 	color: ${({ theme }) => theme.title};
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	position: relative;
+	position: absolute;
 	z-index: 5;
 	border-radius: 10px;
-	top: -300px;
+	top: -50px;
 `;
 
 export const ModalImg = styled.img`
