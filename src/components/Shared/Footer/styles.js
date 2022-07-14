@@ -1,12 +1,34 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import {
-	IoLogoFacebook,
-	IoLogoTwitter,
-	IoLogoWhatsapp,
-	IoLogoYoutube,
+	IoCartOutline,
+	IoIdCardOutline,
+	IoExtensionPuzzleOutline,
+	IoBookmarkOutline,
 	IoLogoInstagram,
 } from "react-icons/io5";
+
+export const IoCart = styled(IoCartOutline)`
+	width: 20px;
+	height: 20px;
+`;
+export const IoIdCard = styled(IoIdCardOutline)`
+	width: 20px;
+	height: 20px;
+`;
+export const IoExtensionPuzzle = styled(IoExtensionPuzzleOutline)`
+	width: 20px;
+	height: 20px;
+`;
+export const IoBookmark = styled(IoBookmarkOutline)`
+	width: 20px;
+	height: 20px;
+`;
+
+export const InstagramIcon = styled(IoLogoInstagram)`
+	width: 20px;
+	height: 20px;
+`;
 
 export const Container = styled.footer`
 	background: ${({ theme }) => theme.background};
@@ -117,26 +139,4 @@ export const SocialIcons = styled.div`
 export const SocialIconLink = styled.a`
 	color: ${({ theme }) => theme.title};
 	font-size: 24px;
-`;
-
-export const FacebookIcon = styled(IoLogoFacebook)`
-	width: 20px;
-	height: 20px;
-`;
-export const TwitterIcon = styled(IoLogoTwitter)`
-	width: 20px;
-	height: 20px;
-`;
-export const WhatsappIcon = styled(IoLogoWhatsapp)`
-	width: 20px;
-	height: 20px;
-`;
-export const YoutubeIcon = styled(IoLogoYoutube)`
-	width: 20px;
-	height: 20px;
-`;
-
-export const InstagramIcon = styled(IoLogoInstagram)`
-	width: 20px;
-	height: 20px;
 `;

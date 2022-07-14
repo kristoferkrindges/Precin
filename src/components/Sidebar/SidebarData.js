@@ -13,7 +13,7 @@ export const SidebarData = [
 		label: "Precinhos",
 		icon: <AiOutlineHome />,
 		to: "/",
-		notification: 5,
+		notification: 0,
 	},
 	{
 		label: "Publicar",
@@ -30,14 +30,14 @@ export const SidebarData = [
 	{
 		label: "Publicações",
 		icon: <IoBookmarkOutline />,
-		to: "/public",
+		to: "/yourpublic",
 		notification: 0,
 	},
 	{
 		label: "Minha Lista",
 		icon: <IoCartOutline />,
 		to: "/listshop",
-		notification: 1,
+		notification: 0,
 	},
 ];
 
