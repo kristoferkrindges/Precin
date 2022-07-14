@@ -50,6 +50,7 @@ import { useUserContext } from "../../../context/userContext";
 import { Link } from "react-router-dom";
 import Notification from "../../Shared/Notification";
 import { toast } from "react-toastify";
+import ModalImage from "../../Shared/ModalImage";
 
 export default function Feeds(props) {
 	const { user, photoURL } = useUserContext();
@@ -267,6 +268,11 @@ export default function Feeds(props) {
 		console.log("Add list!");
 	};
 
+	// Modal image
+	const [openModalImg, setOpenModalImg] = useState(false);
+
+	const [openModalImgP, setOpenModalImgP] = useState(false);
+
 	if (props.openComment == false) {
 		return (
 			<>
@@ -274,7 +280,12 @@ export default function Feeds(props) {
 					<Profile>
 						<User>
 							<Logo>
-								<img src={props.img_user}></img>
+								<img
+									src={props.img_user}
+									onClick={() => {
+										setOpenModalImg(true);
+									}}
+								></img>
 							</Logo>
 							<Name>{props.name}</Name>
 						</User>
@@ -286,6 +297,9 @@ export default function Feeds(props) {
 							/>
 						</Icon>
 					</Profile>
+					{openModalImg && (
+						<ModalImage closeModal={setOpenModalImg} ground={props.img_user} />
+					)}
 					<Product>
 						<Photo>
 							<img
@@ -293,6 +307,9 @@ export default function Feeds(props) {
 									props.img_product ||
 									"https://camo.githubusercontent.com/b7b7dca15c743879821e7cfc14e8034ecee3588e221de0a6f436423e304d95f5/68747470733a2f2f7a7562652e696f2f66696c65732f706f722d756d612d626f612d63617573612f33363664616462316461323032353338616531333332396261333464393030362d696d6167652e706e67"
 								}
+								onClick={() => {
+									setOpenModalImgP(true);
+								}}
 							></img>
 						</Photo>
 						<NameProduct>{props.product}</NameProduct>
@@ -317,6 +334,12 @@ export default function Feeds(props) {
 							/>
 						)}
 					</Product>
+					{openModalImgP && (
+						<ModalImage
+							closeModal={setOpenModalImgP}
+							ground={props.img_product}
+						/>
+					)}
 					<Interaction>
 						<Link to={user ? "" : "/login"}>
 							<ButtonPrecin
