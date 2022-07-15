@@ -242,7 +242,7 @@ export const NameSubject = styled.div`
 export const Name = styled.span`
 	font-size: 2em;
 	font-weight: 600;
-	color: white;
+	color: ${({ theme }) => theme.title};
 	white-space: nowrap;
 
 	@media (max-width: 600px) {
