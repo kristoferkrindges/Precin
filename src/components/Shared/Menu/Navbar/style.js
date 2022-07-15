@@ -183,9 +183,9 @@ export const NavMenu = styled.div`
 	/* margin-right: -22px; */
 	/* padding: 0 5px; */
 
-	@media screen and (max-width: 768px) {
+	/* @media screen and (max-width: 768px) {
 		display: none;
-	}
+	} */
 `;
 
 export const NavItem = styled.li`

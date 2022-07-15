@@ -402,7 +402,7 @@ export default function Post() {
 											price={productPrice}
 											market={market}
 											img_user={photoURL}
-											img_product={productURL}
+											img_product={preview}
 											// img_product={
 											// 	"https://cdn.wikifarmer.com/wp-content/uploads/2020/02/tomato-facts.jpg"
 											// }

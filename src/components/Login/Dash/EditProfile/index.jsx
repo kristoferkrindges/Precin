@@ -248,10 +248,7 @@ function EditProfile() {
 								</Controller>
 							</Right>
 						</UserDetails>
-						<Buttons
-							onClick={HandlerOpen}
-							style={open ? { margin: "8% 0% 0% 0%" } : {}}
-						>
+						<Buttons onClick={HandlerOpen} style={open ? {} : {}}>
 							<HireMe
 								onClick={() => {
 									handleClick();
