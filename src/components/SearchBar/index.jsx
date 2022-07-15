@@ -21,7 +21,7 @@ function SearchBar({ placeholder, data }) {
 		const newFilter = data.filter((value) => {
 			return value.product.toLowerCase().includes(searchWord.toLowerCase());
 		});
-		console.log(newFilter);
+		// console.log(newFilter);
 
 		if (searchWord === "") {
 			setFilteredData([]);

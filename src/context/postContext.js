@@ -21,7 +21,7 @@ export const PostContextProvider = ({ children }) => {
 		const productImage = e.target.files[0];
 		if (productImage && productImage.type.substr(0, 5) === "image") {
 			setImage(e.target.files[0]);
-			console.log(productImage);
+			// console.log(productImage);
 		} else {
 			setImage(null);
 		}
@@ -56,7 +56,7 @@ export const PostContextProvider = ({ children }) => {
 		const productURL = await getDownloadURL(productRef);
 
 		setProductURL(productURL);
-		console.log(productURL);
+		// console.log(productURL);
 
 		setLoadingImage(false);
 	}

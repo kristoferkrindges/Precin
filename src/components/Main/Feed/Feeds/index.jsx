@@ -168,9 +168,9 @@ export default function Feeds(props) {
 		} else {
 			setPrecinButton(false);
 			setPrecin(precin - 1);
-			console.log(arrayPrecin);
+			// console.log(arrayPrecin);
 			arrayPrecin = arrayPrecin.filter((p) => p !== props.id);
-			console.log(arrayPrecin);
+			// console.log(arrayPrecin);
 			updatePrecin();
 			updateDecreasePrecin(props.id, precin);
 		}
@@ -211,7 +211,7 @@ export default function Feeds(props) {
 			setPrecao(precao - 1);
 			updateDecreasePrecao(props.id, precao);
 			arrayPrecao = arrayPrecao.filter((p) => p !== props.id);
-			console.log(arrayPrecao);
+			// console.log(arrayPrecao);
 			updatePrecao();
 		}
 	}

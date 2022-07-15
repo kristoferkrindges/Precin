@@ -62,7 +62,7 @@ function Profile(props) {
 	useEffect(() => {
 		if (user?.photoURL) {
 			setPhotoURL(user.photoURL);
-			console.log(user.photoURL);
+			// console.log(user.photoURL);
 		}
 	}, [user]);
 
