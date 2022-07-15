@@ -77,7 +77,7 @@ export default function Feeds(props) {
 	// States array userP precin and precao
 	const [userPrecin, setUserPrecin] = useState(props.userPrecin[0]);
 	const [userPrecao, setUserPrecao] = useState(props.userPrecao[0]);
-	console.log(props.userPrecin[0]);
+	// console.log(props.userPrecin[0]);
 	let pres;
 	let prec;
 	if (Array.isArray(userPrecin) ? userPrecin.includes(props.id) : false) {

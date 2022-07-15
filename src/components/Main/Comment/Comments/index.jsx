@@ -21,7 +21,7 @@ export default function Comments(props) {
 	let controllerPrecao = props.precao;
 	const [precin, setPrecin] = useState(controllerPrecin); //Aqui pega o context precin
 	const [precao, setPrecao] = useState(controllerPrecao); //Aqui pega o context precao
-	console.log(precin);
+	// console.log(precin);
 
 	const [precinButton, setPrecinButton] = useState(false);
 	const [precaoButton, setPrecaoButton] = useState(false);

@@ -94,7 +94,7 @@ export const UserContextProvider = ({ children }) => {
 		const file = e.target.files[0];
 		if (file && file.type.substr(0, 5) === "image") {
 			setPhoto(e.target.files[0]);
-			console.log(file);
+			// console.log(file);
 		} else {
 			setPhoto(null);
 		}
@@ -126,7 +126,7 @@ export const UserContextProvider = ({ children }) => {
 		updateProfile(user, {
 			photoURL,
 		});
-		console.log(photoURL);
+		// console.log(photoURL);
 
 		setLoading(false);
 		setTimeout(() => {
