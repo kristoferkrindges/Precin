@@ -45,6 +45,7 @@ import {
 	setDoc,
 	orderBy,
 	arrayUnion,
+	arrayRemove,
 } from "firebase/firestore";
 import { useUserContext } from "../../../context/userContext";
 import { Link } from "react-router-dom";
@@ -54,6 +55,8 @@ import ModalImage from "../../Shared/ModalImage";
 
 export default function Feeds(props) {
 	const { user, photoURL } = useUserContext();
+	// console.log(user);
+	// console.log(photoURL);
 
 	//Icone mercado
 	let merk;
@@ -70,24 +73,14 @@ export default function Feeds(props) {
 	if (props.comments == 0) {
 		c = false;
 	}
-	// Modal
-	const [openModal, setOpenModal] = useState(false);
-
+	// Parte de feed NOVO lógica.
 	// States array userP precin and precao
 	const [userPrecin, setUserPrecin] = useState(props.userPrecin[0]);
 	const [userPrecao, setUserPrecao] = useState(props.userPrecao[0]);
-	//Setar fora
-	// console.log(userPrecin);
-	// console.log(userPrecao);
+	console.log(props.userPrecin[0]);
 	let pres;
 	let prec;
-	// let arrayPrecin;
-	// let arrayPrecao;
-	let arrayPrecin = props.userPrecin[0];
-	let arrayPrecao = props.userPrecao[0];
-	// console.log(props.id);
-	// console.log(arrayPrecin);
-	if (Array.isArray(arrayPrecin) ? arrayPrecin.includes(props.id) : false) {
+	if (Array.isArray(userPrecin) ? userPrecin.includes(props.id) : false) {
 		pres = true;
 	} else {
 		pres = false;
@@ -98,99 +91,113 @@ export default function Feeds(props) {
 	} else {
 		prec = false;
 	}
+	// while (userPrecin != undefined) {}
+	// if (userPrecin.includes(props.id)) {
+	// 	pres = true;
+	// } else {
+	// 	pres = false;
+	// }
+
+	// if (userPrecao.includes(props.id)) {
+	// 	prec = true;
+	// } else {
+	// 	prec = false;
+	// }
 
 	// Controller precin and precao
-	let controllerPrecin = props.precin;
-	let controllerPrecao = props.precao;
-	const [precin, setPrecin] = useState(controllerPrecin); //Aqui pega o context precin
-	const [precao, setPrecao] = useState(controllerPrecao); //Aqui pega o context precao
+	const [precin, setPrecin] = useState(props.precin); //Aqui pega o context precin
+	const [precao, setPrecao] = useState(props.precao); //Aqui pega o context precao
+	if (precin <= -1) {
+		setPrecin(0);
+	}
+	if (precao <= -1) {
+		setPrecao(0);
+	}
 
 	const [precinButton, setPrecinButton] = useState(pres); // Colocar a let pres
 	const [precaoButton, setPrecaoButton] = useState(prec); // Colocar a let prec
-	const [commentButton, setCommentButton] = useState(false);
-
-	const { preview } = usePostContext();
-
+	// console.log(props.idP.toString());
 	function HandlerButtonPrecin() {
 		if (precinButton == false) {
 			setPrecinButton(true);
 			setPrecin(precin + 1);
-			arrayPrecin.push(props.id);
+			IncreseAvaiblePrecin(props.idP.toString(), props.id);
 			updateIncreasePrecin(props.id, precin);
-			updatePrecin();
 			if (precaoButton == true) {
 				setPrecaoButton(false);
-				setPrecao(precao - 1);
+				if (precao == 0) {
+					setPrecao(precao);
+				} else {
+					setPrecao(precao - 1);
+				}
 				updateDecreasePrecao(props.id, precao);
-				arrayPrecao = arrayPrecao.filter((p) => p !== props.id);
-				updatePrecao();
-				// setUserPrecao(
-				// 	Array.isArray(arrayPrecao)
-				// 		? arrayPrecao.filter((p) => p !== props.id)
-				// 		: arrayPrecao
-				// );
+				decreseAvaiblePrecao(props.idP.toString(), props.id);
 			}
 		} else {
 			setPrecinButton(false);
-			setPrecin(precin - 1);
-			console.log(arrayPrecin);
-			arrayPrecin = arrayPrecin.filter((p) => p !== props.id);
-			console.log(arrayPrecin);
-			updatePrecin();
+			if (precin == 0) {
+				setPrecin(precin);
+			} else {
+				setPrecin(precin - 1);
+			}
 			updateDecreasePrecin(props.id, precin);
+			decreseAvaiblePrecin(props.idP.toString(), props.id);
 		}
 	}
-
-	//Firestore Update - IncreasePrecin & DecreasePrecin
-
-	const updateIncreasePrecin = async (id, precin) => {
-		const postDoc = doc(db, "posts", id);
-		const newFields = { precin: precin + 1 };
-		await updateDoc(postDoc, newFields);
-		console.log("Precin increased!");
-	};
-
-	const updateDecreasePrecin = async (id, precin) => {
-		const postDoc = doc(db, "posts", id);
-		const newFields = { precin: precin - 1 };
-		await updateDoc(postDoc, newFields);
-		console.log("Precin decreased!");
-	};
 
 	function HandlerButtonPrecao() {
 		if (precaoButton == false) {
 			setPrecaoButton(true);
 			setPrecao(precao + 1);
 			updateIncreasePrecao(props.id, precao);
-			arrayPrecao.push(props.id);
-			updatePrecao();
+			IncreseAvaiblePrecao(props.idP.toString(), props.id);
 			if (precinButton == true) {
 				setPrecinButton(false);
-				setPrecin(precin - 1);
+				if (precin == 0) {
+					setPrecin(precin);
+				} else {
+					setPrecin(precin - 1);
+				}
 				updateDecreasePrecin(props.id, precin);
-				arrayPrecin = arrayPrecin.filter((p) => p !== props.id);
-				updatePrecin();
+				decreseAvaiblePrecin(props.idP.toString(), props.id);
 			}
 		} else {
 			setPrecaoButton(false);
-			setPrecao(precao - 1);
+			if (precao == 0) {
+				setPrecao(precao);
+			} else {
+				setPrecao(precao - 1);
+			}
 			updateDecreasePrecao(props.id, precao);
-			arrayPrecao = arrayPrecao.filter((p) => p !== props.id);
-			console.log(arrayPrecao);
-			updatePrecao();
+			decreseAvaiblePrecao(props.idP.toString(), props.id);
 		}
 	}
 
-	function HandlerButtonComment() {
-		if (commentButton == false) {
-			setCommentButton(true);
-		} else {
-			setCommentButton(false);
-		}
-	}
-
+	const IncreseAvaiblePrecin = async (id, item) => {
+		const postDoc = doc(db, "usersP", id);
+		const newFields = { precin: arrayUnion(item) };
+		await updateDoc(postDoc, newFields);
+		console.log("Ex list!");
+	};
+	const decreseAvaiblePrecin = async (id, shop) => {
+		const postDoc = doc(db, "usersP", id);
+		const newFields = { precin: arrayRemove(shop) };
+		await updateDoc(postDoc, newFields);
+		console.log("Ex list!");
+	};
+	const IncreseAvaiblePrecao = async (id, item) => {
+		const postDoc = doc(db, "usersP", id);
+		const newFields = { precao: arrayUnion(item) };
+		await updateDoc(postDoc, newFields);
+		console.log("Ex list!");
+	};
+	const decreseAvaiblePrecao = async (id, shop) => {
+		const postDoc = doc(db, "usersP", id);
+		const newFields = { precao: arrayRemove(shop) };
+		await updateDoc(postDoc, newFields);
+		console.log("Ex list!");
+	};
 	//Firestore Update - IncreasePrecin & DecreasePrecin
-
 	const updateIncreasePrecao = async (id, precao) => {
 		const postDoc = doc(db, "posts", id);
 		const newFields = { precao: precao + 1 };
@@ -204,38 +211,34 @@ export default function Feeds(props) {
 		await updateDoc(postDoc, newFields);
 		console.log("Precao decreased!");
 	};
-	// Arrays Precin and Precao Updates dk.toString()
-	// const postsCollectionRef = doc(db, "usersP", props.idP[0]);
-	let postsCollectionRef;
-	if (user) {
-		postsCollectionRef = doc(db, "usersP", props.idP.toString());
-	} else {
-		postsCollectionRef = doc(db, "usersP", "kJyjN2C2D8SzaeaoIsOx");
+
+	//Firestore Update - IncreasePrecin & DecreasePrecin
+	const updateIncreasePrecin = async (id, precin) => {
+		const postDoc = doc(db, "posts", id);
+		const newFields = { precin: precin + 1 };
+		await updateDoc(postDoc, newFields);
+		console.log("Precin increased!");
+	};
+
+	const updateDecreasePrecin = async (id, precin) => {
+		const postDoc = doc(db, "posts", id);
+		const newFields = { precin: precin - 1 };
+		await updateDoc(postDoc, newFields);
+		console.log("Precin decreased!");
+	};
+	// ========================================================
+	// Modal
+	const [openModal, setOpenModal] = useState(false);
+
+	const [commentButton, setCommentButton] = useState(false);
+
+	function HandlerButtonComment() {
+		if (commentButton == false) {
+			setCommentButton(true);
+		} else {
+			setCommentButton(false);
+		}
 	}
-
-	const updatePrecin = async () => {
-		await setDoc(
-			postsCollectionRef,
-			{
-				precin: arrayPrecin,
-			},
-			{ merge: true }
-		);
-	};
-
-	const updatePrecao = async () => {
-		await setDoc(
-			postsCollectionRef,
-			{
-				precao: arrayPrecao,
-			},
-			{ merge: true }
-		);
-	};
-
-	// function Includ() {
-	// 	toast.success("Adicionado com sucesso!");
-	// }
 
 	function ProductImage() {
 		const [productImage, setProductImage] = useState([]);

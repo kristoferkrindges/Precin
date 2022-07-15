@@ -35,6 +35,7 @@ export default function Feeds({
 	market,
 	address,
 	onClick,
+	type,
 }) {
 	const { user, photoURL } = useUserContext();
 
@@ -53,53 +54,103 @@ export default function Feeds({
 	} else {
 		merk = Outro;
 	}
-
-	return (
-		<>
-			<Feeder>
-				<Profile>
-					<User>
-						<Logo>
-							<img src={img_user}></img>
-						</Logo>
-						<Name>{name}</Name>
-					</User>
-					<Icons>
-						<IoCloseCircle onClick={eventClick} />
-					</Icons>
-				</Profile>
-				<Product>
-					<Photo>
-						<img
-							src={
-								img_product ||
-								"https://camo.githubusercontent.com/b7b7dca15c743879821e7cfc14e8034ecee3588e221de0a6f436423e304d95f5/68747470733a2f2f7a7562652e696f2f66696c65732f706f722d756d612d626f612d63617573612f33363664616462316461323032353338616531333332396261333464393030362d696d6167652e706e67"
-							}
-						></img>
-					</Photo>
-					<NameProduct>{product}</NameProduct>
-					<Register>
-						<img src={merk}></img>
-						<Price>R$ {price}</Price>
-						<Buttons>
-							<HireMe
-							// onClick={() => {
-							// 	setOpenModal(true);
-							// }}
-							>
-								<GoLocation></GoLocation>
-							</HireMe>
-						</Buttons>
-					</Register>
-					{/* {openModal && (
+	if (type == "Ypublic") {
+		return (
+			<>
+				<Feeder>
+					<Profile>
+						<User>
+							<Logo>
+								<img src={img_user}></img>
+							</Logo>
+							<Name>{name}</Name>
+						</User>
+						<Icons>
+							<IoCloseCircle onClick={eventClick} />
+						</Icons>
+					</Profile>
+					<Product>
+						<Photo>
+							<img
+								src={
+									img_product ||
+									"https://camo.githubusercontent.com/b7b7dca15c743879821e7cfc14e8034ecee3588e221de0a6f436423e304d95f5/68747470733a2f2f7a7562652e696f2f66696c65732f706f722d756d612d626f612d63617573612f33363664616462316461323032353338616531333332396261333464393030362d696d6167652e706e67"
+								}
+							></img>
+						</Photo>
+						<NameProduct>{product}</NameProduct>
+						<Register>
+							<img src={merk}></img>
+							<Price>R$ {price}</Price>
+							<Buttons>
+								<HireMe
+								// onClick={() => {
+								// 	setOpenModal(true);
+								// }}
+								>
+									<GoLocation></GoLocation>
+								</HireMe>
+							</Buttons>
+						</Register>
+						{/* {openModal && (
+								<Modal
+									closeModal={setOpenModal}
+									market={props.market}
+									address={props.address}
+								/>
+							)} */}
+					</Product>
+				</Feeder>
+			</>
+		);
+	} else {
+		return (
+			<>
+				<Feeder>
+					<Profile>
+						<User>
+							<Logo>
+								<img src={img_user}></img>
+							</Logo>
+							<Name>{name}</Name>
+						</User>
+						{/* <Icons>
+							<IoCloseCircle onClick={eventClick} />
+						</Icons> */}
+					</Profile>
+					<Product>
+						<Photo>
+							<img
+								src={
+									img_product ||
+									"https://camo.githubusercontent.com/b7b7dca15c743879821e7cfc14e8034ecee3588e221de0a6f436423e304d95f5/68747470733a2f2f7a7562652e696f2f66696c65732f706f722d756d612d626f612d63617573612f33363664616462316461323032353338616531333332396261333464393030362d696d6167652e706e67"
+								}
+							></img>
+						</Photo>
+						<NameProduct>{product}</NameProduct>
+						<Register>
+							<img src={merk}></img>
+							<Price>R$ {price}</Price>
+							<Buttons>
+								<HireMe
+								// onClick={() => {
+								// 	setOpenModal(true);
+								// }}
+								>
+									<GoLocation></GoLocation>
+								</HireMe>
+							</Buttons>
+						</Register>
+						{/* {openModal && (
 							<Modal
 								closeModal={setOpenModal}
-								market={props.market}
-								address={props.address}
+								market={market}
+								address={address}
 							/>
 						)} */}
-				</Product>
-			</Feeder>
-		</>
-	);
+					</Product>
+				</Feeder>
+			</>
+		);
+	}
 }

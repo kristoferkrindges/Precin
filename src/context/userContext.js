@@ -49,7 +49,7 @@ export const UserContextProvider = ({ children }) => {
 			.catch((err) => setError(err.message))
 			.finally(() => setLoading(false));
 	};
-
+	// Problem is null
 	useEffect(() => {
 		setLoading(true);
 		const unsubscribe = onAuthStateChanged(auth, (res) => {

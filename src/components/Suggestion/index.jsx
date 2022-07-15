@@ -74,55 +74,55 @@ function Suggestion(props) {
 				<Trends>
 					<Trend>Em Alta</Trend>
 					<Colleter>
-						<Link to="/search_result/Tomate">
-							<span className="search"># Tomate</span>
+						<Link to="/search_result/Suco">
+							<span className="search"># Suco</span>
 						</Link>
 						{/* <span className="item">🍇 Uva</span>
 						<span className="item">🍍 Abacaxi</span> */}
 					</Colleter>
 					<Colleter>
 						<Link to="/search_result/Tomate">
-							<span className="search"># Pera</span>
+							<span className="search"># Tomate</span>
 						</Link>
 					</Colleter>
 					<Colleter>
-						<Link to="/search_result/Tomate">
-							<span className="search"># Limão</span>
+						<Link to="/search_result/Bis">
+							<span className="search"># Bis</span>
 						</Link>
 					</Colleter>
 					<Colleter>
-						<Link to="/search_result/Tomate">
-							<span className="search"># Banana</span>
+						<Link to="/search_result/Alho">
+							<span className="search"># Alho</span>
 						</Link>
 					</Colleter>
 					<Colleter>
-						<Link to="/search_result/Tomate">
-							<span className="search"># Cereja</span>
+						<Link to="/search_result/Moranga">
+							<span className="search"># Moranga</span>
 						</Link>
 					</Colleter>
 					<Colleter>
-						<Link to="/search_result/Tomate">
-							<span className="search"># Pizza</span>
+						<Link to="/search_result/Leite">
+							<span className="search"># Leite</span>
 						</Link>
 					</Colleter>
 					<Colleter>
-						<Link to="/search_result/Tomate">
-							<span className="search"># Suco</span>
-						</Link>
-					</Colleter>
-					<Colleter>
-						<Link to="/search_result/Tomate">
+						<Link to="/search_result/Arroz">
 							<span className="search"># Arroz</span>
 						</Link>
 					</Colleter>
 					<Colleter>
-						<Link to="/search_result/Tomate">
-							<span className="search"># Feijão</span>
+						<Link to="/search_result/Banana">
+							<span className="search"># Banana</span>
 						</Link>
 					</Colleter>
 					<Colleter>
-						<Link to="/search_result/Tomate">
-							<span className="search"># Manga</span>
+						<Link to="/search_result/Morango">
+							<span className="search"># Morango</span>
+						</Link>
+					</Colleter>
+					<Colleter>
+						<Link to="/search_result/Detergente">
+							<span className="search"># Detergente</span>
 						</Link>
 					</Colleter>
 				</Trends>

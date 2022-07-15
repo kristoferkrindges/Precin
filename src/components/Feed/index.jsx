@@ -22,12 +22,14 @@ export default function Feed(props) {
 		collection(db, "posts"),
 		orderBy(props.filter, props.order)
 	);
+	// const email = await user.email
 	let email;
 	if (user == undefined) {
 		email = "z";
 	} else {
 		email = user.email;
 	}
+	// console.log(user.email);
 
 	useEffect(() => {
 		const getPosts = async () => {
@@ -85,6 +87,7 @@ export default function Feed(props) {
 						})
 						.map((value, key) => (
 							<>
+								{/* emaill */}
 								<Feeds
 									className="join"
 									key={key}
@@ -101,24 +104,28 @@ export default function Feed(props) {
 											.filter((item) => item.email == value.user_email)
 											.map((value, key) => value.img_url)
 									}
+									/* emaill */
 									idP={
 										users.length > 0 &&
 										users
 											.filter((item) => item.email == email)
 											.map((value, key) => value.idP)
 									}
+									/* emaill */
 									userPrecin={
 										users.length > 0 &&
 										users
 											.filter((item) => item.email == email)
 											.map((value, key) => value.precin)
 									}
+									/* emaill */
 									userPrecao={
 										users.length > 0 &&
 										users
 											.filter((item) => item.email == email)
 											.map((value, key) => value.precao)
 									}
+									/* emaill */
 									listShop={
 										users.length > 0 &&
 										users
@@ -183,24 +190,28 @@ export default function Feed(props) {
 											.filter((item) => item.email == value.user_email)
 											.map((value, key) => value.img_url)
 									}
+									/* emaill */
 									idP={
 										users.length > 0 &&
 										users
 											.filter((item) => item.email == email)
 											.map((value, key) => value.idP)
 									}
+									/* emaill */
 									userPrecin={
 										users.length > 0 &&
 										users
 											.filter((item) => item.email == email)
 											.map((value, key) => value.precin)
 									}
+									/* emaill */
 									userPrecao={
 										users.length > 0 &&
 										users
 											.filter((item) => item.email == email)
 											.map((value, key) => value.precao)
 									}
+									/* emaill */
 									listShop={
 										users.length > 0 &&
 										users

@@ -19,7 +19,8 @@ export const CardContent = styled.div`
 	padding: 30px;
 	width: 100%;
 	height: 100%;
-	margin-left: 1.5%;
+	position: relative;
+	/* margin-left: 1%; */
 	/* position: relative;
 	z-index: 100; */
 `;
@@ -48,18 +49,14 @@ export const Logo = styled.img`
 
 export const Icons = styled.div`
 	position: absolute;
-	/* top: 20px;
-	right: -300px; */
-	top: 80px;
-	right: 400px;
+	top: 85px;
+	right: 500px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 
 	svg {
 		color: white;
-		/* opacity: 1; */
-		/* margin-top: 10px; */
 		transition: all 0.3s ease;
 		cursor: pointer;
 	}
@@ -69,37 +66,7 @@ export const Icons = styled.div`
 		transform: rotate(-180deg);
 	}
 `;
-
-// export const Logo = styled.div`
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	margin-left: 3%;
-// 	width: 30vw;
-
-// 	img {
-// 		width: 100%;
-// 		height: 100%;
-// 	}
-// `;
-
 export const IoClose = styled(IoCloseCircleOutline)`
 	width: 30px;
 	height: 30px;
-	/* display: flex;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	top: 100px;
-	right: 400px;
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	cursor: pointer;
-	color: white;
-	stroke: white;
-	&:hover {
-		color: #94449e;
-		opacity: 0.2;
-	} */
 `;

@@ -19,12 +19,11 @@ export const Feeder = styled.div`
 	border-radius: 20px;
 	position: relative;
 	width: 32vw;
-	height: 53vh;
-	cursor: pointer;
 	transition: opacity 0.5s ease-out;
 	border: 1px solid black;
+	box-shadow: 0px 10px 40px #00000056;
 	margin-top: 1%;
-	margin-bottom: 4%;
+	margin-bottom: 5%;
 
 	&::before {
 		content: "";
@@ -34,23 +33,62 @@ export const Feeder = styled.div`
 		background: ${({ theme }) => theme.buttons};
 		border-radius: 20px 20px 0 0;
 	}
-	@media (max-width: 768px) {
-		height: 35vh;
-		width: 22vh;
+	@media (max-width: 1600px) {
+		width: 35vw;
 	}
 
-	@media (max-height: 878px) {
-		width: 32vw;
-		height: 54vh;
+	@media (max-width: 1500px) {
+		width: 40vw;
+	}
+
+	@media (max-width: 1400px) {
+		width: 45vw;
+	}
+
+	@media (max-width: 1300px) {
+		width: 50vw;
+	}
+
+	@media (max-width: 1200px) {
+		width: 55vw;
+	}
+
+	@media (max-width: 1000px) {
+		width: 60vw;
+	}
+
+	@media (max-width: 900px) {
+		width: 65vw;
+	}
+
+	@media (max-width: 800px) {
+		width: 75vw;
+	}
+
+	@media (max-width: 700px) {
+		width: 70vw;
+	}
+
+	@media (max-width: 600px) {
+		width: 65vw;
+	}
+
+	@media (max-width: 550px) {
+		width: 60vw;
+	}
+
+	@media (max-width: 500px) {
+		width: 55vw;
 	}
 `;
-
 export const Profile = styled.div`
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	position: relative;
 	padding: 11px 20px 11px 20px;
 	width: 100%;
+	color: white;
 `;
 
 export const User = styled.div`
@@ -58,6 +96,35 @@ export const User = styled.div`
 	justify-content: start;
 	align-items: center;
 	width: 30vw;
+	cursor: pointer;
+
+	@media (max-width: 1500px) {
+		width: 35vw;
+	}
+
+	@media (max-width: 1400px) {
+		width: 40vw;
+	}
+
+	@media (max-width: 1300px) {
+		width: 45vw;
+	}
+
+	@media (max-width: 1200px) {
+		width: 50vw;
+	}
+
+	@media (max-width: 1100px) {
+		width: 55vw;
+	}
+
+	@media (max-width: 800px) {
+		width: 60vw;
+	}
+
+	@media (max-width: 700px) {
+		width: 65vw;
+	}
 `;
 
 export const Logo = styled.div`
@@ -77,25 +144,34 @@ export const Logo = styled.div`
 		border-radius: 50%;
 		border: 3px solid #fff;
 	}
-
-	@media (max-width: 1107px) {
-		height: 40px;
-		width: 40px;
-	}
 `;
 
 export const Name = styled.h3`
 	white-space: nowrap;
 	margin-left: 1%;
-	font-size: 1rem;
-	color: ${({ theme }) => theme.title};
+	font-size: 1em;
+	color: white;
 
-	@media (max-width: 1107px) {
-		font-size: 0.8rem;
+	@media (max-width: 500px) {
+		font-size: 0.8em;
+	}
+
+	@media (max-width: 440px) {
+		font-size: 0.7em;
+	}
+
+	@media (max-width: 420px) {
+		font-size: 0.6em;
 	}
 `;
 
-export const Icon = styled.div``;
+export const Icon = styled.div`
+	cursor: pointer;
+
+	svg:hover {
+		opacity: 0.5;
+	}
+`;
 // Product
 export const Product = styled.div`
 	display: flex;
@@ -103,6 +179,7 @@ export const Product = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
+	font-size: 100%;
 `;
 
 export const Photo = styled.div`
@@ -111,22 +188,22 @@ export const Photo = styled.div`
 	border-radius: 25px;
 	padding: 3px;
 	background: ${({ theme }) => theme.buttons};
+	cursor: pointer;
 
-	@media (max-width: 1110px) {
-		height: 220px;
-		width: 220px;
+	@media (max-width: 700px) {
+		height: 200px;
+		width: 200px;
 	}
 
-	@media (max-height: 877px) {
-		height: 220px;
-		width: 220px;
-	}
-
-	@media (max-width: 768px) {
+	@media (max-width: 600px) {
 		height: 150px;
 		width: 150px;
 	}
 
+	@media (max-width: 550px) {
+		height: 100px;
+		width: 100px;
+	}
 	&:hover {
 		opacity: 0.5;
 	}
@@ -146,43 +223,73 @@ export const Photo = styled.div`
 
 export const NameProduct = styled.h2`
 	margin-top: 2%;
-	font-size: 1.8rem;
+	font-size: 1.5em;
 	white-space: nowrap;
 	font-weight: 900;
 	color: ${({ theme }) => theme.title};
+	/* background-color: orange; */
 
-	@media (max-height: 878px) {
-		font-size: 1.2rem;
+	@media (max-width: 700px) {
+		font-size: 1em;
 	}
+
+	@media (max-width: 600px) {
+		font-size: 0.9em;
+	}
+
+	/* @media (max-height: 878px) {
+		font-size: 1.2rem;
+	} */
 `;
 
 export const Register = styled.div`
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	margin-top: 1%;
 	width: 100%;
+	font-size: 100%;
+	/* background-color: grey; */
 
 	img {
-		width: 4.5rem;
-		height: 4.5rem;
+		width: 4.5em;
+		height: 4.5em;
 
-		@media (max-height: 878px) {
+		@media (max-width: 700px) {
+			width: 4em;
+			height: 4em;
+		}
+
+		@media (max-width: 700px) {
+			width: 3em;
+			height: 3em;
+		}
+		/* background-color: blue; */
+
+		/* @media (max-height: 878px) {
 			width: 4rem;
 			height: 4rem;
-		}
+		} */
 	}
 `;
 
 export const Price = styled.h2`
-	font-size: 3rem;
+	font-size: 3em;
 	white-space: nowrap;
 	font-weight: 900;
 	color: ${({ theme }) => theme.title};
+	/* background-color: pink; */
 
+	@media (max-width: 700px) {
+		font-size: 2.5em;
+	}
+
+	@media (max-width: 600px) {
+		font-size: 2em;
+	}
+	/* 
 	@media (max-height: 878px) {
 		font-size: 2.5rem;
-	}
+	} */
 `;
 
 export const Buttons = styled.div`

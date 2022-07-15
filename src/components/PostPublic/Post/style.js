@@ -316,9 +316,11 @@ export const CardContent = styled.div`
 
 export const NameProduct = styled.h2`
 	font-size: 2em;
-	font-weight: 500;
+	font-weight: 900;
 	color: ${({ theme }) => theme.title};
-	margin: 3%;
+	/* margin: 3%; */
+	margin-top: 1%;
+	margin-bottom: 1%;
 	text-align: center;
 
 	@media only screen and (max-width: 824px) {
