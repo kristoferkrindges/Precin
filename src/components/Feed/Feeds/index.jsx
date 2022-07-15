@@ -91,6 +91,10 @@ export default function Feeds(props) {
 	} else {
 		prec = false;
 	}
+	if ((pres & prec) == true) {
+		pres = false;
+		prec = false;
+	}
 	// while (userPrecin != undefined) {}
 	// if (userPrecin.includes(props.id)) {
 	// 	pres = true;
@@ -122,6 +126,7 @@ export default function Feeds(props) {
 			setPrecinButton(true);
 			setPrecin(precin + 1);
 			IncreseAvaiblePrecin(props.idP.toString(), props.id);
+			decreseAvaiblePrecao(props.idP.toString(), props.id);
 			updateIncreasePrecin(props.id, precin);
 			if (precaoButton == true) {
 				setPrecaoButton(false);
@@ -150,6 +155,7 @@ export default function Feeds(props) {
 			setPrecaoButton(true);
 			setPrecao(precao + 1);
 			updateIncreasePrecao(props.id, precao);
+			decreseAvaiblePrecin(props.idP.toString(), props.id);
 			IncreseAvaiblePrecao(props.idP.toString(), props.id);
 			if (precinButton == true) {
 				setPrecinButton(false);
