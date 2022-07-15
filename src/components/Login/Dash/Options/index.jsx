@@ -32,7 +32,7 @@ const doc = [
 	{
 		card: "Suas publicações",
 		icon: <IoBookmarkOutline />,
-		link: "",
+		link: "/yourpublic",
 	},
 	{
 		card: "Sua lista",
