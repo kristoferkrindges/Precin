@@ -11,11 +11,26 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-	height: 200px;
+	height: 300px;
 	width: 300px;
 	margin-bottom: 2%;
 	border: 5px solid rgba(37, 108, 225, 1);
 	background: ${({ theme }) => theme.buttons};
+
+	@media (max-width: 1200px) {
+		height: 250px;
+		width: 250px;
+	}
+
+	@media (max-width: 700px) {
+		height: 200px;
+		width: 200px;
+	}
+
+	@media (max-width: 600px) {
+		height: 150px;
+		width: 150px;
+	}
 `;
 
 export const DeleteImage = styled.button`
@@ -26,8 +41,8 @@ export const DeleteImage = styled.button`
 	color: white;
 	font-size: 1.5rem;
 	margin-top: 3%;
-	height: 6vh;
-	width: 10vh;
+	height: 20px;
+	width: 20%;
 	padding: 25px 50px;
 	border-radius: 25px;
 	cursor: pointer;

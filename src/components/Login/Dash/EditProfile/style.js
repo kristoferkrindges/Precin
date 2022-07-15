@@ -47,9 +47,8 @@ export const IoMail = styled(IoMailOutline)`
 export const IoPerson2 = styled(IoPersonOutline)`
 	width: 40px;
 	height: 40px;
-	stroke: white;
+	stroke: ${({ theme }) => theme.title};
 	cursor: pointer;
-
 	&:hover {
 		opacity: 0.5;
 	}
@@ -58,7 +57,8 @@ export const IoPerson2 = styled(IoPersonOutline)`
 export const IoLock2 = styled(IoLockClosedOutline)`
 	width: 40px;
 	height: 40px;
-	stroke: white;
+	stroke: ${({ theme }) => theme.title};
+
 	cursor: pointer;
 
 	&:hover {
@@ -69,7 +69,7 @@ export const IoLock2 = styled(IoLockClosedOutline)`
 export const IoMail2 = styled(IoMailOutline)`
 	width: 40px;
 	height: 40px;
-	stroke: white;
+	stroke: ${({ theme }) => theme.title};
 	cursor: pointer;
 
 	&:hover {
@@ -103,7 +103,7 @@ export const IoPencil = styled(IoPencilOutline)`
 export const IoCamera = styled(IoCameraOutline)`
 	width: 40px;
 	height: 40px;
-	stroke: white;
+	stroke: ${({ theme }) => theme.title};
 
 	&:hover {
 		opacity: 0.5;
@@ -134,13 +134,15 @@ export const Layout = styled.div`
 `;
 
 export const Top = styled.div`
-	background: ${({ theme }) => theme.buttons};
+	background: ${({ theme }) => theme.navbar};
 	border-radius: 20px;
-	margin: 0px 0;
-	height: 36vh;
-	width: 100vh;
+	width: 60%;
 	cursor: pointer;
 	transition: opacity 0.5s ease-out;
+
+	@media (max-width: 720px) {
+		width: 80%;
+	}
 
 	&:hover {
 		/* width: 38vh;
@@ -155,6 +157,16 @@ export const Image = styled.div`
 	border-radius: 50%;
 	padding: 3px;
 	background: ${({ theme }) => theme.buttons};
+
+	@media (max-width: 700px) {
+		height: 200px;
+		width: 200px;
+	}
+
+	@media (max-width: 600px) {
+		height: 180px;
+		width: 180px;
+	}
 `;
 export const Logo = styled.img`
 	height: 100%;
@@ -203,8 +215,15 @@ export const Social = styled.div`
 	flex-direction: column;
 	align-items: center;
 
+	@media (max-width: 600px) {
+		right: 20px;
+	}
+
+	@media (max-width: 530px) {
+		right: 5px;
+	}
+
 	svg {
-		/* color: #fff; */
 		opacity: 0.8;
 		margin-top: 10px;
 		transition: all 0.3s ease;
@@ -215,13 +234,20 @@ export const NameSubject = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* margin-top: 10px; */
+	font-size: 100%;
 	color: white;
+	margin-top: 1%;
+	margin-bottom: 1%;
 `;
 export const Name = styled.span`
-	font-size: 2rem;
+	font-size: 2em;
 	font-weight: 600;
 	color: white;
+	white-space: nowrap;
+
+	@media (max-width: 600px) {
+		font-size: 1.5em;
+	}
 `;
 export const Subject = styled.span`
 	font-size: 1.5rem;
@@ -233,14 +259,13 @@ export const Buttons = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
-	margin-top: 15px;
 `;
 
 export const HireMe = styled.button`
-	background: ${({ theme }) => theme.title};
+	background: ${({ theme }) => theme.buttons};
 	outline: none;
-	border: 1px solid ${({ theme }) => theme.buttons};
-	color: ${({ theme }) => theme.buttons};
+	border: 1px solid ${({ theme }) => theme.bg3};
+	color: white;
 	padding: 8px 22px;
 	border-radius: 20px;
 	font-size: 1.5rem;
@@ -250,32 +275,45 @@ export const HireMe = styled.button`
 
 	&:hover {
 		background: #333;
-		opacity: 0.5;
+		opacity: 0.6;
 	}
 `;
 
 // Second Container
 
 export const Bottom = styled.div`
-	height: 50vh;
-	width: 100vh;
+	width: 60%;
 	background-color: ${({ theme }) => theme.navbar};
 	padding: 25px 30px;
 	border-radius: 25px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+	/* height: 50vh; */
 	/* bottom: -100%;
 	transition: 850ms; */
+
+	/* @media (max-width: 1300px) {
+		height: 60%;
+	} */
+
+	@media (max-width: 720px) {
+		width: 80%;
+	}
 `;
 
 export const Title = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 25px;
+	white-space: nowrap;
+	font-size: 1.5em;
 	font-weight: 500;
 	position: relative;
 	color: ${({ theme }) => theme.title};
 	height: 5vh;
+
+	@media (max-width: 700px) {
+		font-size: 1.3em;
+	}
 
 	&::before {
 		content: "";
@@ -285,7 +323,7 @@ export const Title = styled.div`
 		height: 3px;
 		width: 150px;
 		border-radius: 5px;
-		background: linear-gradient(135deg, #71b7e6, #9b59b6);
+		background: linear-gradient(135deg, #71b7e6, rgba(37, 108, 225, 1));
 	}
 `;
 
@@ -297,13 +335,18 @@ export const Collection = styled.div`
 
 export const UserDetails = styled.div`
 	display: flex;
-	/* flex-wrap: wrap; */
 	align-items: center;
-	justify-content: space-around;
+	justify-content: center;
+	margin-top: 5%;
+	width: 100%;
+	/* flex-direction: column; */
+	/* flex-wrap: wrap; */
 	/* margin: 20px 0 12px 0; */
-	width: 60vw;
 	/* margin-top: 5%; */
 
+	@media (max-width: 1300px) {
+		flex-direction: column;
+	}
 	/* span {
 		display: block;
 		font-weight: 500;
@@ -318,32 +361,61 @@ export const UserDetails = styled.div`
 
 export const Left = styled.div`
 	display: flex;
-	flex-direction: column;
+	align-items: center;
 	justify-content: center;
-	width: 30vw;
+	flex-direction: column;
+	width: 80%;
+
+	@media (max-width: 1300px) {
+		width: 100%;
+	}
 `;
 export const Right = styled.div`
 	display: flex;
-	flex-direction: column;
+	align-items: center;
 	justify-content: center;
-	width: 30vw;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 80%;
+
+	@media (max-width: 1300px) {
+		width: 100%;
+	}
 `;
 
 export const Controller = styled.div`
 	display: flex;
-	/* align-items: center; */
 	flex-direction: column;
+	width: 70%;
+	font-size: 100%;
+	/* margin-top: 5%; */
+	/* background-color: yellow; */
+	/* align-items: center; */
 	/* justify-content: center; */
-	width: 20vw;
-	margin-top: 5%;
+
+	@media (max-width: 1600px) {
+		width: 80%;
+	}
+
+	@media (max-width: 1450px) {
+		width: 90%;
+	}
+
+	@media (max-width: 1300px) {
+		width: 100%;
+	}
 
 	span {
 		display: flex;
 		justify-content: start;
 		margin-left: 5%;
 		margin-bottom: 2%;
-		font-size: 1.2rem;
+		font-size: 1.2em;
 		color: ${({ theme }) => theme.title};
+
+		@media (max-width: 700px) {
+			font-size: 1em;
+		}
 	}
 `;
 
@@ -351,6 +423,7 @@ export const ContainerInput = styled.div`
 	position: relative;
 	height: 45px;
 	width: 100%;
+	font-size: 100%;
 	background-color: rgba(0, 0, 0, 0.2);
 	margin: auto;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
@@ -361,20 +434,30 @@ export const ContainerInput = styled.div`
 export const InputName = styled.input`
 	position: absolute;
 	height: 45px;
-	/* width: 300px; */
 	width: 100%;
 	border-radius: 25px;
 	background: #fff;
 	outline: none;
 	padding-left: 20px;
-	font-size: 16px;
+	font-size: 1em;
 	color: black;
 	transition: background-color 0.5s ease-in;
-
 	padding-left: 15px;
 	border: 1px solid #ccc;
 	border-bottom-width: 2px;
 	transition: all 0.3s ease;
+
+	@media (max-width: 580px) {
+		font-size: 0.9em;
+	}
+
+	@media (max-width: 545px) {
+		font-size: 0.8em;
+	}
+
+	@media (max-width: 520px) {
+		font-size: 0.7em;
+	}
 
 	&:focus {
 		background-color: rgba(0, 0, 0, 0.1);

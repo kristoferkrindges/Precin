@@ -218,13 +218,13 @@ export const CardWrapper = styled.div`
 		height: 70vh;
 	}
 
-	@media only screen and (max-width: 1200px) {
+	/* @media only screen and (max-width: 1200px) {
 		height: 65vh;
-	}
+	} */
 
-	@media only screen and (max-width: 963px) {
+	/* @media only screen and (max-width: 963px) {
 		height: 60vh;
-	}
+	} */
 `;
 
 export const Card = styled.div`
@@ -311,6 +311,11 @@ export const CardContent = styled.div`
 		border-radius: 50%;
 		object-fit: cover;
 		margin-top: 5%;
+
+		@media (max-width: 480px) {
+			width: 120px;
+			height: 120px;
+		}
 	}
 `;
 
@@ -618,23 +623,35 @@ export const Button = styled.button`
 	align-items: center;
 
 	@media only screen and (max-width: 1200px) {
+		width: 22%;
+	}
+
+	@media only screen and (max-width: 900px) {
+		width: 25%;
+	}
+
+	@media only screen and (max-width: 768px) {
+		width: 27%;
+	}
+
+	@media only screen and (max-width: 700px) {
 		width: 30%;
 	}
 
-	@media only screen and (max-width: 940px) {
+	@media only screen and (max-width: 600px) {
+		width: 32%;
+	}
+
+	@media only screen and (max-width: 560px) {
+		width: 35%;
+	}
+
+	@media only screen and (max-width: 500px) {
 		width: 40%;
 	}
 
-	@media only screen and (max-width: 763px) {
+	@media only screen and (max-width: 480px) {
 		width: 50%;
-	}
-
-	@media only screen and (max-width: 630px) {
-		width: 60%;
-	}
-
-	@media only screen and (max-width: 540px) {
-		width: 70%;
 	}
 
 	&:hover {

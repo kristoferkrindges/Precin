@@ -1,10 +1,26 @@
 import styled from "styled-components";
 
 export const NavSearchBar = styled.div`
-	/* justify-content: center;
-	align-items: center; */
+	justify-content: center;
+	align-items: center;
 	width: 100%;
-	height: 80px;
+
+	@media (max-width: 1024px) {
+		margin-top: 3%;
+	}
+
+	@media (max-width: 820px) {
+		margin-top: 4%;
+	}
+
+	@media (max-width: 620px) {
+		margin-top: 5%;
+	}
+
+	@media (max-width: 500px) {
+		margin-top: 6%;
+	}
+
 	.searchInputs {
 		display: flex;
 		width: 90%;
@@ -17,18 +33,40 @@ export const NavSearchBar = styled.div`
 		width: 100%;
 		height: 40px;
 		border: none;
-		font-size: 18px;
+		font-size: 1.5em;
 		font-weight: 600;
 		padding-left: 2%;
 		background: transparent;
 		color: ${({ theme }) => theme.title};
-		@media screen and (max-width: 1000px) {
-			margin-top: 1%;
-		}
-		@media screen and (max-width: 768px) {
+
+		@media screen and (max-width: 1200px) {
 			width: 90%;
-			/* margin-top: 2%; */
 		}
+
+		@media (max-width: 800px) {
+			font-size: 1.3em;
+		}
+
+		@media (max-width: 650px) {
+			font-size: 1.2em;
+		}
+
+		@media (max-width: 610px) {
+			font-size: 1.1em;
+		}
+
+		@media (max-width: 580px) {
+			font-size: 1em;
+		}
+
+		@media (max-width: 540px) {
+			font-size: 0.9em;
+		}
+
+		@media (max-width: 510px) {
+			font-size: 0.8em;
+		}
+
 		:focus {
 			outline: none;
 		}
@@ -41,9 +79,9 @@ export const NavSearchBar = styled.div`
 		place-items: center;
 		padding-right: 1%;
 
-		@media screen and (max-width: 600px) {
+		/* @media screen and (max-width: 600px) {
 			display: none;
-		}
+		} */
 	}
 	.searchIcon svg {
 		font-size: 30px;
@@ -89,19 +127,21 @@ export const NavSearchBar = styled.div`
 export const SearchInputs = styled.div`
 	position: relative;
 	height: 40px;
-	width: 70vh;
+	width: 90%;
 	background-color: rgba(0, 0, 0, 0.2);
 	margin: auto;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 	border-radius: 25px;
 	transition: all 0.3s ease;
-	/* margin-bottom: 10%; */
 	display: flex;
-	width: 90%;
 	background: ${({ theme }) => theme.bgAlpha};
-	/* border: 1px solid ${({ theme }) => theme.bg3}; */
+	border: 1px solid ${({ theme }) => theme.bg3};
 	margin-top: 2.3%;
-	/* margin-left: 5%; */
+
+	@media (max-width: 1200px) {
+		width: 80%;
+	}
+
 	& a {
 		text-decoration: none;
 		cursor: pointer;
@@ -162,6 +202,12 @@ export const DataResult = styled.div`
 	overflow: hidden;
 	overflow-y: auto;
 	border-radius: 25px;
+
+	@media screen and (max-width: 1200px) {
+		width: 80%;
+		margin-left: 10%;
+	}
+
 	&::-webkit-scrollbar {
 		display: none;
 	}

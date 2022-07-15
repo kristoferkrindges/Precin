@@ -37,19 +37,27 @@ export const Feeder = styled.div`
 		width: 35vw;
 	}
 
-	@media (max-width: 1500px) {
-		width: 40vw;
-	}
-
-	@media (max-width: 1400px) {
+	@media (max-width: 1024px) {
 		width: 45vw;
 	}
 
-	@media (max-width: 1300px) {
-		width: 50vw;
+	@media (max-width: 768px) {
+		width: 55vw;
 	}
 
-	@media (max-width: 1200px) {
+	/* @media (max-width: 1500px) {
+		width: 40vw;
+	} */
+
+	/* @media (max-width: 1400px) {
+		width: 45vw;
+	} */
+
+	/* @media (max-width: 1300px) {
+		width: 50vw;
+	} */
+
+	/* @media (max-width: 1200px) {
 		width: 55vw;
 	}
 
@@ -63,9 +71,9 @@ export const Feeder = styled.div`
 
 	@media (max-width: 800px) {
 		width: 75vw;
-	}
+	} */
 
-	@media (max-width: 700px) {
+	/* @media (max-width: 700px) {
 		width: 70vw;
 	}
 
@@ -79,7 +87,7 @@ export const Feeder = styled.div`
 
 	@media (max-width: 500px) {
 		width: 55vw;
-	}
+	} */
 `;
 export const Profile = styled.div`
 	display: flex;
@@ -183,27 +191,28 @@ export const Product = styled.div`
 `;
 
 export const Photo = styled.div`
-	height: 250px;
-	width: 250px;
+	height: 200px;
+	width: 200px;
 	border-radius: 25px;
 	padding: 3px;
 	background: ${({ theme }) => theme.buttons};
 	cursor: pointer;
 
 	@media (max-width: 700px) {
-		height: 200px;
-		width: 200px;
-	}
-
-	@media (max-width: 600px) {
 		height: 150px;
 		width: 150px;
 	}
 
-	@media (max-width: 550px) {
-		height: 100px;
-		width: 100px;
+	@media (max-width: 480px) {
+		height: 130px;
+		width: 130px;
 	}
+
+	/* @media (max-width: 550px) {
+		height: 50px;
+		width: 50px;
+	} */
+
 	&:hover {
 		opacity: 0.5;
 	}
@@ -304,7 +313,7 @@ export const HireMe = styled.button`
 	color: #fff;
 	padding: 10px 20px;
 	border-radius: 20px;
-	font-size: 1.5rem;
+	font-size: 1.5em;
 	font-weight: 500;
 	transition: all 0.3s ease;
 	cursor: pointer;
@@ -312,8 +321,8 @@ export const HireMe = styled.button`
 	&:hover {
 		background: #333;
 	}
-	@media (max-height: 878px) {
-		font-size: 1.3rem;
+	@media (max-width: 700px) {
+		font-size: 1em;
 	}
 `;
 
