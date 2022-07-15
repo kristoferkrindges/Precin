@@ -69,7 +69,8 @@ import {
 import ProductImage from "../ProductImage";
 import { useUserContext } from "../../../context/userContext";
 import { usePostContext } from "../../../context/postContext";
-import Feeds from "../../Feed/Feeds/index";
+// import Feeds from "../../Feed/Feeds/index";
+import NewFeed from "../../YourPublic/NewFeed";
 
 export default function Post() {
 	const [productName, setProductName] = useState("");
@@ -391,9 +392,9 @@ export default function Post() {
 									</CardImage>
 								</ImageContent>
 								<CardContent>
-									<NameProduct>Como ficará a sua publicação</NameProduct>
+									<NameProduct>Ficou assim!</NameProduct>
 									<Ul>
-										{/* <Feeds
+										<NewFeed
 											name={user.displayName}
 											time={"1h"}
 											public={""}
@@ -401,8 +402,12 @@ export default function Post() {
 											price={productPrice}
 											market={market}
 											img_user={photoURL}
-											product_image={productURL}
-										/> */}
+											img_product={productURL}
+											// img_product={
+											// 	"https://cdn.wikifarmer.com/wp-content/uploads/2020/02/tomato-facts.jpg"
+											// }
+											type={"l"}
+										/>
 									</Ul>
 								</CardContent>
 							</Card>

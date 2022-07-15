@@ -98,6 +98,7 @@ const Public = () => {
 										market={value.market}
 										address={value.address}
 										onClick={HandlerButtonShop}
+										type={"Ypublic"}
 									/>
 								))}
 					</InfoData>
